@@ -1,0 +1,537 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    {%- render 'section-variables', section: section -%}
+  }
+
+  #shopify-section-{{ section.id }} .page-width--narrow {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+  }
+
+  /* Diagonal Lines Texture - Top Half Only */
+  #shopify-section-{{ section.id }} .section.section-with-texture {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .section.section-with-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background-image:
+      repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 0, 0, 0.06) 10px,
+        rgba(0, 0, 0, 0.03) 20px
+      ),
+      repeating-linear-gradient(
+        60deg,
+        transparent 0px,
+        transparent 30px,
+        rgba(255, 255, 255, 0.08) 30px,
+        rgba(255, 255, 255, 0.04) 50px
+      ),
+      repeating-linear-gradient(
+        60deg,
+        transparent 0px,
+        transparent 60px,
+        rgba(0, 0, 0, 0.03) 60px,
+        rgba(0, 0, 0, 0.015) 90px
+      );
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.3) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #shopify-section-{{ section.id }} .section.section-with-texture > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .title-wrapper .heading {
+    color: {{ section.settings.heading_color | default: 'inherit' }};
+  }
+
+  #shopify-section-{{ section.id }} .title-wrapper .heading *,
+  #shopify-section-{{ section.id }} .title-wrapper .heading split-words,
+  #shopify-section-{{ section.id }} .title-wrapper .heading .split-words {
+    color: {{ section.settings.heading_color | default: 'inherit' }};
+  }
+
+  #shopify-section-{{ section.id }} .staff-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .staff-grid {
+      grid-template-columns: repeat({{ section.settings.columns_tablet }}, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #shopify-section-{{ section.id }} .staff-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    }
+  }
+
+  /* Horizontal card layout - photo left, content right */
+  #shopify-section-{{ section.id }} .staff-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  #shopify-section-{{ section.id }} .staff-photo {
+    flex-shrink: 0;
+    width: 220px;
+    align-self: stretch;
+  }
+
+  #shopify-section-{{ section.id }} .staff-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .staff-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem;
+  }
+
+  #shopify-section-{{ section.id }} .staff-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    color: oklch(30% .04 230);
+  }
+
+  #shopify-section-{{ section.id }} .staff-name .last-name {
+    display: inline;
+    color: {{ section.settings.last_name_color | default: 'oklch(68% .27 40)' }};
+  }
+
+  #shopify-section-{{ section.id }} .staff-name .last-name::before {
+    content: ' ';
+  }
+
+  #shopify-section-{{ section.id }} .staff-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: oklch(50% .03 230);
+  }
+
+  #shopify-section-{{ section.id }} .staff-bio {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(var(--color-foreground), 0.7);
+    margin-bottom: 1rem;
+  }
+
+  #shopify-section-{{ section.id }} .staff-bio p {
+    margin: 0;
+    color: inherit;
+  }
+
+  #shopify-section-{{ section.id }} .staff-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  #shopify-section-{{ section.id }} .staff-social a {
+    color: rgb(var(--color-link));
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .staff-social a:hover {
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .empty-state {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  #shopify-section-{{ section.id }} .empty-state p {
+    font-size: 1.125rem;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .staff-card {
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .staff-photo {
+      width: 100%;
+      height: 250px;
+    }
+
+    #shopify-section-{{ section.id }} .staff-photo img {
+      object-position: center top;
+    }
+  }
+</style>
+
+<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}{% if section.settings.show_texture %} section-with-texture{% endif %}">
+  <div class="{% if section.settings.full_width %}full-width{% else %}page-width--narrow{% endif %} relative">
+    {%- render 'section-heading', section: section -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="staff-grid grid relative z-1">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'staff_member' -%}
+              <div class="staff-card" {{ block.shopify_attributes }}>
+
+                {%- if block.settings.photo != blank -%}
+                  <div class="staff-photo">
+                    {%- liquid
+                      assign alt_text = block.settings.first_name | append: ' ' | append: block.settings.last_name
+                    -%}
+                    {{- block.settings.photo | image_url: width: 400 | image_tag:
+                      loading: 'lazy',
+                      widths: '180,360',
+                      alt: alt_text
+                    -}}
+                  </div>
+                {%- endif -%}
+
+                <div class="staff-content">
+                  {%- if block.settings.first_name != blank or block.settings.last_name != blank -%}
+                    <h3 class="staff-name">
+                      {{ block.settings.first_name }}
+                      {%- if block.settings.last_name != blank -%}
+                        <span class="last-name">{{ block.settings.last_name }}</span>
+                      {%- endif -%}
+                    </h3>
+                  {%- endif -%}
+
+                  {%- if block.settings.title != blank -%}
+                    <p class="staff-title">
+                      {{ block.settings.title }}
+                    </p>
+                  {%- endif -%}
+
+                  {%- if block.settings.bio != blank -%}
+                    <div class="staff-bio">
+                      {{ block.settings.bio }}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.instagram_url != blank or block.settings.facebook_url != blank -%}
+                    <div class="staff-social">
+                      {%- if block.settings.instagram_url != blank -%}
+                        <a
+                          href="{{ block.settings.instagram_url }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="link"
+                          aria-label="{{ block.settings.first_name }} {{ block.settings.last_name }} Instagram"
+                        >
+                          Instagram
+                        </a>
+                      {%- endif -%}
+                      {%- if block.settings.facebook_url != blank -%}
+                        <a
+                          href="{{ block.settings.facebook_url }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="link"
+                          aria-label="{{ block.settings.first_name }} {{ block.settings.last_name }} Facebook"
+                        >
+                          Facebook
+                        </a>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="empty-state">
+        <p>Add staff members to display your pro team</p>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Pro Staff",
+  "tag": "section",
+  "class": "section-pro-staff",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Meet Our Pro Staff"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "title-sm",
+          "label": "Small"
+        },
+        {
+          "value": "title-md",
+          "label": "Medium"
+        },
+        {
+          "value": "title-lg tracking-heading",
+          "label": "Large"
+        },
+        {
+          "value": "title-xl tracking-heading",
+          "label": "Extra Large"
+        }
+      ],
+      "default": "title-lg tracking-heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "text-left md:items-end md:flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "text-center md:items-center",
+          "label": "Center"
+        },
+        {
+          "value": "text-right md:items-end md:flex-row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "text-center md:items-center"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Ice fishing experts who trust FishArmor</p>"
+    },
+    {
+      "type": "header",
+      "content": "Grid Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Tablet columns",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Show section divider",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "rounded",
+      "label": "Enable rounded corners",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_texture",
+      "label": "Show diagonal lines texture",
+      "default": false,
+      "info": "Adds subtle diagonal line pattern to top half of section"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Make section full width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "text",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "inherit",
+      "info": "Enter color value (hex, rgb, or oklch). Use 'inherit' for default theme color."
+    },
+    {
+      "type": "text",
+      "id": "last_name_color",
+      "label": "Last name color",
+      "default": "oklch(68% .27 40)",
+      "info": "Enter color value (hex, rgb, or oklch). Example: oklch(68% .27 40)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "staff_member",
+      "name": "Staff Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo",
+          "info": "Square photos work best (400x400px recommended)"
+        },
+        {
+          "type": "text",
+          "id": "first_name",
+          "label": "First Name",
+          "default": "Brian"
+        },
+        {
+          "type": "text",
+          "id": "last_name",
+          "label": "Last Name",
+          "default": "Brosdahl"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ice Fishing Legend - Guide - TV Host"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Bio",
+          "default": "<p>Ice fishing expert with 20+ years on Minnesota lakes.</p>"
+        },
+        {
+          "type": "url",
+          "id": "instagram_url",
+          "label": "Instagram URL"
+        },
+        {
+          "type": "url",
+          "id": "facebook_url",
+          "label": "Facebook URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pro Staff",
+      "blocks": [
+        {
+          "type": "staff_member"
+        },
+        {
+          "type": "staff_member"
+        },
+        {
+          "type": "staff_member"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -17,6 +17,7 @@
         "show_vendor": true,
         "show_cart_note": true,
         "show_shipping_calculator": true,
+        "add_discount_code": true,
         "show_view_cart_button": true,
         "show_checkout_button": true,
         "show_free_shipping_bar": true,
@@ -53,6 +54,9 @@
             "text_font": "body",
             "text_size": "subtext-custom",
             "text_max_size": 12,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -86,6 +90,9 @@
             "text_font": "body",
             "text_size": "text-sm",
             "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -95,18 +102,6 @@
           "type": "media",
           "disabled": true,
           "settings": {}
-        },
-        "floating": {
-          "type": "floating",
-          "settings": {
-            "heading": "Free Shipping on $1500+ Orders ",
-            "content_position": "left-0",
-            "show_social": false,
-            "mobile_disabled": false,
-            "mobile_hide_social": false,
-            "color_text": "#171717",
-            "color_background": "#00ada8"
-          }
         }
       },
       "block_order": [
@@ -115,8 +110,7 @@
         "spacing-1",
         "form",
         "text-2",
-        "media",
-        "floating"
+        "media"
       ],
       "custom_css": [
         ".newsletter-bar .newsletter-bar__button {font-size: var(--text-base); font-weight: 500; background-color: rgba(255, 255, 255, 0.6);}"
@@ -129,7 +123,6 @@
         "expiry": 30,
         "text_alignment": "left",
         "content_position": "right-0",
-        "image": "shopify://shop_images/FRshore.jpg",
         "color_drawer_text": "#171717",
         "color_drawer_background": "#ffffff",
         "color_drawer_highlight": "#00ada8",
@@ -159,6 +152,9 @@
             "text_font": "body",
             "text_size": "text-base",
             "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -223,6 +219,9 @@
             "text_font": "body",
             "text_size": "text-base",
             "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -291,7 +290,8 @@
           "settings": {
             "custom_icon": "",
             "title": "Shop",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "external": false
           }
         },
         "mobile-dock-4": {

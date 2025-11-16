@@ -15,6 +15,9 @@
         "vendor": {
           "type": "text",
           "settings": {
+            "icon": "none",
+            "iwidth": "custom",
+            "icon_width": 24,
             "text": "{{ product.vendor }}",
             "text_size": "text-base"
           }
@@ -22,16 +25,15 @@
         "title": {
           "type": "title",
           "settings": {
-            "title_size": "product-title-md",
+            "title_size": "product-title-lg",
             "title_size_mobile": "product-title-md",
             "show_price": true,
             "show_rating": true
           }
         },
-        "excerpt": {
-          "type": "text",
+        "description_KWETUW": {
+          "type": "description",
           "settings": {
-            "text": "This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color, materials used, sizing, and where it was made.",
             "text_size": "text-base"
           }
         },
@@ -55,11 +57,16 @@
             "size_chart": ""
           }
         },
+        "sku_Lac8zH": {
+          "type": "sku",
+          "settings": {}
+        },
         "inventory": {
           "type": "inventory",
           "settings": {
             "inventory_threshold": 15,
             "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
             "color_scheme": "accent-1"
           }
         },
@@ -67,8 +74,12 @@
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": true,
+            "show_price": false,
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
           }
         },
         "pickup_availability": {
@@ -82,7 +93,8 @@
             "show_help_desk": true,
             "help_label": "Need help?",
             "help_type": "drawer",
-            "help_page": ""
+            "help_page": "",
+            "help_page_external": false
           }
         },
         "complementary": {
@@ -102,9 +114,10 @@
       "block_order": [
         "vendor",
         "title",
-        "excerpt",
+        "description_KWETUW",
         "countdown",
         "variant_picker",
+        "sku_Lac8zH",
         "inventory",
         "buy_buttons",
         "pickup_availability",
@@ -119,16 +132,16 @@
         "thumbnail_position": "beside",
         "image_ratio": "adapt_first",
         "image_zoom": "lightbox",
-        "hide_variants": false,
+        "hide_variants": true,
         "enable_video_autoplay": true,
         "enable_video_looping": true,
         "mobile_layout": "full_width",
         "image_ratio_mobile": "adapt_first",
         "mobile_thumbnail": false,
-        "padding_top": 0,
+        "padding_top": 40,
         "padding_bottom": 52,
         "divider": false,
-        "full_width": true,
+        "full_width": false,
         "rounded": false
       }
     },
@@ -215,63 +228,70 @@
           "settings": {
             "split_mode": true,
             "icon": "none",
+            "iwidth": "custom",
             "icon_width": 24,
-            "heading": "Product description"
+            "heading": "Product description",
+            "text_size": "text-base"
           }
         },
         "collapsible_tab-1": {
           "type": "collapsible_tab",
           "settings": {
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 24,
             "heading": "Collapsible row 1",
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "metafields": ""
+            "metafields": "",
+            "text_size": "text-base"
           }
         },
         "collapsible_tab-2": {
           "type": "collapsible_tab",
           "settings": {
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 24,
             "heading": "Collapsible row 2",
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "metafields": ""
+            "metafields": "",
+            "text_size": "text-base"
           }
         },
         "collapsible_tab-3": {
           "type": "collapsible_tab",
           "settings": {
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 24,
             "heading": "Collapsible row 3",
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "metafields": ""
+            "metafields": "",
+            "text_size": "text-base"
           }
         },
         "collapsible_tab-4": {
           "type": "collapsible_tab",
           "settings": {
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 24,
             "heading": "Collapsible row 4",
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "metafields": ""
+            "metafields": "",
+            "text_size": "text-base"
           }
         },
         "collapsible_tab-5": {
           "type": "collapsible_tab",
           "settings": {
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 24,
             "heading": "Collapsible row 5",
             "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "metafields": ""
+            "metafields": "",
+            "text_size": "text-base"
           }
         }
       },
@@ -283,6 +303,7 @@
         "collapsible_tab-4",
         "collapsible_tab-5"
       ],
+      "disabled": true,
       "settings": {
         "style": "with-background",
         "open_first_row": true,
@@ -295,6 +316,7 @@
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
         "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
@@ -319,9 +341,8 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "",
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 48,
             "heading": "Image heading",
             "heading_size": "title-sm",
@@ -330,6 +351,8 @@
             "description": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "",
             "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
             "button_icon": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -339,9 +362,8 @@
           "type": "video",
           "settings": {
             "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "",
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 48,
             "heading": "Video heading",
             "heading_size": "title-sm",
@@ -350,6 +372,8 @@
             "description": "<p>Pair text with a video to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "",
             "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
             "button_icon": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -358,9 +382,8 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "",
             "icon": "none",
-            "icon_image": "",
+            "iwidth": "custom",
             "icon_width": 48,
             "heading": "Image heading",
             "heading_size": "title-sm",
@@ -369,6 +392,8 @@
             "description": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button_label": "",
             "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
             "button_icon": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -380,6 +405,7 @@
         "video",
         "image-2"
       ],
+      "disabled": true,
       "settings": {
         "image_height": "100vh",
         "image_width": "medium",
@@ -447,8 +473,8 @@
         "product-2",
         "product-3"
       ],
+      "disabled": true,
       "settings": {
-        "image": "",
         "heading": "Shop the <em>look</em>",
         "heading_size": "title-sm",
         "heading_alignment": "text-center md:items-center",
@@ -457,6 +483,7 @@
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
         "button_icon": true,
         "highlighted_text": "scribble",
         "highlighted_scribble": "squiggle-underline",
@@ -493,8 +520,10 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 140
+            "height": 140,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "text-2": {
@@ -510,8 +539,10 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 140
+            "height": 140,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         }
       },
@@ -521,6 +552,7 @@
         "text-2",
         "image-2"
       ],
+      "disabled": true,
       "settings": {
         "direction": "left",
         "speed": 20,
@@ -589,9 +621,9 @@
         "contact": {
           "type": "contact",
           "settings": {
+            "heading": "Didn’t find your answer?",
             "text": "<p>Don't hestitate to contact us</p>",
             "show_phone": false,
-            "avatar": "",
             "avatar_height": 60,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -606,6 +638,7 @@
         "question-5",
         "contact"
       ],
+      "disabled": true,
       "settings": {
         "style": "with-background",
         "heading": "FAQs",
@@ -616,6 +649,7 @@
         "description": "<p>Please read our <a href=\"/pages/faqs\" title=\"FAQ's\">FAQs</a> page to find out more.</p>",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
         "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",

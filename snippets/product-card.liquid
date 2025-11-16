@@ -340,6 +340,12 @@
         </div>
       </div>
 
+      {%- if show_card_description and product.metafields.custom.card_description != blank -%}
+        <div class="product-card__description text-sm leading-tight mt-4">
+          {{ product.metafields.custom.card_description }}
+        </div>
+      {%- endif -%}
+
       {%- if show_color_swatches -%}
         {%- liquid
           assign swatch_trigger_list = 'products.general.color_swatch_trigger' | t | downcase | split: ','

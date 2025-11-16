@@ -9,124 +9,192 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "image_with_text_overlay_JhcbtN": {
+      "type": "image-with-text-overlay",
       "blocks": {
-        "slide-1": {
+        "image_cmcxAM": {
           "type": "image",
           "settings": {
-            "image": "",
-            "image_mobile": "",
-            "heading": "IMAGE SLIDE 1",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_icon": false
-          }
-        },
-        "slide-2": {
-          "type": "image",
-          "settings": {
-            "image": "",
-            "image_mobile": "",
-            "heading": "IMAGE SLIDE 2",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_icon": false
-          }
-        },
-        "slide-3": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "video_url_mobile": "",
-            "heading": "VIDEO SLIDE",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_icon": false
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50
           }
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2",
-        "slide-3"
+        "image_cmcxAM"
       ],
+      "name": "t:sections.image-with-text-overlay.name",
       "settings": {
-        "autoplay": false,
-        "autoplay_speed": 7,
-        "show_navigation": true,
-        "image_height": "750px",
+        "transparent_header": false,
+        "image": "shopify://shop_images/homepage-hero.jpg",
+        "image_height": "700px",
         "content_width": "small",
-        "image_height_mobile": "500px",
-        "color_text": "#ffffff",
-        "color_background": "#ffffff",
-        "gradient_background": "",
+        "content_position": "md:items-end md:justify-end",
+        "text_alignment": "right",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#0a1824",
+        "color_background": "#0a1824",
+        "gradient_background": "linear-gradient(180deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
         "color_button_text": "#171717",
         "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "color_overlay": "#000000",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
         "padding_top": 0,
         "padding_bottom": 0,
         "divider": false,
         "full_width": true,
         "rounded": false,
-        "enable_parallax": false,
+        "enable_parallax": true,
         "parallax_direction": "vertical"
       }
     },
-    "rich-text-1": {
-      "type": "rich-text",
+    "floating_product_collection_xm6JRq": {
+      "type": "floating-product-collection",
       "blocks": {
-        "text": {
+        "heading_FjqTPc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Built By Anglers. Engineered for Real Fishing Conditions.",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "heading_color": "#e4e8ec",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xUiUBa": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<br/><br/>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store. Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<p>150 years of combined on-water experience. American-made. Engineered to survive Minnesota winters, Canadian Shield waters, and everything you throw at it.</p>",
             "text_font": "body",
-            "text_size": "subtext-md",
+            "text_size": "subtext-xl",
             "text_max_size": 32,
-            "secondary_color": false,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_color": "#b8e600",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
         }
       },
       "block_order": [
-        "text"
+        "heading_FjqTPc",
+        "text_xUiUBa"
       ],
+      "name": "Floating collection",
       "settings": {
+        "collection": "frontpage",
+        "products": [],
+        "product_limit": 3,
+        "image_height": "900px",
+        "layout": "image_first",
+        "content_position": "md:items-end",
         "text_alignment": "left",
-        "text_alignment_mobile": "left",
-        "heading": "Talk about your <em>brand</em>",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "Our Story",
-        "button_link": "",
-        "button_icon": true,
-        "highlighted_text": "scribble",
-        "highlighted_scribble": "basic-underline",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center",
+        "text_alignment_mobile": "center",
+        "swipe_on_mobile": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "linear-gradient(136deg, rgba(10, 24, 36, 1) 12%, rgba(110, 131, 148, 1) 82%)",
+        "color_highlight": "#e0a580",
         "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 0,
+        "color_overlay": "#171717",
+        "overlay_opacity": 40,
+        "padding_top": 68,
+        "padding_bottom": 68,
         "divider": false,
-        "narrow": false,
-        "rounded": false
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "pro_staff_3bn4K7": {
+      "type": "pro-staff",
+      "blocks": {
+        "staff_member_GhB9Mr": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Brian-Brosdahl.jpg",
+            "first_name": "Brian",
+            "last_name": "Brosdahl",
+            "title": "Ice Fishing Legend • Guide • TV Host",
+            "bio": "<p>I use Fish Armor every day in my guide business. The durability and versatility of these systems make them essential equipment for serious ice anglers. Simply solid construction that stands up to the toughest conditions on the ice.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_UCBdAJ": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Brad-Hawthorne.jpg",
+            "first_name": "Brad",
+            "last_name": "Hawthorne",
+            "title": "Mille Lacs Guide • 20+ Years Experience",
+            "bio": "<p>Clients can be tough on stuff, especially when you're fishing Mille Lacs in harsh conditions. Fish Armor is the answer for guides who need equipment that can handle daily professional use. The no-metal design means no corrosion, even with constant exposure to water and ice.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_J6wMU3": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Jeremy-Smith.jpg",
+            "first_name": "Jeremy",
+            "last_name": "Smith",
+            "title": "Lindner Media • Lure Designer",
+            "bio": "<p>One of the best and most versatile shuttle systems available on the market. As someone who designs fishing equipment professionally, I appreciate the engineering and thought that went into these systems. Perfect for both ice fishing and open water applications.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_Fyhr7f": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Jeff-Simpson.jpg",
+            "first_name": "Jeff",
+            "last_name": "Simpson",
+            "title": "Lindner Media • In-Fisherman Veteran",
+            "bio": "<p>The versatility is endless with Fish Armor shuttles. I use these systems for hours every single day during the ice fishing season. Whether filming for In-Fisherman or guiding clients, I trust Fish Armor to protect my expensive electronics in the harshest conditions.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "staff_member_GhB9Mr",
+        "staff_member_UCBdAJ",
+        "staff_member_J6wMU3",
+        "staff_member_Fyhr7f"
+      ],
+      "name": "Pro Staff",
+      "settings": {
+        "heading": "TRUSTED BY THE BEST",
+        "heading_size": "title-lg",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center md:items-center",
+        "description": "<p>Our team brings unmatched expertise to every shuttle we build. With 150+ years of combined experience and countless hours on the ice, these guides know what it takes to protect your investment in the harshest conditions.</p>",
+        "columns_desktop": 2,
+        "columns_tablet": 1,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "divider": false,
+        "rounded": false,
+        "show_texture": true,
+        "full_width": false,
+        "heading_color": "oklch(30% .04 230)",
+        "last_name_color": "oklch(68% .27 40)"
       }
     },
     "collection-list": {
@@ -136,7 +204,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "All products",
             "description": "Check out all our products",
             "overlay_content": true,
@@ -149,7 +216,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "Collection 1",
             "description": "Collection description",
             "overlay_content": false,
@@ -162,7 +228,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "Collection 2",
             "description": "Collection description",
             "overlay_content": false,
@@ -175,7 +240,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "Collection 3",
             "description": "Collection description",
             "overlay_content": false,
@@ -188,7 +252,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "Collection 4",
             "description": "Collection description",
             "overlay_content": false,
@@ -201,7 +264,6 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "image": "",
             "title": "Collection 5",
             "description": "Collection description",
             "overlay_content": false,
@@ -220,6 +282,7 @@
         "collection-6"
       ],
       "settings": {
+        "card_style": "card",
         "image_type": "collection",
         "image_ratio": "square",
         "show_products_count": true,
@@ -271,6 +334,9 @@
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -281,7 +347,9 @@
           "settings": {
             "button_label": "Shop Now",
             "button_link": "",
+            "button_style": "primary",
             "button_size": "md",
+            "button_external": false,
             "button_icon": true
           }
         }
@@ -306,6 +374,8 @@
         "content_position_mobile": "items-center justify-center",
         "text_alignment_mobile": "center",
         "color_text": "#ffffff",
+        "color_background": "",
+        "gradient_background": "",
         "color_highlight": "#e0a580",
         "gradient_highlight": "",
         "color_button_text": "#171717",
@@ -326,6 +396,9 @@
         "text": {
           "type": "text",
           "settings": {
+            "icon": "none",
+            "iwidth": "custom",
+            "icon_width": 24,
             "text": "{{ section.settings.product.vendor }}",
             "text_size": "text-base"
           }
@@ -334,6 +407,7 @@
           "type": "title",
           "settings": {
             "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
             "show_price": true,
             "show_rating": true
           }
@@ -369,6 +443,7 @@
           "settings": {
             "inventory_threshold": 15,
             "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
             "color_scheme": "accent-1"
           }
         },
@@ -376,8 +451,12 @@
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": false,
+            "show_price": false,
             "show_dynamic_checkout": false,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
           }
         },
         "pickup_availability": {
@@ -390,7 +469,8 @@
             "share_label": "Share",
             "show_help_desk": true,
             "help_label": "Need help?",
-            "help_page": ""
+            "help_page": "",
+            "help_page_external": false
           }
         },
         "read_more": {
@@ -423,11 +503,13 @@
         "media_size": 64,
         "gallery_layout": "thumbnail",
         "thumbnail_position": "beside",
+        "image_ratio": "adapt_first",
         "image_zoom": "lightbox",
         "hide_variants": false,
         "enable_video_autoplay": true,
         "enable_video_looping": true,
         "mobile_layout": "full_width",
+        "image_ratio_mobile": "adapt_first",
         "mobile_thumbnail": false,
         "padding_top": 120,
         "padding_bottom": 0,
@@ -442,7 +524,6 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "",
             "subheading": "",
             "heading": "Before image",
             "content_position": "end",
@@ -452,7 +533,6 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "",
             "subheading": "",
             "heading": "After image",
             "content_position": "end",
@@ -476,6 +556,7 @@
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
         "button_icon": true,
         "highlighted_text": "text",
         "highlighted_scribble": "circle",
@@ -491,39 +572,6 @@
         "padding_bottom": 0,
         "divider": false,
         "full_width": false,
-        "rounded": false
-      }
-    },
-    "rich-text-2": {
-      "type": "rich-text",
-      "settings": {
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
-        "heading": "Build your <em>Bundle</em>",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "large",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "<p>The choice is yours. With our bundle builder, you can select any combination from our range of products. The easiest way to keep everyone happy.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "scribble",
-        "highlighted_scribble": "squiggle-underline",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 120,
-        "padding_bottom": 48,
-        "divider": false,
-        "narrow": false,
         "rounded": false
       }
     },
@@ -599,6 +647,8 @@
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
         "padding_top": 120,
         "padding_bottom": 120,
         "divider": false,
@@ -615,6 +665,9 @@
             "text_font": "body",
             "text_size": "subtext-custom",
             "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -645,7 +698,9 @@
           "settings": {
             "button_label": "Shop Now",
             "button_link": "",
+            "button_style": "primary",
             "button_size": "md",
+            "button_external": false,
             "button_icon": true
           }
         }
@@ -658,16 +713,16 @@
       ],
       "settings": {
         "transparent_header": false,
-        "image": "",
         "image_height": "750px",
         "content_width": "medium",
         "content_position": "md:items-center md:justify-center",
         "text_alignment": "center",
-        "image_mobile": "",
         "image_height_mobile": "500px",
         "content_position_mobile": "items-center justify-center",
         "text_alignment_mobile": "center",
         "color_text": "#ffffff",
+        "color_background": "",
+        "gradient_background": "",
         "color_highlight": "#fcd34d",
         "gradient_highlight": "",
         "color_button_text": "#171717",
@@ -727,7 +782,6 @@
         "product-3"
       ],
       "settings": {
-        "image": "",
         "heading": "Shop the <em>look</em>",
         "heading_size": "title-sm",
         "heading_alignment": "text-center md:items-center",
@@ -736,6 +790,7 @@
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
         "button_icon": true,
         "highlighted_text": "scribble",
         "highlighted_scribble": "squiggle-underline",
@@ -765,7 +820,8 @@
             "icon": "quote",
             "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
-            "image": "",
+            "author_info": "",
+            "author_url": "",
             "image_ratio": "rounded",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -777,7 +833,8 @@
             "icon": "quote",
             "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
-            "image": "",
+            "author_info": "",
+            "author_url": "",
             "image_ratio": "rounded",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -789,7 +846,8 @@
             "icon": "quote",
             "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
-            "image": "",
+            "author_info": "",
+            "author_url": "",
             "image_ratio": "rounded",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -803,12 +861,13 @@
       ],
       "settings": {
         "transparent_header": false,
-        "image": "",
         "image_height": "750px",
         "content_position": "md:items-center md:justify-center",
         "image_height_mobile": "500px",
         "content_position_mobile": "items-center justify-center",
         "color_text": "#ffffff",
+        "color_background": "",
+        "gradient_background": "",
         "color_highlight": "",
         "gradient_highlight": "",
         "color_overlay": "#171717",
@@ -816,6 +875,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "divider": false,
+        "full_width": true,
         "rounded": true,
         "enable_parallax": true,
         "parallax_direction": "vertical"
@@ -890,50 +950,64 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-3": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-4": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-5": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-6": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         },
         "image-7": {
           "type": "image",
           "settings": {
-            "image": "",
-            "height": 60
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
           }
         }
       },
@@ -955,6 +1029,8 @@
         "color_text": "",
         "color_background": "#fde68a",
         "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
         "padding_top": 36,
         "padding_bottom": 36,
         "divider": false,
@@ -998,13 +1074,13 @@
     }
   },
   "order": [
-    "slideshow",
-    "rich-text-1",
+    "image_with_text_overlay_JhcbtN",
+    "floating_product_collection_xm6JRq",
+    "pro_staff_3bn4K7",
     "collection-list",
     "video-with-text-overlay",
     "featured-product",
     "image-comparison",
-    "rich-text-2",
     "product-bundle",
     "scrolling-text-1",
     "countdown-timer",
