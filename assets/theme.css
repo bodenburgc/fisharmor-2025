@@ -2652,7 +2652,7 @@ video {
 }
 
 .tracking-heading {
-  letter-spacing: -.04em
+  letter-spacing: var(--font-heading-letter-spacing)
 }
 
 .whitespace-nowrap {
