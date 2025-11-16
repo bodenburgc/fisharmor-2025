@@ -38,7 +38,8 @@
 
     {%- liquid
       render 'social-meta-tags'
-      
+
+      echo 'fonts.css' | asset_url | stylesheet_tag: preload: true
       render 'css-variables'
       echo 'theme.css' | asset_url | stylesheet_tag: preload: true
 
