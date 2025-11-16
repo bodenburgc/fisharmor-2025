@@ -255,10 +255,8 @@
         "content": "t:settings_schema.typography.settings.header__headings"
       },
       {
-        "type": "font_picker",
-        "id": "type_header_font",
-        "label": "t:settings_schema.typography.settings.type_header_font.label",
-        "default": "poppins_n7"
+        "type": "paragraph",
+        "content": "Heading Font: Gazzetta (Bold) - Custom FishArmor font"
       },
       {
         "type": "range",
@@ -288,10 +286,8 @@
         "content": "t:settings_schema.typography.settings.header__body"
       },
       {
-        "type": "font_picker",
-        "id": "type_body_font",
-        "label": "t:settings_schema.typography.settings.type_body_font.label",
-        "default": "poppins_n5"
+        "type": "paragraph",
+        "content": "Body Font: Barlow (Regular, with weights 300-700) - Custom FishArmor font"
       },
       {
         "type": "range",

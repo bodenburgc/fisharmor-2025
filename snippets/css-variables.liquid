@@ -2,11 +2,9 @@
   {%- liquid
     comment
       Custom FishArmor fonts (Gazzetta and Barlow) are loaded via fonts.css
-      Font picker settings are ignored in favor of custom fonts
+      Heading Font: Gazzetta Bold
+      Body Font: Barlow (weights 300-700)
     endcomment
-
-    assign header_font = settings.type_header_font
-    assign body_font = settings.type_body_font
 
     assign rounded_button = '0.375rem'
     if settings.rounded_button == 'round'
