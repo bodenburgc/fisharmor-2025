@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "BODE 2024",
-    "theme_author": "BODE",
+    "theme_name": "FishArmor 2024",
+    "theme_author": "FishArmor",
     "theme_version": "1.0.0",
-    "theme_documentation_url": "https://BODE.design",
-    "theme_support_url": "https://BODE.design"
+    "theme_documentation_url": "https://fisharmor.com",
+    "theme_support_url": "https://fisharmor.com/support"
   },
   {
     "name": "t:settings_schema.logo.name",

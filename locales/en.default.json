@@ -34,9 +34,9 @@
     },
     "404": {
       "title": "Page not found",
-      "subtext_html": "Looks like the page you're looking for no longer exists.<br>Try going back to the previous page or to the pages below.",
+      "subtext_html": "This page seems to have drifted off the ice. Let's get you back to protecting your investment.<br>Try going back to the previous page or explore our shuttles below.",
       "back_to_home": "Go to the home page",
-      "continue_shopping": "Continue shopping"
+      "continue_shopping": "Shop FishArmor Shuttles"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -55,7 +55,7 @@
       "login_form_error": "Wrong password!",
       "login_form_submit": "Enter",
       "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link\">Log in here</a>",
-      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+      "powered_by_shopify_html": ""
     },
     "breadcrumbs": {
       "home": "Home",
@@ -586,12 +586,12 @@
   "gift_cards": {
     "issued": {
       "title_html": "Here's your {{ value }} gift card for {{ shop }}!",
-      "subtext": "Here's your gift card!",
+      "subtext": "Your FishArmor gift card is ready!",
       "disabled": "Disabled",
       "expired": "Expired",
       "active": "Expires on {{ expiry }}",
-      "redeem": "Use this code at checkout to redeem your gift card.",
-      "shop_link": "Visit online store",
+      "redeem": "Use this code at checkout to redeem your gift card and protect your investment.",
+      "shop_link": "Shop FishArmor",
       "copy_code_success": "Code copied successfully",
       "copy": "Copy",
       "print": "Print",

@@ -19,8 +19,8 @@
           "settings": {
             "icon": "support",
             "custom_icon": "",
-            "heading": "GoBoat Support",
-            "text": "<p>Have questions or need assistance with your GoBoat? Our team is here to help you!</p>",
+            "heading": "FishArmor Support",
+            "text": "<p>Have questions or need assistance with your FishArmor shuttle? Our team is here to help you!</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -31,7 +31,7 @@
             "icon": "users",
             "custom_icon": "",
             "heading": "Become a Dealer",
-            "text": "<p>Partner with us to share the GoBoat adventure. Contact us to learn how you can become a dealer!</p>",
+            "text": "<p>Partner with us to bring FishArmor protection to your customers. Contact us to learn how you can become a dealer!</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -42,7 +42,7 @@
             "icon": "box",
             "custom_icon": "",
             "heading": "Fast Free Shipping",
-            "text": "<p>Get free shipping on orders of $1500 (before tax) or more – Get Your GoBoat on the Water!</p>",
+            "text": "<p>Get free shipping on orders of $1500 (before tax) or more – Protect Your Electronics on the Ice!</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -137,7 +137,7 @@
         "enable_newsletter": true,
         "newsletter_heading": "Stay afloat with the latest deals!",
         "newsletter_heading_size": "md:title-lg",
-        "newsletter_text": "<p>Subscribe to get exclusive offers, free giveaways, and once-in-a-lifetime deals straight to your inbox. Don’t miss out on the best GoBoat savings and updates!</p>",
+        "newsletter_text": "<p>Subscribe to get exclusive offers, free giveaways, and once-in-a-lifetime deals straight to your inbox. Don't miss out on the best FishArmor savings and updates!</p>",
         "newsletter_logo_height": 50,
         "show_social": true,
         "enable_follow_on_shop": false,

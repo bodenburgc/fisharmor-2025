@@ -29,8 +29,8 @@
         "cart_recommendations_products": [],
         "empty_cart_message": "<p>Not sure where to start?<br/>Try these collections:</p>",
         "empty_cart_collections": [
-          "goboat",
-          "attachments"
+          "all",
+          "accessories"
         ],
         "recent_products_enabled": true,
         "recent_products_heading": "Recently viewed",
@@ -82,7 +82,7 @@
         "text-2": {
           "type": "text",
           "settings": {
-            "text": "<p>Dive into exclusive offers, free giveaways, and special deals straight to your inbox. Don't miss out on the best GoBoat savings and updates!</p>",
+            "text": "<p>Dive into exclusive offers, free giveaways, and special deals straight to your inbox. Don't miss out on the best FishArmor savings and updates!</p>",
             "text_font": "body",
             "text_size": "text-sm",
             "text_max_size": 32,

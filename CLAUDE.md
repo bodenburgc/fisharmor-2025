@@ -4,14 +4,89 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Shopify theme** codebase named "BODE 2024" (version 1.0.0) by BODE. It follows Shopify's standard theme structure and uses Liquid templating engine for dynamic content rendering.
+This is a **Shopify theme** for **FishArmor**, an ice fishing equipment brand specializing in protective cases (shuttles) for expensive electronics. The theme is built using the BODE 2024 framework (version 1.0.0) and follows Shopify's standard theme structure with Liquid templating.
 
 **Theme Information:**
-- **Name:** BODE 2024
-- **Author:** BODE
+- **Brand:** FishArmor
+- **Framework:** BODE 2024
 - **Version:** 1.0.0
+- **Target Market:** Serious ice fishermen, USA-made premium protection
 - **Documentation:** https://BODE.design
 - **Support:** https://BODE.design
+
+## Brand Guidelines
+
+FishArmor's brand is built around **ice fishing protection** with emphasis on USA manufacturing and technical excellence. Comprehensive brand guidelines are located in `/docs/brand/`:
+
+### Brand Identity Quick Reference
+
+**Brand Voice & Messaging:**
+- **Personality:** Confident, rugged, authentic, technical (not marketing-heavy)
+- **Primary Message:** "Protect Your Investment" (ice fishermen invest thousands in electronics)
+- **Key Values:** USA-made (Minnesota), extreme durability, angler-led design
+- **Tone:** Active, specific language; avoid hyperbole ("Revolutionary!", "Ultimate!")
+- **Target Audience:** Serious ice fishermen who value technical specs and authentic experiences
+- See `/docs/brand/VOICE.md` for complete guidelines
+
+**Color Palette (Ice Fishing Theme - OKLCH Format):**
+
+**Brand Accents:**
+- **Safety Red:** `oklch(50% 0.18 15)` / `#D32F2F` - Primary CTAs, "Add to Cart"
+- **Sunrise Orange:** `oklch(75% 0.25 60)` / `#FFA31A` - Highlights, promotions
+- **Warning Flag:** `oklch(68% 0.27 40)` / `#FF6600` - High visibility, secondary CTAs
+- **Chartreuse Strike:** `oklch(85% 0.20 120)` / `#B8E600` - Pop color accents
+- **Hot Pink Flash:** `oklch(60% 0.27 350)` / `#FF1B8D` - Special highlights
+
+**Shades (Neutral Palette):**
+- **Steel Ice (15%):** `oklch(15% 0.035 230)` / `#0A1824` - Darkest, main text
+- **Frozen Lake (30%):** `oklch(30% 0.04 230)` / `#2C4554` - Dark backgrounds
+- **Deep Water (50%):** `oklch(50% 0.03 230)` / `#6E8394` - Mid-tone text
+- **Ice Shelf (70%):** `oklch(70% 0.015 230)` / `#A0B5C7` - Light text on dark
+- **Polar White (90%):** `oklch(90% 0.001 230)` / `#E4E8EC` - Subtle backgrounds
+
+**Tailwind Classes:** `bg-safety-red`, `text-steel-ice`, `bg-sunrise-orange`, etc.
+- See `/docs/brand/COLORS.md` for complete palette and usage
+
+**Typography:**
+- **Headlines:** Gazzetta (bold, condensed, uppercase) - rugged and impactful
+- **Body:** Barlow family (Regular, Semi Condensed, Condensed) - technical readability
+- **Fluid Type Scale:** Uses `clamp()` for responsive sizing (12px-61px range)
+- **Mobile Priority:** Minimum 16px body text, large touch targets (48x48px)
+- See `/docs/brand/TYPOGRAPHY.md` for complete type system
+
+**Component Patterns:**
+- **Primary CTA:** Safety Red background, white text, uppercase
+- **Product Cards:** White background, Pine Green product names, Safety Red "Add to Cart"
+- **Badges:** Safety Red for "NEW", Pine Green for categories
+- **Navigation:** Steel Ice text, Pine Green on hover/active
+- See `/docs/brand/COMPONENTS.md` for detailed patterns
+
+**Photography Style:**
+- Authentic ice fishing environments (frozen lakes, ice houses, Minnesota winters)
+- Real anglers using products in extreme conditions
+- Professional product shots on dark Steel Ice backgrounds
+- Natural lighting, unstaged moments
+- See `/docs/brand/PHOTOGRAPHY.md` for specifications
+
+**Key Vocabulary:**
+- Use: "Shuttle" (not case), "Roto-molded" (not plastic), "USA-made", "Sonar protection"
+- Avoid: "Cheap", "Revolutionary", "Military-grade", "Luxury"
+
+### Brand Documentation Structure
+
+```
+docs/brand/
+├── README.md           # Brand guidelines overview & quick navigation
+├── VOICE.md           # Personality, tone, messaging examples
+├── COLORS.md          # Ice fishing themed OKLCH palette
+├── TYPOGRAPHY.md      # Gazzetta + Barlow fluid type system
+├── COMPONENTS.md      # Buttons, cards, badges, navigation patterns
+├── PHOTOGRAPHY.md     # Image style, specifications, treatments
+├── LAYOUT.md          # Grid, containers, spacing, responsive design
+└── ICONS.md           # Icon system, mobile-friendly touch targets
+```
+
+**Mobile-First Priority:** Ice fishermen use phones on the ice - large touch targets, high contrast for bright snow, fast loading on slow connections.
 
 ## Shopify CLI Commands
 
@@ -104,7 +179,6 @@ Note: You'll need to authenticate with `shopify auth login` before running theme
 - Mobile dock navigation
 - Predictive search
 - Recently viewed products
-- GoBoat custom sections (appears to be a specific brand/product line)
 
 ### Metafield Configuration
 
@@ -131,6 +205,10 @@ When making changes:
 ## Important Notes
 
 - **DO NOT** manually edit `config/settings_data.json` - it's auto-generated by Shopify admin
+- **ALWAYS** follow FishArmor brand guidelines in `/docs/brand/` when creating content, choosing colors, or writing copy
+- **Brand-specific vocabulary:** Use "shuttle" not "case", "roto-molded" not "plastic", "USA-made" not "American-made"
+- **Color usage:** Safety Red for primary CTAs, Sunrise Orange/Warning Flag for highlights, Steel Ice/Frozen Lake for text and backgrounds
+- **Typography:** Gazzetta (uppercase) for headlines, Barlow for body text
 - Section schemas define both rendering logic and admin UI controls
 - Liquid syntax: `{%- liquid -%}` for logic, `{{ }}` for output
 - Asset URLs: `{{ 'file.css' | asset_url }}`
