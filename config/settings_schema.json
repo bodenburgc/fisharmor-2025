@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Concept",
-    "theme_author": "RoarTheme",
-    "theme_version": "5.1.0",
-    "theme_documentation_url": "https://roartheme.co/blogs/concept",
-    "theme_support_url": "https://haloroar.ticksy.com"
+    "theme_name": "BODE 2024",
+    "theme_author": "BODE",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://BODE.design",
+    "theme_support_url": "https://BODE.design"
   },
   {
     "name": "t:settings_schema.logo.name",

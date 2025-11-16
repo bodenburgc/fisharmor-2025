@@ -1,6 +1,6 @@
 /*
 @license
-Concept by RoarTheme (https://roartheme.co)
+BODE 2024 by BODE (https://BODE.design)
 
 Plugins:
 motion                  10.16.2

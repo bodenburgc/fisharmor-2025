@@ -1,10 +1,10 @@
 /*
 @license
-  Concept by RoarTheme (https://roartheme.co)
+  BODE 2024 by BODE (https://BODE.design)
   Access unminified JS in assets/theme.js
 
   Use this event listener to run your own JS outside of this file.
-  Documentation - https://roartheme.co/blogs/concept/javascript-events-for-developers
+  Documentation - https://BODE.design
 
   document.addEventListener('page:loaded', function() {
     // Page has loaded and theme assets are ready
@@ -37,7 +37,7 @@ try {
 } catch (e) {}
 
 document.documentElement.classList.add(theme.config.isTouch ? 'touch' : 'no-touch');
-console.log(theme.settings.themeName + ' theme (' + theme.settings.themeVersion + ') by RoarTheme | Learn more at https://roartheme.co');
+console.log(theme.settings.themeName + ' theme (' + theme.settings.themeVersion + ') by BODE | Learn more at https://BODE.design');
 
 (function () {
   /*============================================================================
