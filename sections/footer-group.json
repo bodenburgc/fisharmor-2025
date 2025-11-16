@@ -1,0 +1,183 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "multicolumn-with-icons": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "custom_icon": "",
+            "heading": "GoBoat Support",
+            "text": "<p>Have questions or need assistance with your GoBoat? Our team is here to help you!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "icon": "users",
+            "custom_icon": "",
+            "heading": "Become a Dealer",
+            "text": "<p>Partner with us to share the GoBoat adventure. Contact us to learn how you can become a dealer!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "custom_icon": "",
+            "heading": "Fast Free Shipping",
+            "text": "<p>Get free shipping on orders of $1500 (before tax) or more – Get Your GoBoat on the Water!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Satisfaction Guaranteed",
+            "text": "<p>With our “Stable and Able” 30-Day Performance Guarantee, buy with confidence. If you’re not satisfied, we’ll buy it back. Enjoy peace of mind and get ready for adventure on the water!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-3",
+        "column-2",
+        "column-4"
+      ],
+      "settings": {
+        "style": "with-border",
+        "columns": 3,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": true,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "logo_social": {
+          "type": "logo_social",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/WH-Logo.png",
+            "logo_height": 30,
+            "show_social": false,
+            "enable_follow_on_shop": false
+          }
+        },
+        "link_list-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Customer Support",
+            "menu": "footer-1",
+            "container_width": 50
+          }
+        },
+        "link_list-2": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Dealers & Programs",
+            "menu": "footer-dealers-programs",
+            "container_width": 50
+          }
+        }
+      },
+      "block_order": [
+        "logo_social",
+        "link_list-1",
+        "link_list-2"
+      ],
+      "settings": {
+        "invert_newsletter_others": false,
+        "enable_newsletter": true,
+        "newsletter_heading": "Stay afloat with the latest deals!",
+        "newsletter_heading_size": "md:title-lg",
+        "newsletter_text": "<p>Subscribe to get exclusive offers, free giveaways, and once-in-a-lifetime deals straight to your inbox. Don’t miss out on the best GoBoat savings and updates!</p>",
+        "newsletter_logo_height": 50,
+        "show_social": true,
+        "enable_follow_on_shop": false,
+        "color_text": "#ffffff",
+        "color_background": "#00ada8",
+        "gradient_background": "",
+        "color_button_text": "#000000",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    },
+    "footer-copyright": {
+      "type": "footer-copyright",
+      "settings": {
+        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "show_policy": true,
+        "show_payment_icons": false,
+        "monochrome_payment_icons": false,
+        "show_copyright": true,
+        "copyright_text": "",
+        "color_text": "#ffffff",
+        "color_background": "#171717",
+        "gradient_background": "",
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    }
+  },
+  "order": [
+    "multicolumn-with-icons",
+    "footer",
+    "footer-copyright"
+  ]
+}

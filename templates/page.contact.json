@@ -1,0 +1,203 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-lg md:text-2xl",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Us",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Got questions or need assistance?</strong> We're here to keep you cruising! <strong><br/></strong>Contact us Monday - Friday, 8:00am - 5:00pm CST. Fill out the form below.</p>",
+            "text_font": "body",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text_4JkLkN": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Got questions or need assistance?</strong> We're here to keep you cruising! <strong><br/></strong>Contact us Monday - Friday, 8:00am - 5:00pm CST. Fill out the form below, or <strong>call us at </strong><em><strong>918-973-2628</strong></em><strong>.</strong></p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "text_4JkLkN"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 92,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "contact-1": {
+          "type": "contact",
+          "settings": {
+            "heading": "Address",
+            "text": "<p><strong>GoBoat LLC.</strong><br/>13401 S 129th E Ave <br/>Broken Arrow, OK 74011</p><p>918-973-2628</p><p>info@goboat.com</p>"
+          }
+        },
+        "contact-2": {
+          "type": "contact",
+          "disabled": true,
+          "settings": {
+            "heading": "Email",
+            "text": ""
+          }
+        },
+        "contact-3": {
+          "type": "contact",
+          "disabled": true,
+          "settings": {
+            "heading": "Phone",
+            "text": "<p><a href=\"#\" title=\"tel:918-973-2628\">918-973-2628<br/></a>M - F, 8am - 5pm CST</p>"
+          }
+        },
+        "media": {
+          "type": "media",
+          "settings": {
+            "heading": "Follow us"
+          }
+        },
+        "custom_field-1": {
+          "type": "custom_field",
+          "settings": {
+            "type": "text",
+            "title": "Phone number",
+            "required": false,
+            "full_width": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        },
+        "custom_field-2": {
+          "type": "custom_field",
+          "settings": {
+            "type": "select",
+            "title": "Subject",
+            "required": false,
+            "full_width": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": "Product, Order, Press, Other"
+          }
+        }
+      },
+      "block_order": [
+        "contact-1",
+        "contact-2",
+        "contact-3",
+        "media",
+        "custom_field-1",
+        "custom_field-2"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text",
+    "contact-form"
+  ]
+}

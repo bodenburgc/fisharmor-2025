@@ -1,0 +1,97 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_R8gNCx": {
+          "type": "announcement",
+          "settings": {
+            "icon": "truck",
+            "text": "Free Shipping on Orders Over $1500 (before tax) – Get Your GoBoat on the Water! (Lower 48 States Only)",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "announcement_bmLgpT": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "text": "Welcome to our store",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_R8gNCx",
+        "announcement_bmLgpT"
+      ],
+      "settings": {
+        "show_social": false,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "invert_icons_selectors": false,
+        "announcement_position": "center",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "color_text": "#fafafa",
+        "color_background": "#00ada8",
+        "gradient_background": "",
+        "color_highlight": "#ffddbf",
+        "gradient_highlight": "",
+        "hide_homepage": false,
+        "full_width": true,
+        "rounded": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "menu_mobile": "main-menu",
+        "menu_active": "dot",
+        "hover_menu": true,
+        "header_layout": "left-center",
+        "sticky_header_type": "always",
+        "enable_language_selector_desktop": false,
+        "enable_country_selector_desktop": false,
+        "show_country_name_dekstop": false,
+        "show_country_flag_desktop": false,
+        "logo_position_mobile": "center",
+        "show_social": true,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "transparent_color_text": "#ffffff",
+        "color_text": "#171717",
+        "color_background": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "full_width": true,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

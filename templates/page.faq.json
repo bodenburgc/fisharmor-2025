@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "FAQ's",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Here are the <strong>most common questions</strong>. <br/>We aim to help you make the most of your <em><strong>time on the water</strong></em>.</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_pVhHp4": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Acqi3g": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "GoBoat 1.0 FAQ's",
+            "button_link": "shopify://pages/faq-goboat-1-0",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_Acqi3g"
+      ],
+      "settings": {
+        "gap": "large",
+        "columns": 4,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "Didn’t find your answer?",
+            "text": "<p>Don't hestitate to contact us</p>",
+            "show_phone": false,
+            "avatar_height": 60,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich-text-1": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "GOBOAT 2.0 FAQ",
+            "text": "<p><strong>Product Specifications</strong></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "What is the GoBoat 2.0 made of?",
+            "text": "<p>The GoBoat 2.0 is made from our Aircore composite drop-stitch material. It is extremely rigid, tough, and lightweight.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "What type of motor does the 2.0 come with?",
+            "text": "<p>The 2.0 comes with a saltwater-ready 35 lbs thrust trolling motor with 5 speeds forward and 3 reverse.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_VgC9fw": {
+          "type": "question",
+          "settings": {
+            "title": "How much does the GoBoat 2.0 weigh?",
+            "text": "<p>The boat itself weighs 57 lbs, and fully loaded with the motor and batteries, it is around 79 lbs.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_GEtz6M": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "GOBOAT 2.0 FAQ",
+            "text": "<p><strong>Performance</strong></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_R47BDz": {
+          "type": "question",
+          "settings": {
+            "title": "How fast does a GoBoat go?",
+            "text": "<p>The GoBoat can go a brisk 5 miles per hour.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_dqtmik": {
+          "type": "question",
+          "settings": {
+            "title": "How much weight is the GoBoat 2.0 rated for?",
+            "text": "<p>It can support up to a 300 lbs person, but the boat itself is rated to hold 600 lbs.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_N7FitD": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "GOBOAT 2.0 FAQ",
+            "text": "<p>Usage and Environment</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_TN639k": {
+          "type": "question",
+          "settings": {
+            "title": "Can the GoBoat 2.0 be used in saltwater?",
+            "text": "<p>Yes, it was made specifically to be used in any environment, including saltwater.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_XQjk7R": {
+          "type": "question",
+          "settings": {
+            "title": "Does my GoBoat need to be registered?",
+            "text": "<p>Since the GoBoat is a motorized watercraft, it may need to be registered in your state. You will need to check your local boating regulations if you plan on using it on a lake or other state body of water. All the appropriate paperwork is included in your packet shipped with the GoBoat.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_fUfPMg": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "GOBOAT 2.0 FAQ",
+            "text": "<p>Safety and Durability</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_pHNY4W": {
+          "type": "question",
+          "settings": {
+            "title": "Is the GoBoat 2.0 safe?",
+            "text": "<p>Yes, it is very safe. The round construction makes it extremely stable and easy to stand on. In the case of a failure and it loses air, both the body and the seat will float. Always wear an appropriate life preserver for your safety.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_HWndxw": {
+          "type": "question",
+          "settings": {
+            "title": "Is it safe for the battery to get wet?",
+            "text": "<p>Yes, water won't harm a 12V battery or cause electrocution. The battery does, however, need to be a sealed battery to prevent water from getting inside it.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_hQzTgc": {
+          "type": "question",
+          "settings": {
+            "title": "Is the boat puncture-resistant?",
+            "text": "<p>The GoBoat tube is made of very dense PVC construction. While it is an inflatable, it's not puncture-proof, but punctures are very rare. In case of a puncture, a patch kit is provided with every GoBoat.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "rich_text_V46hNx": {
+          "type": "rich-text",
+          "settings": {
+            "heading": "GOBOAT 2.0 FAQ",
+            "text": "<p>Battery Information</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_AM6JH6": {
+          "type": "question",
+          "settings": {
+            "title": "What type of battery do I need for my GoBoat 2.0?",
+            "text": "<p>Any 12V Group U1 sealed battery can be used with the GoBoat 2.0. Any lithium, lead acid, AGM, or gel cell will work. The GoBoat is made to hold 2 batteries at once for a guaranteed full day of fun on the water.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_UBLP6F": {
+          "type": "question",
+          "settings": {
+            "title": "Does the GoBoat 2.0 come with a battery?",
+            "text": "<p>The GoBoat 2.0 is available both with and without a battery. The base price does not include a battery - batteries are sold separately unless specifically selected during purchase. When shipped within the 48 contiguous US states, you can choose from battery options including 12V 30Ah (2-4 hour run time) or 12V 50Ah (4-6 hour run time) along with a 5A charger. We cannot ship batteries outside of the US due to shipping restrictions, so international customers can only purchase the GoBoat without a battery.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "contact",
+        "rich-text-1",
+        "question-1",
+        "question-2",
+        "question_VgC9fw",
+        "rich_text_GEtz6M",
+        "question_R47BDz",
+        "question_dqtmik",
+        "rich_text_N7FitD",
+        "question_TN639k",
+        "question_XQjk7R",
+        "rich_text_fUfPMg",
+        "question_pHNY4W",
+        "question_HWndxw",
+        "question_hQzTgc",
+        "rich_text_V46hNx",
+        "question_AM6JH6",
+        "question_UBLP6F"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text",
+    "multicolumn_pVhHp4",
+    "faq"
+  ]
+}
