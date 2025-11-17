@@ -72,7 +72,7 @@
         </div>
 
         {%- comment -%} Right side: Menu columns {%- endcomment -%}
-        <div class="footer__menus flex flex-col md:flex-row md:flex-1 gap-10 md:gap-12" style="width: 100%;">
+        <div class="footer__menus flex flex-col md:flex-row md:flex-1 md:items-start gap-10 md:gap-12" style="width: 100%;">
           {%- liquid
             for block in section.blocks
               case block.type
