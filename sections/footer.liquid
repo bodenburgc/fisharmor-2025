@@ -56,7 +56,7 @@
     {%- if section.blocks.size > 0 -%}
       <div class="flex flex-col md:flex-row gap-10 md:gap-16">
         {%- comment -%} Left column: Logo, brand text, and social icons stacked vertically {%- endcomment -%}
-        <div class="footer__brand flex flex-col gap-6 md:gap-8" style="flex: 0 0 auto; max-width: 480px;">
+        <div class="footer__brand flex flex-col" style="flex: 0 0 auto; max-width: 480px;">
           {%- liquid
             assign logo_block = section.blocks | where: "type", "logo_social" | first
             if logo_block
