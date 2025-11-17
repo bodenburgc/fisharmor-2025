@@ -209,7 +209,7 @@
             "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 11
           }
         },
         "collection_Nri4hq": {
@@ -278,15 +278,15 @@
         "carousel_on_desktop": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "ENGINEERED FOR EVERY SETUP",
-        "heading_size": "title-lg",
+        "heading": "",
+        "heading_size": "title-md",
         "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
+        "heading_tag": "h3",
         "subheading": "",
         "description": "",
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "",
+        "color_text": "#e4e8ec",
         "color_background": "#0a1824",
         "gradient_background": "linear-gradient(136deg, rgba(10, 24, 36, 1) 12%, rgba(110, 131, 148, 1) 82%)",
         "color_highlight": "",
@@ -427,6 +427,91 @@
         "full_width": false,
         "rounded": true
       }
+    },
+    "multicolumn_info_XnK7pQ": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_support_1": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "custom_icon": "",
+            "heading": "FishArmor Support",
+            "text": "<p>Have questions or need assistance with your FishArmor shuttle? Our team is here to help you!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_dealer_2": {
+          "type": "column",
+          "settings": {
+            "icon": "users",
+            "custom_icon": "",
+            "heading": "Become a Dealer",
+            "text": "<p>Partner with us to bring FishArmor protection to your customers. Contact us to learn how you can become a dealer!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_shipping_3": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "custom_icon": "",
+            "heading": "Fast Free Shipping",
+            "text": "<p>Get free shipping on orders $150+ (before tax). Your sonar protection delivered fast – ready for the ice in days, not weeks.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_quality_4": {
+          "type": "column",
+          "settings": {
+            "icon": "shield_check",
+            "custom_icon": "",
+            "heading": "USA-Made Quality",
+            "text": "<p>Engineered and manufactured in Minnesota. Every shuttle built to survive extreme conditions and protect thousands in electronics.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_support_1",
+        "column_dealer_2",
+        "column_shipping_3",
+        "column_quality_4"
+      ],
+      "settings": {
+        "style": "with-border",
+        "columns": 4,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": true,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -435,6 +520,7 @@
     "pro_staff_3bn4K7",
     "collection-list",
     "product-bundle",
-    "featured-collections"
+    "featured-collections",
+    "multicolumn_info_XnK7pQ"
   ]
 }
