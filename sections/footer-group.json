@@ -42,7 +42,7 @@
             "icon": "box",
             "custom_icon": "",
             "heading": "Fast Free Shipping",
-            "text": "<p>Get free shipping on orders of $1500 (before tax) or more – Protect Your Electronics on the Ice!</p>",
+            "text": "<p>Get free shipping on orders $150+ (before tax). Your sonar protection delivered fast – ready for the ice in days, not weeks.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -50,10 +50,10 @@
         "column_6it3Yt": {
           "type": "column",
           "settings": {
-            "icon": "box",
+            "icon": "shield_check",
             "custom_icon": "",
-            "heading": "Fast Free Shipping",
-            "text": "<p>Get free shipping on orders of $1500 (before tax) or more – Protect Your Electronics on the Ice!</p>",
+            "heading": "USA-Made Quality",
+            "text": "<p>Engineered and manufactured in Minnesota. Every shuttle built to survive extreme conditions and protect thousands in electronics.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
