@@ -816,8 +816,26 @@ h6,
   letter-spacing: var(--font-heading-letter-spacing);
   line-height: var(--font-heading-line-height);
   text-transform: var(--font-heading-text-transform);
-  color: #2C4554;
   word-break: break-word;
+}
+
+/* Apply heading color only to main content, not footer */
+.main-content blockquote,
+.main-content .heading,
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6,
+.main-content .h0,
+.main-content .h1,
+.main-content .h2,
+.main-content .h3,
+.main-content .h4,
+.main-content .h5,
+.main-content .h6 {
+  color: #2C4554;
 }
 
 .h0 {
@@ -7904,11 +7922,6 @@ details.active .drawer__promotions .mega-menu__item,
 .media-card {
   background-color: rgb(var(--color-placeholder));
   border-radius: var(--card-radius);
-}
-
-.media-card .media {
-  border-start-start-radius: var(--card-radius);
-  border-start-end-radius: var(--card-radius);
 }
 
 .media-card--standard {
