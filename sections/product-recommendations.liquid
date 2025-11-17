@@ -4,6 +4,64 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
+
+  /* Force product card title and price to stack vertically */
+  #shopify-section-{{ section.id }} .product-card__details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .product-card__details > p {
+    width: 100%;
+  }
+
+  /* Vendor styling - small, gray, uppercase */
+  #shopify-section-{{ section.id }} .product-card__top a {
+    font-size: 0.75rem;
+    color: rgb(var(--color-foreground-secondary));
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Product title - large, bold, uppercase - use heading font (Gazzetta) */
+  #shopify-section-{{ section.id }} .product-card__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #2C4554;
+  }
+
+  /* Price - large, red/accent color */
+  #shopify-section-{{ section.id }} .product-card__details .price {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: oklch(50% 0.18 15); /* Safety Red from brand colors */
+    margin-bottom: 1rem;
+  }
+
+  /* Product description - show and style */
+  #shopify-section-{{ section.id }} .product-card__description {
+    font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
+    line-height: 1.4;
+    color: rgb(var(--color-foreground-secondary));
+    margin-top: 0;
+  }
+
+  /* Hide quick add button */
+  #shopify-section-{{ section.id }} .quick-add {
+    display: none;
+  }
+
+  /* Adjust card content spacing */
+  #shopify-section-{{ section.id }} .product-card__content {
+    gap: 0;
+    padding-top: 1rem;
+  }
 </style>
 
 <product-recommendations class="related-products block" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.product_limit }}&intent=related">
@@ -39,12 +97,13 @@
                 image_ratio: settings.product_image_ratio,
                 image_fill: settings.product_image_fill,
                 show_secondary_image: settings.product_secondary_image,
-                show_vendor: settings.product_vendor,
+                show_vendor: true,
+                show_card_description: true,
                 show_rating: settings.product_rating,
                 show_color_swatches: settings.product_color_swatches,
                 show_countdown: settings.product_countdown,
-                show_quick_add: settings.product_quick_add,
-                show_quick_view: settings.product_quick_view,
+                show_quick_add: false,
+                show_quick_view: false,
                 vertical_badges: settings.product_vertical_badges,
                 show_sold_out: settings.product_sold_out,
                 show_save_amount: settings.product_save_amount,

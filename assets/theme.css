@@ -816,7 +816,7 @@ h6,
   letter-spacing: var(--font-heading-letter-spacing);
   line-height: var(--font-heading-line-height);
   text-transform: var(--font-heading-text-transform);
-  color: rgb(var(--color-foreground));
+  color: #2C4554;
   word-break: break-word;
 }
 
@@ -9721,15 +9721,10 @@ details.active .drawer__promotions .mega-menu__item,
   --border-opacity: var(--card-border-opacity);
   --product-card-quick-view-inset: var(--sp-4);
   background-color: rgb(var(--color-placeholder));
-  border-radius: var(--card-radius);
+  border-radius: var(--radius-xl);
   align-content: flex-start;
   border: var(--card-border-width) solid rgb(var(--color-foreground)/ var(--border-opacity));
-  box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) rgb(var(--color-shadow)/ var(--shadow-opacity));
-}
-
-.product-card__media :is(.media, .flickity-viewport, .product-card__model) {
-  border-start-start-radius: var(--card-radius);
-  border-start-end-radius: var(--card-radius);
+  position: relative;
 }
 
 .product-card__media video-media :is(iframe, video) {
@@ -9798,15 +9793,17 @@ details.active .drawer__promotions .mega-menu__item,
 }
 
 .product-card__content {
-  --card-content-padding-block: clamp(var(--sp-4), 1.263vw, var(--sp-6)) clamp(var(--sp-4), 2.105vw, var(--sp-10));
-  --card-content-padding-inline: clamp(var(--sp-4), 2.105vw, var(--sp-10));
+  --card-content-padding-block: clamp(var(--sp-2), 0.8vw, var(--sp-3)) clamp(var(--sp-2), 1.2vw, var(--sp-4));
+  --card-content-padding-inline: clamp(var(--sp-3), 1.5vw, var(--sp-5));
   grid-template-columns: minmax(0, 1fr);
   padding-block: var(--card-content-padding-block);
   padding-inline: var(--card-content-padding-inline);
+  padding-block-end: clamp(var(--sp-4), 2vw, var(--sp-6));
 }
 
 .product-card__top {
-  padding-block-end: var(--sp-2)
+  padding-block-start: var(--sp-3);
+  padding-block-end: 0
 }
 
 .product-card__top .caption {
@@ -9815,14 +9812,20 @@ details.active .drawer__promotions .mega-menu__item,
 }
 
 .product-card__title {
-  font-size: var(--font-product-size);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: #2C4554;
 }
 
 .product-card__title,
 .horizontal-product__title {
-  font-family: var(--font-product-family);
+  font-family: var(--font-heading-family);
   font-weight: var(--font-product-weight);
   text-transform: var(--font-product-text-transform);
+}
+
+.product-card__description {
+  font-size: clamp(0.8125rem, 1.5vw, 0.9375rem);
+  line-height: 1.4;
 }
 
 .product-card__content.text-center .product-card__details {
@@ -10048,19 +10051,6 @@ details.active .drawer__promotions .mega-menu__item,
     --tw-translate-y: 0;
     opacity: 1;
     visibility: visible;
-  }
-
-  .product-card__media>.media>img,
-  .product-card__model>img {
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    transform: scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .product-card__media:hover>.media>img,
-  .product-card__media:hover .product-card__model>img {
-    --tw-scale-x: 1.05;
-    --tw-scale-y: 1.05;
   }
 }
 
@@ -10803,8 +10793,9 @@ details.active .drawer__promotions .mega-menu__item,
 /*! price */
 
 .price__regular {
+  font-family: var(--font-heading-family);
   color: rgb(var(--color-price));
-  font-size: var(--fluid-sm-to-base);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
 }
 
 .price__regular small {
@@ -10818,8 +10809,9 @@ details.active .drawer__promotions .mega-menu__item,
 
 .unit-price,
 .price__sale {
+  font-family: var(--font-heading-family);
   color: rgb(var(--color-price)/ 0.6);
-  font-size: var(--fluid-xs-to-sm);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .price__sale::before {
@@ -11025,7 +11017,7 @@ details.active .drawer__promotions .mega-menu__item,
 }
 
 .column__title {
-  font-size: clamp(var(--text-lg), 1.053vw, var(--text-xl));
+  font-size: clamp(var(--text-2xl), 2vw, var(--text-3xl));
 }
 
 .column__text {
@@ -11672,6 +11664,7 @@ details.active .drawer__promotions .mega-menu__item,
 
 .slider .card {
   scroll-snap-align: start;
+  border-radius: var(--radius-xl);
 }
 
 .slider + :is(p, .indicators) {

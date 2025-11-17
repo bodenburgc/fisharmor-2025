@@ -3,6 +3,69 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+
+  /* Force product card title and price to stack vertically */
+  #shopify-section-{{ section.id }} .product-card__details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .product-card__details > p {
+    width: 100%;
+  }
+
+  /* Vendor styling - small, gray, uppercase */
+  #shopify-section-{{ section.id }} .product-card__top a {
+    font-size: 0.75rem;
+    color: rgb(var(--color-foreground-secondary));
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Product title - large, bold, uppercase - use heading font (Gazzetta) */
+  #shopify-section-{{ section.id }} .product-card__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #2C4554;
+  }
+
+  /* Price - large, red/accent color */
+  #shopify-section-{{ section.id }} .product-card__details .price {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: oklch(50% 0.18 15); /* Safety Red from brand colors */
+    margin-bottom: 1rem;
+  }
+
+  /* Product description - show and style */
+  #shopify-section-{{ section.id }} .product-card__description {
+    font-size: clamp(0.8125rem, 1.5vw, 0.9375rem);
+    line-height: 1.4;
+    color: rgb(var(--color-foreground-secondary));
+    margin-top: 0;
+  }
+
+  /* Hide quick add button */
+  #shopify-section-{{ section.id }} .quick-add {
+    display: none;
+  }
+
+  /* Hide quick view button */
+  #shopify-section-{{ section.id }} .product-card__quick-view {
+    display: none;
+  }
+
+  /* Adjust card content spacing */
+  #shopify-section-{{ section.id }} .product-card__content {
+    gap: 0;
+    padding-top: 1rem;
+  }
 </style>
 
 {{ 'collection.css' | asset_url | stylesheet_tag }}
@@ -25,7 +88,7 @@
 
   assign enable_sorting = section.settings.enable_sorting
   assign enable_filtering = section.settings.enable_filtering
-  assign show_on_model = section.settings.show_on_model
+  assign show_on_model = false
   assign filter_type = section.settings.filter_type
   assign buttons_style = section.settings.buttons_style
 -%}
@@ -257,7 +320,8 @@
                   show_save_amount: settings.product_save_amount,
                   save_type: settings.product_save_type,
                   show_icon_list: settings.product_icon_list,
-                  show_on_model: show_on_model
+                  show_on_model: false,
+                  show_card_description: true
                 -%}
               {%- endfor -%}
             </motion-list>
