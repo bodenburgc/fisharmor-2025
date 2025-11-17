@@ -10,6 +10,31 @@
     #shopify-section-{{ section.id }} .footer__menus details {
       border-bottom: none;
     }
+
+    /* Prevent menus from collapsing on desktop */
+    #shopify-section-{{ section.id }} .footer__menus details {
+      pointer-events: none;
+    }
+
+    #shopify-section-{{ section.id }} .footer__menus details[open] {
+      pointer-events: auto;
+    }
+
+    #shopify-section-{{ section.id }} .footer__menus details summary {
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* Hide the chevron/arrow on desktop */
+    #shopify-section-{{ section.id }} .footer__menus details summary svg,
+    #shopify-section-{{ section.id }} .footer__menus details summary .icon {
+      display: none;
+    }
+
+    /* Force details to be open */
+    #shopify-section-{{ section.id }} .footer__menus details .details__content {
+      display: block !important;
+    }
   }
 </style>
 
