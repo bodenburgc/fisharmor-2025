@@ -35,6 +35,12 @@
     #shopify-section-{{ section.id }} .footer__menus details .details__content {
       display: block !important;
     }
+
+    /* Reset top padding on all menu summaries for consistent alignment */
+    #shopify-section-{{ section.id }} .footer__menus details:first-child .details__summary,
+    #shopify-section-{{ section.id }} .footer__menus details .details__summary {
+      padding-block-start: 0 !important;
+    }
   }
 </style>
 
