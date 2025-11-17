@@ -4,6 +4,13 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
+
+  /* Remove border-bottom on footer menu items on desktop */
+  @media (min-width: 768px) {
+    #shopify-section-{{ section.id }} .footer__menus details {
+      border-bottom: none;
+    }
+  }
 </style>
 
 {%- liquid
