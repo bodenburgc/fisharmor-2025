@@ -14,25 +14,38 @@
 -%}
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded{% endif %}"{% if section.settings.enable_parallax %} is="footer-parallax"{% endif %}>
-  <div class="footer{% if enable_footer_info %}{% if section.settings.invert_newsletter_others %} footer--inverted{% endif %}{% else %} footer--no-info{% endif %} page-width{% if section.settings.full_width %} page-width--full{% endif %} relative grid" role="region" aria-label="Footer">
+  <div class="footer{% if enable_footer_info %}{% if section.settings.invert_newsletter_others %} footer--inverted{% endif %}{% else %} footer--no-info{% endif %} page-width{% if section.settings.full_width %} page-width--full{% endif %} relative" role="region" aria-label="Footer">
     {%- if section.blocks.size > 0 -%}
-      <div class="footer__left flex flex-col md:flex-row gap-10">
-        {%- liquid
-          assign block = section.blocks | where: "type", "logo_social" | first
-          if block
-            render 'footer-logo', block: block
-          endif
-        -%}
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16">
+        {%- comment -%} Left column: Logo, brand text, and social icons stacked vertically {%- endcomment -%}
+        <div class="footer__brand flex flex-col gap-6 md:gap-8" style="flex: 0 0 auto; max-width: 480px;">
+          {%- liquid
+            assign logo_block = section.blocks | where: "type", "logo_social" | first
+            if logo_block
+              render 'footer-logo', block: logo_block
+            endif
 
-        <div class="footer__accordions flex flex-wrap flex-col md:flex-row md:grow md:gap-12">
+            for block in section.blocks
+              if block.type == 'text'
+                render 'footer-text', block: block
+              endif
+            endfor
+          -%}
+
+          {%- if section.settings.show_social -%}
+            <div class="footer__socials flex justify-start">
+              {%- render 'social-icons', size: 'lg', gap: '7' -%}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Right side: Menu columns {%- endcomment -%}
+        <div class="footer__menus flex flex-col md:flex-row md:flex-1 gap-10 md:gap-12">
           {%- liquid
             for block in section.blocks
               case block.type
                 when 'link_list'
                   render 'footer-menu', block: block
-
-                when 'text'
-                  render 'footer-text', block: block
 
                 when 'brand_information'
                   render 'footer-contact', block: block
@@ -43,41 +56,25 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.enable_newsletter or section.settings.show_social or shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-      <div class="footer__right grid gap-10">
-        {%- if section.settings.enable_newsletter -%}
-          <div class="footer__newsletter grid gap-6">
-            {%- if section.settings.newsletter_logo -%}
-              <p class="footer__logo leading-none">
-                <a href="{{ routes.root_url }}">
-                  <span class="sr-only">{{ shop.name }}</span>
-                  {%- capture sizes -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px{%- endcapture -%}
-                  {%- capture widths -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}, {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio | times: 2 | at_most: section.settings.newsletter_logo.width }}{%- endcapture -%}
-                  {%- capture style -%}--image-width: {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px; --image-height: {{ section.settings.newsletter_logo_height }}px;{%- endcapture -%}
-                  {{- section.settings.newsletter_logo | image_url: width: section.settings.newsletter_logo.width | image_tag: loading: 'lazy', widths: widths, sizes: sizes, style: style, preload: true, is: 'lazy-image' -}}
-                </a>
-              </p>
-            {%- endif -%}
-
-            <p class="h3 text-xl {{ section.settings.newsletter_heading_size }} leading-none tracking-none font-medium lg:font-heading">{{ section.settings.newsletter_heading | escape }}</p>
-            {%- render 'newsletter-form', section_id: section.id, context: 'footer' -%}
-
-            {%- if section.settings.newsletter_text != blank -%}
-              <div class="rte text-sm leading-tight">{{ section.settings.newsletter_text }}</div>
-            {%- endif -%}
-          </div>
+    {%- if section.settings.enable_newsletter -%}
+      <div class="footer__newsletter grid gap-6 mt-10">
+        {%- if section.settings.newsletter_logo -%}
+          <p class="footer__logo leading-none">
+            <a href="{{ routes.root_url }}">
+              <span class="sr-only">{{ shop.name }}</span>
+              {%- capture sizes -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px{%- endcapture -%}
+              {%- capture widths -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}, {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio | times: 2 | at_most: section.settings.newsletter_logo.width }}{%- endcapture -%}
+              {%- capture style -%}--image-width: {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px; --image-height: {{ section.settings.newsletter_logo_height }}px;{%- endcapture -%}
+              {{- section.settings.newsletter_logo | image_url: width: section.settings.newsletter_logo.width | image_tag: loading: 'lazy', widths: widths, sizes: sizes, style: style, preload: true, is: 'lazy-image' -}}
+            </a>
+          </p>
         {%- endif -%}
 
-        {%- if section.settings.show_social -%}
-          <div class="footer__socials flex align-self-end justify-start md:justify-end xl:justify-start">
-            {%- render 'social-icons', size: 'lg', gap: '7' -%}
-          </div>
-        {%- endif -%}
+        <p class="h3 text-xl {{ section.settings.newsletter_heading_size }} leading-none tracking-none font-medium lg:font-heading">{{ section.settings.newsletter_heading | escape }}</p>
+        {%- render 'newsletter-form', section_id: section.id, context: 'footer' -%}
 
-        {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-          <div class="follow-on-shop">
-            {{- shop | login_button: action: 'follow' -}}
-          </div>
+        {%- if section.settings.newsletter_text != blank -%}
+          <div class="rte text-sm leading-tight">{{ section.settings.newsletter_text }}</div>
         {%- endif -%}
       </div>
     {%- endif -%}
