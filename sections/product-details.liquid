@@ -27,7 +27,7 @@
         {%- if enable_split_mode == true -%}
           <sticky-element class="lg:sticky top-0 flex flex-col gap-1d5" {{ description.shopify_attributes }}>
             {%- if description.settings.heading != blank -%}
-              <div class="heading text-base md:text-lg font-medium leading-none normal-case flex items-center gap-2d5 md:gap-3">
+              <div class="heading text-lg md:text-2xl font-medium leading-none normal-case flex items-center gap-2d5 md:gap-3">
                 {%- if description.settings.icon_image != blank -%}
                   {%- liquid
                     if description.settings.iwidth == 'fit'
