@@ -103,8 +103,8 @@
           "type": "logo_social",
           "settings": {
             "logo": "shopify://shop_images/Fish-Amor-Horizontal.png",
-            "logo_height": 80,
-            "show_social": true,
+            "logo_height": 95,
+            "show_social": false,
             "enable_follow_on_shop": false
           }
         },
@@ -121,7 +121,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SHOP",
-            "menu": "",
+            "menu": "footer-categories",
             "container_width": 33,
             "opened": false
           }
@@ -130,7 +130,7 @@
           "type": "link_list",
           "settings": {
             "heading": "COMPANY",
-            "menu": "",
+            "menu": "footer-company",
             "container_width": 33,
             "opened": false
           }
@@ -139,7 +139,7 @@
           "type": "link_list",
           "settings": {
             "heading": "SUPPORT",
-            "menu": "",
+            "menu": "footer-company",
             "container_width": 33,
             "opened": false
           }
