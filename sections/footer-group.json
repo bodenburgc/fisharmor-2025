@@ -127,20 +127,20 @@
             "opened": false
           }
         },
-        "link_list_company": {
-          "type": "link_list",
-          "settings": {
-            "heading": "COMPANY",
-            "menu": "footer-company",
-            "container_width": 33,
-            "opened": false
-          }
-        },
         "link_list_support": {
           "type": "link_list",
           "settings": {
             "heading": "SUPPORT",
             "menu": "footer-company",
+            "container_width": 33,
+            "opened": false
+          }
+        },
+        "link_list_company": {
+          "type": "link_list",
+          "settings": {
+            "heading": "COMPANY",
+            "menu": "footer-company-1",
             "container_width": 33,
             "opened": false
           }
@@ -150,8 +150,8 @@
         "logo_social",
         "brand_text",
         "link_list_shop",
-        "link_list_company",
-        "link_list_support"
+        "link_list_support",
+        "link_list_company"
       ],
       "settings": {
         "invert_newsletter_others": false,
