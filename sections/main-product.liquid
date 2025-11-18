@@ -23,6 +23,17 @@
       --aspect-ratio: {{ first_media.aspect_ratio }};
     }
   }
+
+  /* Remove spacing between vendor and title, and title and price */
+  #shopify-section-{{ section.id }} .product__vendor + .product__title,
+  #shopify-section-{{ section.id }} .product__title + .product__price {
+    margin-block-start: 0;
+  }
+
+  /* Hide tax notice */
+  #shopify-section-{{ section.id }} .product__tax {
+    display: none;
+  }
 </style>
 
 {%- liquid
@@ -287,7 +298,7 @@
             {%- when 'price' -%}
               <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
                 <div class="no-js-hidden" id="Price-{{ section.id }}-{{ product.id }}">
-                  {%- render 'product-price', product: product, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5' -%}
+                  {%- render 'product-price', product: product, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5 text-3xl lg:text-4xl' -%}
                   
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="text-opacity text-sm font-medium leading-tight" id="VolumeNote-{{ section.id }}-{{ product.id }}">

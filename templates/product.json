@@ -27,8 +27,14 @@
           "settings": {
             "title_size": "product-title-lg",
             "title_size_mobile": "product-title-md",
-            "show_price": true,
+            "show_price": false,
             "show_rating": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": true
           }
         },
         "description_short_ht66tx": {
@@ -114,6 +120,7 @@
       "block_order": [
         "vendor",
         "title",
+        "price",
         "description_short_ht66tx",
         "countdown",
         "variant_picker",
