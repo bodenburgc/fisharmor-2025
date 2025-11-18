@@ -614,7 +614,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_limit": 6,
+        "product_limit": 10,
         "columns": 5,
         "carousel_on_desktop": true,
         "columns_mobile": "2",
