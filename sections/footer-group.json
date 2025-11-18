@@ -27,6 +27,7 @@
         },
         "column-3": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "icon": "users",
             "custom_icon": "",
@@ -67,7 +68,7 @@
       ],
       "settings": {
         "style": "with-border",
-        "columns": 4,
+        "columns": 3,
         "text_alignment": "left",
         "heading": "",
         "heading_size": "title-lg tracking-heading",

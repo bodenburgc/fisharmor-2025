@@ -235,6 +235,13 @@
                 {%- render 'product-badges', product: product, use_variant: true, show_sold_out: block.settings.show_sold_out, show_save_amount: block.settings.show_save_amount, save_type: block.settings.save_type, class: 'flex flex-wrap gap-3' -%}
               </div>
 
+            {%- when 'description_short' -%}
+              {%- if product.metafields.custom.description_short != blank -%}
+                <div class="product__description-short rte {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
+                  {{- product.metafields.custom.description_short | newline_to_br -}}
+                </div>
+              {%- endif -%}
+
             {%- when 'description' -%}
               <div class="product__text rte {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
                 {{- product.description -}}
@@ -2045,6 +2052,41 @@
         {
           "type": "paragraph",
           "content": "t:sections.main-product.blocks.pickup_availability.settings.paragraph.content"
+        }
+      ]
+    },
+    {
+      "type": "description_short",
+      "name": "Short description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Displays the product's short description metafield (custom.description_short). This appears above the fold for a concise product overview."
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "text-sm",
+              "label": "t:sections.global.settings.text_size.options__1.label"
+            },
+            {
+              "value": "text-base",
+              "label": "t:sections.global.settings.text_size.options__2.label"
+            },
+            {
+              "value": "text-base lg:text-lg",
+              "label": "t:sections.global.settings.text_size.options__3.label"
+            },
+            {
+              "value": "text-base lg:text-xl",
+              "label": "t:sections.global.settings.text_size.options__4.label"
+            }
+          ],
+          "default": "text-base lg:text-lg",
+          "label": "t:sections.global.settings.text_size.label"
         }
       ]
     },

@@ -7,16 +7,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a **Shopify theme** for **FishArmor**, an ice fishing equipment brand specializing in protective cases (shuttles) for expensive electronics. The theme is built using the BODE 2024 framework (version 1.0.0) and follows Shopify's standard theme structure with Liquid templating.
 
 **Theme Information:**
+- **Theme Name:** FishArmor 2024
 - **Brand:** FishArmor
 - **Framework:** BODE 2024
 - **Version:** 1.0.0
 - **Target Market:** Serious ice fishermen, USA-made premium protection
-- **Documentation:** https://BODE.design
-- **Support:** https://BODE.design
+- **Store URL:** fisharmorusa-com.myshopify.com
+- **Shopify API Version:** 2024-01
 
 ## Brand Guidelines
 
-FishArmor's brand is built around **ice fishing protection** with emphasis on USA manufacturing and technical excellence. Comprehensive brand guidelines are located in `/docs/brand/`:
+FishArmor's brand is built around **ice fishing protection** with emphasis on USA manufacturing and technical excellence. Comprehensive brand guidelines are located in `/.docs/brand/`:
 
 ### Brand Identity Quick Reference
 
@@ -26,7 +27,7 @@ FishArmor's brand is built around **ice fishing protection** with emphasis on US
 - **Key Values:** USA-made (Minnesota), extreme durability, angler-led design
 - **Tone:** Active, specific language; avoid hyperbole ("Revolutionary!", "Ultimate!")
 - **Target Audience:** Serious ice fishermen who value technical specs and authentic experiences
-- See `/docs/brand/VOICE.md` for complete guidelines
+- See `/.docs/brand/VOICE.md` for complete guidelines
 
 **Color Palette (Ice Fishing Theme - OKLCH Format):**
 
@@ -45,28 +46,28 @@ FishArmor's brand is built around **ice fishing protection** with emphasis on US
 - **Polar White (90%):** `oklch(90% 0.001 230)` / `#E4E8EC` - Subtle backgrounds
 
 **Tailwind Classes:** `bg-safety-red`, `text-steel-ice`, `bg-sunrise-orange`, etc.
-- See `/docs/brand/COLORS.md` for complete palette and usage
+- See `/.docs/brand/COLORS.md` for complete palette and usage
 
 **Typography:**
 - **Headlines:** Gazzetta (bold, condensed, uppercase) - rugged and impactful
 - **Body:** Barlow family (Regular, Semi Condensed, Condensed) - technical readability
 - **Fluid Type Scale:** Uses `clamp()` for responsive sizing (12px-61px range)
 - **Mobile Priority:** Minimum 16px body text, large touch targets (48x48px)
-- See `/docs/brand/TYPOGRAPHY.md` for complete type system
+- See `/.docs/brand/TYPOGRAPHY.md` for complete type system
 
 **Component Patterns:**
 - **Primary CTA:** Safety Red background, white text, uppercase
 - **Product Cards:** White background, Pine Green product names, Safety Red "Add to Cart"
 - **Badges:** Safety Red for "NEW", Pine Green for categories
 - **Navigation:** Steel Ice text, Pine Green on hover/active
-- See `/docs/brand/COMPONENTS.md` for detailed patterns
+- See `/.docs/brand/COMPONENTS.md` for detailed patterns
 
 **Photography Style:**
 - Authentic ice fishing environments (frozen lakes, ice houses, Minnesota winters)
 - Real anglers using products in extreme conditions
 - Professional product shots on dark Steel Ice backgrounds
 - Natural lighting, unstaged moments
-- See `/docs/brand/PHOTOGRAPHY.md` for specifications
+- See `/.docs/brand/PHOTOGRAPHY.md` for specifications
 
 **Key Vocabulary:**
 - Use: "Shuttle" (not case), "Roto-molded" (not plastic), "USA-made", "Sonar protection"
@@ -75,7 +76,7 @@ FishArmor's brand is built around **ice fishing protection** with emphasis on US
 ### Brand Documentation Structure
 
 ```
-docs/brand/
+.docs/brand/
 ├── README.md           # Brand guidelines overview & quick navigation
 ├── VOICE.md           # Personality, tone, messaging examples
 ├── COLORS.md          # Ice fishing themed OKLCH palette
@@ -83,7 +84,8 @@ docs/brand/
 ├── COMPONENTS.md      # Buttons, cards, badges, navigation patterns
 ├── PHOTOGRAPHY.md     # Image style, specifications, treatments
 ├── LAYOUT.md          # Grid, containers, spacing, responsive design
-└── ICONS.md           # Icon system, mobile-friendly touch targets
+├── ICONS.md           # Icon system, mobile-friendly touch targets
+└── ASSETS.md          # Asset management and organization
 ```
 
 **Mobile-First Priority:** Ice fishermen use phones on the ice - large touch targets, high contrast for bright snow, fast loading on slow connections.
@@ -182,8 +184,18 @@ Note: You'll need to authenticate with `shopify auth login` before running theme
 
 ### Metafield Configuration
 
-The theme uses Shopify metafields. Product metafields are defined in `.shopify/product.json`:
-- `custom.card_description` - Single line text field for product card descriptions
+The theme uses Shopify metafields extensively. Product metafields are defined in `.shopify/metafields.json`:
+
+**Custom Metafields:**
+- `custom.card_description` - Single line text field for product card short descriptions
+- `custom.description_short` - Multi-line text field for condensed product descriptions
+
+**Standard Shopify Metafields:**
+- `shopify.color-pattern` - List of color/pattern references
+- `shopify.battery-type`, `shopify.battery-size`, `shopify.battery-technology` - Battery specifications
+- `shopify.item-material` - Primary material (e.g., aluminum, roto-molded plastic)
+- `shopify.durability-features` - Product durability highlights (e.g., rustproof, waterproof)
+- `shopify.item-condition` - Condition status (new, refurbished, etc.)
 
 ### Theme Settings
 
@@ -193,6 +205,46 @@ Major configurable areas (via `config/settings_schema.json`):
 - Typography (header/body fonts, sizes, line heights, letter spacing)
 - Layout dimensions (page width, section spacing)
 
+## Shopify API Automation Scripts
+
+The repository includes bash scripts for bulk product updates via Shopify Admin API GraphQL. These scripts are in the root directory.
+
+### Script Patterns
+
+**Authentication:**
+- Uses Admin API access tokens (stored in scripts, should be rotated regularly)
+- GraphQL endpoint: `https://fisharmorusa-com.myshopify.com/admin/api/2024-01/graphql.json`
+- Headers: `X-Shopify-Access-Token` and `Content-Type: application/json`
+
+**Common Scripts:**
+- `update_shuttle_order.sh` - Unpublish/republish shuttles to control collection sort order
+- `batch_*.sh` - Bulk update products by category (live imaging, batteries, accessories, etc.)
+- `find_*.sh` - Query scripts to find products by specific criteria
+- `check_published_dates.py` - Python script to verify product publish dates
+
+**Script Structure:**
+```bash
+TOKEN="shpat_..."
+URL="https://fisharmorusa-com.myshopify.com/admin/api/2024-01/graphql.json"
+
+curl -s -X POST "$URL" \
+    -H "X-Shopify-Access-Token: $TOKEN" \
+    -H "Content-Type: application/json" \
+    -d '{"query":"mutation { productUpdate(...) }"}' \
+    | python3 -m json.tool
+```
+
+**GraphQL Mutations Used:**
+- `productUpdate` - Update product metadata, tags, descriptions, metafields
+- `productPublish` / `productUnpublish` - Control product visibility and sort order
+- `collectionDelete` - Remove collections
+
+**Important Notes:**
+- Scripts use `sleep` delays to avoid rate limiting
+- JSON responses are formatted with `python3 -m json.tool`
+- Product IDs use Shopify's GID format: `gid://shopify/Product/[ID]`
+- Scripts often update both `descriptionHtml` and metafields simultaneously
+
 ## Development Workflow
 
 When making changes:
@@ -201,16 +253,26 @@ When making changes:
 3. CSS/JS changes in `assets/` are referenced in sections or layout files
 4. Settings changes need both schema definition and default values
 5. Translation keys use format `t:settings_schema.path.to.key.label`
+6. For bulk product updates, use or modify existing bash scripts in root directory
 
 ## Important Notes
 
+**Theme Development:**
 - **DO NOT** manually edit `config/settings_data.json` - it's auto-generated by Shopify admin
-- **ALWAYS** follow FishArmor brand guidelines in `/docs/brand/` when creating content, choosing colors, or writing copy
-- **Brand-specific vocabulary:** Use "shuttle" not "case", "roto-molded" not "plastic", "USA-made" not "American-made"
-- **Color usage:** Safety Red for primary CTAs, Sunrise Orange/Warning Flag for highlights, Steel Ice/Frozen Lake for text and backgrounds
-- **Typography:** Gazzetta (uppercase) for headlines, Barlow for body text
 - Section schemas define both rendering logic and admin UI controls
 - Liquid syntax: `{%- liquid -%}` for logic, `{{ }}` for output
 - Asset URLs: `{{ 'file.css' | asset_url }}`
 - Translation: `{{ 'key.path' | t }}`
 - Check Shopify theme documentation for Liquid objects and filters specific to e-commerce
+
+**Brand Guidelines:**
+- **ALWAYS** follow FishArmor brand guidelines in `/.docs/brand/` when creating content, choosing colors, or writing copy
+- **Brand-specific vocabulary:** Use "shuttle" not "case", "roto-molded" not "plastic", "USA-made" not "American-made"
+- **Color usage:** Safety Red for primary CTAs, Sunrise Orange/Warning Flag for highlights, Steel Ice/Frozen Lake for text and backgrounds
+- **Typography:** Gazzetta (uppercase, bold, condensed) for headlines, Barlow for body text
+- **Mobile-first:** Large touch targets (48x48px), high contrast, fast loading for ice fishing conditions
+
+**Security:**
+- API access tokens are currently stored in bash scripts - these should be rotated regularly
+- Never commit new API tokens to version control
+- Consider using environment variables for sensitive credentials

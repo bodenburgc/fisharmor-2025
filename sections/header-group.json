@@ -17,8 +17,8 @@
         "announcement_R8gNCx": {
           "type": "announcement",
           "settings": {
-            "icon": "truck",
-            "text": "Free Shipping on Orders Over $1500 (before tax) – Protect Your Investment! (Lower 48 States Only)",
+            "icon": "none",
+            "text": "USA-MADE IN MINNESOTA | Free Shipping on Orders $100+",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
@@ -28,10 +28,21 @@
         },
         "announcement_bmLgpT": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "icon": "none",
-            "text": "Welcome to our store",
+            "text": "Universal Fit: Garmin • Humminbird • Lowrance • Marcum",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "announcement_tVDQbV": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "text": "Protect Your Investment | Premium Roto-Molded Shuttles",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
@@ -42,7 +53,8 @@
       },
       "block_order": [
         "announcement_R8gNCx",
-        "announcement_bmLgpT"
+        "announcement_bmLgpT",
+        "announcement_tVDQbV"
       ],
       "settings": {
         "show_social": false,
@@ -70,8 +82,8 @@
       "type": "header",
       "settings": {
         "logo_h1": true,
-        "menu": "main-menu",
-        "menu_mobile": "main-menu",
+        "menu": "header",
+        "menu_mobile": "header",
         "menu_active": "dot",
         "hover_menu": true,
         "header_layout": "left-center",

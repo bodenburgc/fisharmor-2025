@@ -108,7 +108,7 @@
     
               {%- when 'text' -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.text_font == 'subtitle' %} uppercase leading-tight tracking-widest{% else %} leading-normal{% endif %}{% if block.settings.secondary_color %} text-opacity{% endif %}"{% if block.settings.text_size == 'subtext-custom' %} style="--subtext-size: {{ block.settings.text_max_size }}px;--subtext-line-height: {{ block.settings.text_line_height }};--subtext-letter-spacing: {{ block.settings.text_letter_spacing | divided_by: 1000.00 }}em;{% if block.settings.text_capitalize %}--subtext-text-transform: uppercase;{% endif %}"{% endif %} {{ block.shopify_attributes }}>
+                  <div class="rte {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.text_font == 'subtitle' %} uppercase leading-tight tracking-widest{% else %} leading-normal{% endif %}{% if block.settings.secondary_color %} text-opacity{% endif %}"{% if block.settings.text_size == 'subtext-custom' %} style="--subtext-size: {{ block.settings.text_max_size }}px;--subtext-line-height: {{ block.settings.text_line_height }};--subtext-letter-spacing: {{ block.settings.text_letter_spacing | divided_by: 1000.00 }}em;{% if block.settings.text_capitalize %}--subtext-text-transform: uppercase;{% endif %}{% if block.settings.text_color != blank and block.settings.text_color != 'rgba(0,0,0,0)' %}color: {{ block.settings.text_color }};{% endif %}"{% elsif block.settings.text_color != blank and block.settings.text_color != 'rgba(0,0,0,0)' %} style="color: {{ block.settings.text_color }};"{% endif %} {{ block.shopify_attributes }}>
                     {%- render 'highlighted-text', content: block.settings.text, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                   </div>
                 {%- endif -%}
@@ -831,6 +831,11 @@
           "id": "secondary_color",
           "default": false,
           "label": "t:sections.global.settings.secondary_color.label"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
         },
         {
           "type": "header",

@@ -120,6 +120,172 @@
         "parallax_direction": "vertical"
       }
     },
+    "video_with_text_zqdcrG": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_fzHxYf": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Ice to Boat in Minutes",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_n3bTj9": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>One system. Two seasons. Zero hassle.</strong></em></p>",
+            "text_font": "subtitle",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "#D32F2F",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_4dNpgb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Watch Brad walk you through our complete boat mounting system—from the ProFold mounts and Pro Pole to the docking plates that let you move your shuttle from ice to open water in seconds. No complicated installations, just solid aluminum construction and quick-release systems that actually work when you need them.</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fzHxYf",
+        "text_n3bTj9",
+        "text_4dNpgb"
+      ],
+      "name": "t:sections.video-with-text.name",
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=7YAX_btn57k",
+        "cover_image": "shopify://shop_images/From-Ice-to-Boat-in-Minutes.jpg",
+        "description": "Brad Kolstad demonstrating Fish Armor boat mounting systems including ProFold mounts, Pro Pole, and docking plates for converting ice fishing shuttles to open water use",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "image_height": "adapt",
+        "video_width": "medium",
+        "layout": "video_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "video_with_text_LhMX8h": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_cYheNK": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>One Unit. Ice and Boat. No Compromise.</strong>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xAKhmJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Stop buying separate systems. Start fishing smarter.</strong></em></p>",
+            "text_font": "subtitle",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "#D32F2F",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_JbgUyN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Brad breaks down the complete Fish Armor shuttle lineup—from the fully enclosed Pro Extreme to the streamlined Pro Lite and our cord-through Pro Pole. See how the system protects your $2,000+ sonar investment while moving seamlessly from ice to boat, ATV to gunnel, all season long.</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cYheNK",
+        "text_xAKhmJ",
+        "text_JbgUyN"
+      ],
+      "name": "t:sections.video-with-text.name",
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=dLW1QyAwWSU",
+        "cover_image": "shopify://shop_images/Ice-and-Boat-No-Compromise.jpg",
+        "description": "Brad Kolstad demonstrating Fish Armor shuttle systems including Pro Extreme, Pro Lite, and Pro Pole for transporting Garmin, Humminbird, and Lowrance forward-facing sonar units between ice and open water fishing",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "image_height": "adapt",
+        "video_width": "medium",
+        "layout": "text_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
     "pro_staff_3bn4K7": {
       "type": "pro-staff",
       "blocks": {
@@ -303,6 +469,7 @@
     },
     "product-bundle": {
       "type": "product-bundle",
+      "disabled": true,
       "custom_css": [
         "@media screen and (min-width: 1536px) {.product-bundle-wrapper {padding-inline: calc(var(--grid-gap) * 2); }}",
         "@media screen and (min-width: 1536px) and (max-width: 1920px) {.product-bundle {flex: 0 0 25%; } .product-bundle__sidebar {width: 100%; }}"
@@ -427,100 +594,16 @@
         "full_width": false,
         "rounded": true
       }
-    },
-    "multicolumn_info_XnK7pQ": {
-      "type": "multicolumn-with-icons",
-      "blocks": {
-        "column_support_1": {
-          "type": "column",
-          "settings": {
-            "icon": "support",
-            "custom_icon": "",
-            "heading": "FishArmor Support",
-            "text": "<p>Have questions or need assistance with your FishArmor shuttle? Our team is here to help you!</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_dealer_2": {
-          "type": "column",
-          "settings": {
-            "icon": "users",
-            "custom_icon": "",
-            "heading": "Become a Dealer",
-            "text": "<p>Partner with us to bring FishArmor protection to your customers. Contact us to learn how you can become a dealer!</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_shipping_3": {
-          "type": "column",
-          "settings": {
-            "icon": "box",
-            "custom_icon": "",
-            "heading": "Fast Free Shipping",
-            "text": "<p>Get free shipping on orders $150+ (before tax). Your sonar protection delivered fast – ready for the ice in days, not weeks.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_quality_4": {
-          "type": "column",
-          "settings": {
-            "icon": "shield_check",
-            "custom_icon": "",
-            "heading": "USA-Made Quality",
-            "text": "<p>Engineered and manufactured in Minnesota. Every shuttle built to survive extreme conditions and protect thousands in electronics.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "column_support_1",
-        "column_dealer_2",
-        "column_shipping_3",
-        "column_quality_4"
-      ],
-      "settings": {
-        "style": "with-border",
-        "columns": 4,
-        "text_alignment": "left",
-        "heading": "",
-        "heading_size": "title-lg tracking-heading",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "divider": true,
-        "full_width": false,
-        "rounded": false
-      }
     }
   },
   "order": [
     "image_with_text_overlay_JhcbtN",
     "floating_product_collection_xm6JRq",
+    "video_with_text_zqdcrG",
+    "video_with_text_LhMX8h",
     "pro_staff_3bn4K7",
     "collection-list",
     "product-bundle",
-    "featured-collections",
-    "multicolumn_info_XnK7pQ"
+    "featured-collections"
   ]
 }
