@@ -152,7 +152,7 @@
         "text_4dNpgb": {
           "type": "text",
           "settings": {
-            "text": "<p>Watch Brad walk you through our complete boat mounting system—from the ProFold mounts and Pro Pole to the docking plates that let you move your shuttle from ice to open water in seconds. No complicated installations, just solid aluminum construction and quick-release systems that actually work when you need them.</p>",
+            "text": "<p>Watch Brad walk you through our complete boat mounting system—from the Pro Pole Boat Mount Arm and Pro Pole to the docking plates that let you move your shuttle from ice to open water in seconds. No complicated installations, just solid aluminum construction and quick-release systems that actually work when you need them.</p>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
@@ -174,7 +174,8 @@
       "settings": {
         "video_url": "https://www.youtube.com/watch?v=7YAX_btn57k",
         "cover_image": "shopify://shop_images/From-Ice-to-Boat-in-Minutes.jpg",
-        "description": "Brad Kolstad demonstrating Fish Armor boat mounting systems including ProFold mounts, Pro Pole, and docking plates for converting ice fishing shuttles to open water use",
+        "description": "Brad Kolstad demonstrating Fish Armor boat mounting systems including Pro Pole Boat Mount Arm, Pro Pole, and docking plates for converting ice fishing shuttles to open water use",
+        "below_video_image": "patterns/watch-this.png",
         "enable_video_autoplay": false,
         "enable_video_looping": false,
         "image_height": "adapt",
@@ -258,6 +259,7 @@
         "video_url": "https://www.youtube.com/watch?v=dLW1QyAwWSU",
         "cover_image": "shopify://shop_images/Ice-and-Boat-No-Compromise.jpg",
         "description": "Brad Kolstad demonstrating Fish Armor shuttle systems including Pro Extreme, Pro Lite, and Pro Pole for transporting Garmin, Humminbird, and Lowrance forward-facing sonar units between ice and open water fishing",
+        "below_video_image": "patterns/watch-this.png",
         "enable_video_autoplay": false,
         "enable_video_looping": false,
         "image_height": "adapt",

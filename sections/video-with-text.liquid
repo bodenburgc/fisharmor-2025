@@ -32,7 +32,8 @@
     <div class="image-with-text{% if with_background %} with-background{% endif %} lg:flex lg:gap-8{% if section.settings.layout == 'video_first' %} lg:flex-row{% else %} lg:flex-row-reverse{% endif %} overflow-hidden">
       <div class="image-with-text__item grow shrink-0{% if section.settings.video_width == 'small' %} lg:grow-0{% endif %} relative">
         <div class="image-with-text__media h-full">
-          <media-element class="image-with-text__image block media--{{ section.settings.image_height }} mobile:media--{{ section.settings.image_height_mobile }} relative overflow-hidden"
+          <media-element class="image-with-text__image block media--{{ section.settings.image_height }} mobile:media--{{ section.settings.image_height_mobile }} relative"
+            style="box-shadow: 3px 12px 12px 0 rgba(0, 0, 0, .6); border-radius: var(--rounded-block);"
             {%- if section.settings.enable_parallax %} data-parallax="0.3" data-parallax-dir="{{ section.settings.parallax_direction }}"{% endif -%}
           >
             <div class="media media--height block w-full h-full relative overflow-hidden">
@@ -73,6 +74,9 @@
               -%}
             </div>
           </media-element>
+          {%- if section.settings.below_video_image != blank -%}
+            <img src="{{ section.settings.below_video_image | asset_url }}" alt="Watch this" style="width: 200px; height: auto; display: block; margin: 10px 5% 20px auto;">
+          {%- endif -%}
         </div>
       </div>
 
@@ -240,6 +244,13 @@
       "id": "description",
       "label": "t:sections.video.settings.description.label",
       "info": "t:sections.video.settings.description.info"
+    },
+    {
+      "type": "text",
+      "id": "below_video_image",
+      "label": "Image below video (filename from assets/patterns)",
+      "info": "Enter the filename (e.g., 'watch-this.png') from the assets/patterns folder",
+      "placeholder": "watch-this.png"
     },
     {
       "type": "checkbox",
