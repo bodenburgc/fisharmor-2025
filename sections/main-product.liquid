@@ -529,7 +529,113 @@
                 image_ratio_mobile: section.settings.image_ratio_mobile,
                 image_fill: settings.product_image_fill
               -%}
-              
+
+              {%- comment -%} Shelf Mount Alert {%- endcomment -%}
+              <div id="shelf-mount-alert-{{ section.id }}" style="display: none; margin-top: 1rem; padding: 1rem; background-color: #FFF3CD; border: 1px solid #FFC107; border-radius: 4px;">
+                <p style="margin: 0; color: #856404; font-weight: 600;">
+                  ⚠️ Shelf Required: This configuration requires the Fish Armor Shelf (mounts via gimbal bracket). The shelf will be automatically added to your cart.
+                </p>
+              </div>
+
+              <script>
+                (function() {
+                  const sectionId = '{{ section.id }}';
+                  const shelfVariantId = 51870786126005;
+                  let shelfAddedForVariant = null;
+                  let isAdding = false;
+                  let debounceTimer = null;
+
+                  function checkShelfRequirement(variant) {
+                    if (!variant) return;
+
+                    const alertBox = document.getElementById(`shelf-mount-alert-${sectionId}`);
+                    if (!alertBox) return;
+
+                    // Check if size contains "Shelf Mount"
+                    const isShelfMount = variant.option3 && variant.option3.toLowerCase().includes('shelf mount');
+
+                    if (isShelfMount) {
+                      alertBox.style.display = 'block';
+
+                      // Debounce the add to cart call to prevent rapid-fire duplicates
+                      clearTimeout(debounceTimer);
+                      debounceTimer = setTimeout(() => {
+                        if (shelfAddedForVariant !== variant.id && !isAdding) {
+                          addShelfToCart(variant.id);
+                        }
+                      }, 300); // Wait 300ms before adding
+                    } else {
+                      alertBox.style.display = 'none';
+                    }
+                  }
+
+                  function addShelfToCart(variantId) {
+                    isAdding = true;
+
+                    fetch('/cart/add.js', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ items: [{ id: shelfVariantId, quantity: 1 }] })
+                    })
+                    .then(response => response.json())
+                    .then(() => {
+                      shelfAddedForVariant = variantId;
+                      document.dispatchEvent(new CustomEvent('cart:refresh'));
+                    })
+                    .catch(error => console.error('Error adding shelf:', error))
+                    .finally(() => {
+                      isAdding = false;
+                    });
+                  }
+
+                  // Wait for product-form to be ready, then attach listeners
+                  function setupListeners() {
+                    // Find the product form element
+                    const productForm = document.querySelector('product-form');
+
+                    if (productForm) {
+                      // Listen on the product-form element (event doesn't bubble)
+                      productForm.addEventListener('variant:change', (event) => {
+                        if (event.detail && event.detail.variant) {
+                          checkShelfRequirement(event.detail.variant);
+                        }
+                      });
+                    }
+
+                    // Also listen on document as fallback
+                    document.addEventListener('variant:change', (event) => {
+                      if (event.detail && event.detail.variant) {
+                        checkShelfRequirement(event.detail.variant);
+                      }
+                    });
+
+                    // Subscribe to theme pub/sub as additional fallback
+                    if (window.theme && window.theme.pubsub) {
+                      window.theme.pubsub.subscribe(window.theme.pubsub.PUB_SUB_EVENTS.variantChange, (event) => {
+                        if (event.data && event.data.variant) {
+                          checkShelfRequirement(event.data.variant);
+                        }
+                      });
+                    }
+
+                    // Check initial variant
+                    const el = document.querySelector('[data-selected-variant]');
+                    if (el && el.textContent) {
+                      try {
+                        checkShelfRequirement(JSON.parse(el.textContent));
+                      } catch (e) {}
+                    }
+                  }
+
+                  // Setup after DOM is ready
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', setupListeners);
+                  } else {
+                    setupListeners();
+                  }
+                })();
+              </script>
+
             {%- when 'product_variations' -%}
               {%- render 'product-variants',
                 block: block,
