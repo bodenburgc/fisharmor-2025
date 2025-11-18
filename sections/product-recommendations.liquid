@@ -64,9 +64,20 @@
   }
 </style>
 
-<product-recommendations class="related-products block" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.product_limit }}&intent=related">
+{%- liquid
+  # Track which product IDs we've already shown to avoid duplicates
+  assign shown_ids = ','
+  assign has_products = false
+-%}
+
+<div class="related-products block">
   <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    {%- comment -%} Check if product has collections {%- endcomment -%}
+    {%- if product.collections.size > 0 -%}
+      {%- assign has_products = true -%}
+    {%- endif -%}
+
+    {%- if has_products -%}
       <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative overflow-hidden md:overflow-visible">
         {%- capture indicators -%}
           <div class="indicators hidden lg:flex gap-2d5">
@@ -88,29 +99,43 @@
 
         <slider-element id="Slider-{{ section.id }}" class="grid slider{% if section.settings.carousel_on_desktop %} slider--desktop{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}" selector=".card-grid>.card"{% if section.settings.carousel_on_desktop or section.settings.swipe_on_mobile %} tabindex="0"{% endif %}>
           <motion-list class="card-grid card-grid--{{ section.settings.columns }} mobile:card-grid--{{ section.settings.columns_mobile }} grid">
-            {%- for recommendation in recommendations.products -%}
-              {%- render 'product-card',
-                product: recommendation,
-                product_id: recommendation.id,
-                section_id: section.id,
-                lazy_load: false,
-                image_ratio: settings.product_image_ratio,
-                image_fill: settings.product_image_fill,
-                show_secondary_image: settings.product_secondary_image,
-                show_vendor: true,
-                show_card_description: true,
-                show_rating: settings.product_rating,
-                show_color_swatches: settings.product_color_swatches,
-                show_countdown: settings.product_countdown,
-                show_quick_add: false,
-                show_quick_view: false,
-                vertical_badges: settings.product_vertical_badges,
-                show_sold_out: settings.product_sold_out,
-                show_save_amount: settings.product_save_amount,
-                save_type: settings.product_save_type,
-                show_icon_list: settings.product_icon_list
-              -%}
-            {%- endfor -%}
+            {%- liquid
+              assign count = 0
+
+              # Loop through all collections this product belongs to
+              for collection in product.collections
+                # Loop through products in each collection
+                for coll_product in collection.products
+                  # Skip if it's the current product
+                  if coll_product.id == product.id
+                    continue
+                  endif
+
+                  # Skip if we've already shown this product
+                  assign id_string = ',' | append: coll_product.id | append: ','
+                  if shown_ids contains id_string
+                    continue
+                  endif
+
+                  # Render the product card
+                  render 'product-card', product: coll_product, product_id: coll_product.id, section_id: section.id, lazy_load: false, image_ratio: settings.product_image_ratio, image_fill: settings.product_image_fill, show_secondary_image: settings.product_secondary_image, show_vendor: true, show_card_description: true, show_rating: settings.product_rating, show_color_swatches: settings.product_color_swatches, show_countdown: settings.product_countdown, show_quick_add: false, show_quick_view: false, vertical_badges: settings.product_vertical_badges, show_sold_out: settings.product_sold_out, show_save_amount: settings.product_save_amount, save_type: settings.product_save_type, show_icon_list: settings.product_icon_list
+
+                  # Mark this product as shown
+                  assign shown_ids = shown_ids | append: coll_product.id | append: ','
+
+                  # Increment counter and check limit
+                  assign count = count | plus: 1
+                  if count >= section.settings.product_limit
+                    break
+                  endif
+                endfor
+
+                # Break outer loop if we've reached the limit
+                if count >= section.settings.product_limit
+                  break
+                endif
+              endfor
+            -%}
           </motion-list>
 
           {%- if section.settings.heading == blank and section.settings.subheading == blank and section.settings.description == blank -%}
@@ -135,7 +160,7 @@
       </div>
     {%- endif -%}
   </div>
-</product-recommendations>
+</div>
 
 {% schema %}
 {
