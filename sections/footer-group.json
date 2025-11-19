@@ -42,8 +42,8 @@
           "settings": {
             "icon": "box",
             "custom_icon": "",
-            "heading": "Fast Free Shipping",
-            "text": "<p>Get free shipping on orders $150+ (before tax). Your sonar protection delivered fast – ready for the ice in days, not weeks.</p>",
+            "heading": "Fast Shipping",
+            "text": "<p>Your sonar protection delivered fast – ready for the ice in days, not weeks. Built in Minnesota, shipped direct to your door.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -51,7 +51,7 @@
         "column_6it3Yt": {
           "type": "column",
           "settings": {
-            "icon": "shield_check",
+            "icon": "shield",
             "custom_icon": "",
             "heading": "USA-Made Quality",
             "text": "<p>Engineered and manufactured in Minnesota. Every shuttle built to survive extreme conditions and protect thousands in electronics.</p>",
