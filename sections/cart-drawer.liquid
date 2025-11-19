@@ -24,14 +24,14 @@
         <ul class="drawer__tabs flex gap-10" is="tab-list">
           <li>
             <button class="drawer__tab relative" type="button" aria-controls="MiniCart-{{ section.id }}" aria-expanded="true">
-              <span class="drawer__title heading lg:text-3xl text-2xl leading-none tracking-tight">{{ 'general.cart.title' | t }}</span>
+              <span class="drawer__title heading lg:text-4xl text-3xl leading-none tracking-wide">{{ 'general.cart.title' | t }}</span>
               <cart-count class="count absolute font-medium text-xs lg:text-sm leading-none" aria-label="{{ 'general.cart.cart_count' | t: count: cart.item_count | escape }}"{% if cart == empty %} hidden{% endif %}>{{ cart.item_count }}</cart-count>
             </button>
           </li>
           {%- if section.settings.recent_products_enabled -%}
             <li>
               <button class="drawer__tab" type="button" aria-controls="RecentlyViewed-{{ section.id }}" aria-expanded="false">
-                <span class="drawer__title heading lg:text-3xl text-2xl leading-none tracking-tight">{{ section.settings.recent_products_heading | escape }}</span>
+                <span class="drawer__title heading lg:text-4xl text-3xl leading-none tracking-wide">{{ section.settings.recent_products_heading | escape }}</span>
               </button>
             </li>
           {%- endif -%}
@@ -51,7 +51,7 @@
             {%- if cart == empty -%}
               <div class="drawer__scrollable relative flex justify-center items-start grow shrink text-center">
                 <div class="drawer__empty grid gap-5 md:gap-8">
-                  <p class="drawer__empty-text h2 heading leading-none tracking-tight">{{ 'cart.general.empty' | t }}</p>
+                  <p class="drawer__empty-text h2 heading text-4xl leading-none tracking-wide">{{ 'cart.general.empty' | t }}</p>
                   <div class="drawer__empty-message text-sm md:text-base leading-tight rte">
                     {{- section.settings.empty_cart_message -}}
                   </div>
@@ -154,7 +154,7 @@
                               {%- if section.settings.show_vendor -%}
                                 <p class="text-xs text-opacity">{{ item.product.vendor }}</p>
                               {%- endif -%}
-                              <a href="{{ item.url }}" class="horizontal-product__title reversed-link font-medium text-base leading-tight">{{ item.product.title | escape }}</a>
+                              <a href="{{ item.url }}" class="horizontal-product__title reversed-link font-medium text-2xl tracking-wide leading-tight">{{ item.product.title | escape }}</a>
                             </div>
 
                             {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}

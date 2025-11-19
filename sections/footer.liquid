@@ -54,8 +54,12 @@
     margin-top: 2rem;
   }
 
-  #shopify-section-{{ section.id }} .footer__menus .details__summary {
-    font-size: 1.25rem;
+  /* Larger footer link list headings on mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .heading.text-base-2xl {
+      font-size: 1.75rem !important;
+      letter-spacing: 0.025em;
+    }
   }
 </style>
 

@@ -4,6 +4,24 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
+
+  /* Product card text sizes - Mobile */
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .product-card__title {
+      font-size: 2rem;
+      letter-spacing: 0.025em;
+    }
+
+    #shopify-section-{{ section.id }} .product-card__vendor {
+      font-size: 1rem;
+    }
+
+    #shopify-section-{{ section.id }} .price__regular {
+      font-family: var(--font-heading-family);
+      color: rgb(var(--color-price));
+      font-size: clamp(1.6125rem, 2.5vw, 1.875rem);
+    }
+  }
 </style>
 
 {%- liquid

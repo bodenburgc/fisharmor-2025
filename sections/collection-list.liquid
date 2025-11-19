@@ -15,6 +15,14 @@
   #shopify-section-{{ section.id }} .heading.tracking-tighter {
     letter-spacing: 0.02em;
   }
+
+  /* Larger collection card titles on mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .collection-card__title {
+      font-size: 2rem;
+      letter-spacing: 0.025em;
+    }
+  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
