@@ -14,23 +14,11 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_R8gNCx": {
-          "type": "announcement",
-          "settings": {
-            "icon": "none",
-            "text": "USA-MADE IN MINNESOTA | Free Shipping on Orders $100+",
-            "link": "",
-            "hide_icon_mobile": true,
-            "text_mobile": "",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
         "announcement_bmLgpT": {
           "type": "announcement",
           "settings": {
             "icon": "none",
-            "text": "Universal Fit: Garmin • Humminbird • Lowrance • Marcum",
+            "text": "USA-MADE IN MINNESOTA | Garmin • Humminbird • Lowrance",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
@@ -52,7 +40,6 @@
         }
       },
       "block_order": [
-        "announcement_R8gNCx",
         "announcement_bmLgpT",
         "announcement_tVDQbV"
       ],

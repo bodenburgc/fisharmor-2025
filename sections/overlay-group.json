@@ -20,7 +20,7 @@
         "add_discount_code": true,
         "show_view_cart_button": true,
         "show_checkout_button": true,
-        "show_free_shipping_bar": true,
+        "show_free_shipping_bar": false,
         "free_shipping_minimum_amount": "1500",
         "cart_recommendations_enabled": true,
         "cart_recommendations_heading": "You may also like",
@@ -30,7 +30,7 @@
         "cart_recommendations_products": [],
         "empty_cart_message": "<p>Not sure where to start?<br/>Try these collections:</p>",
         "empty_cart_collections": [
-          "all",
+          "shuttles",
           "accessories"
         ],
         "recent_products_enabled": true,
@@ -50,10 +50,10 @@
         "text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>First Time on Board?</p>",
+            "text": "<p>Join the Fish Armor crew</p>",
             "text_font": "body",
             "text_size": "subtext-custom",
-            "text_max_size": 12,
+            "text_max_size": 16,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
             "text_capitalize": false,
@@ -65,7 +65,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up and enjoy exclusive <em>savings</em> on your first order!",
+            "heading": "Built to Protect. <em>Made in the USA.</em>",
             "heading_size": "text-2xl lg:text-3xl",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -86,7 +86,7 @@
         "text-2": {
           "type": "text",
           "settings": {
-            "text": "<p>Dive into exclusive offers, free giveaways, and special deals straight to your inbox. Don't miss out on the best FishArmor savings and updates!</p>",
+            "text": "<p>Be first to know about new shuttles, poles, and accessories designed to protect your live imaging investment. Plus get compatibility guides, mounting tips, and product updates delivered to your inbox.</p>",
             "text_font": "body",
             "text_size": "text-sm",
             "text_max_size": 32,
@@ -123,9 +123,10 @@
         "expiry": 30,
         "text_alignment": "left",
         "content_position": "right-0",
+        "image": "shopify://shop_images/Pro-Lite-Series.jpg",
         "color_drawer_text": "#171717",
         "color_drawer_background": "#ffffff",
-        "color_drawer_highlight": "#00ada8",
+        "color_drawer_highlight": "#d32f2f",
         "color_drawer_button_text": "#ffffff",
         "color_drawer_button_background": "#171717",
         "color_drawer_button_gradient": "",
