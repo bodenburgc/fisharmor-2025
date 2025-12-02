@@ -1,0 +1,400 @@
+{%- liquid
+  assign map_api_key = section.settings.map_api_key
+  assign default_radius = section.settings.default_radius | default: 100
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    {%- render 'section-variables', section: section -%}
+  }
+</style>
+
+{{ 'dealer-locator.css' | asset_url | stylesheet_tag }}
+
+<script>
+  window.dealerLocatorStrings = {
+    searchPlaceholder: {{ 'sections.dealer_locator.search_placeholder' | t | json }},
+    searchButton: {{ 'sections.dealer_locator.search_button' | t | json }},
+    useLocation: {{ 'sections.dealer_locator.use_location' | t | json }},
+    locating: {{ 'sections.dealer_locator.locating' | t | json }},
+    searching: {{ 'sections.dealer_locator.searching' | t | json }},
+    showingAll: {{ 'sections.dealer_locator.showing_all' | t | json }},
+    showingResults: {{ 'sections.dealer_locator.showing_results' | t | json }},
+    showingClosest: {{ 'sections.dealer_locator.showing_closest' | t | json }},
+    noResults: {{ 'sections.dealer_locator.no_results' | t | json }},
+    searchError: {{ 'sections.dealer_locator.search_error' | t | json }},
+    locationDenied: {{ 'sections.dealer_locator.location_denied' | t | json }},
+    locationUnavailable: {{ 'sections.dealer_locator.location_unavailable' | t | json }},
+    getDirections: {{ 'sections.dealer_locator.get_directions' | t | json }},
+    website: {{ 'sections.dealer_locator.website' | t | json }},
+    milesAway: {{ 'sections.dealer_locator.miles_away' | t | json }},
+    mapError: {{ 'sections.dealer_locator.map_error' | t | json }}
+  };
+</script>
+
+<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}">
+  <div class="page-width">
+    {%- comment -%} Section Heading {%- endcomment -%}
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+      <div class="title-wrapper leading-none gap-4 flex flex-col items-start mb-8">
+        {%- if section.settings.heading != blank -%}
+          <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
+            <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
+          </{{ section.settings.heading_tag }}>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="description rte leading-normal subtext-lg max-w-prose">
+            {{- section.settings.description -}}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Search Form {%- endcomment -%}
+    <div class="dealer-locator__search flex flex-wrap gap-3 mb-6" data-dealer-search>
+      <button
+        type="button"
+        class="button button--secondary"
+        is="hover-button"
+        data-dealer-geolocation
+        aria-label="{{ 'sections.dealer_locator.use_location' | t }}"
+      >
+        <span class="btn-fill" data-fill></span>
+        <span class="btn-text inline-flex items-center gap-2">
+          {%- render 'icon', icon: 'location', size: 'sm' -%}
+          <span data-geolocation-text>{{ 'sections.dealer_locator.use_location' | t }}</span>
+        </span>
+      </button>
+
+      <div class="field flex-1 min-w-[200px]">
+        <input
+          type="text"
+          id="dealer-search-{{ section.id }}"
+          class="input"
+          placeholder="{{ 'sections.dealer_locator.search_placeholder' | t }}"
+          data-dealer-search-input
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="field w-auto">
+        <select
+          id="dealer-radius-{{ section.id }}"
+          class="select"
+          data-dealer-radius
+        >
+          <option value="closest"{% if default_radius == 'closest' %} selected{% endif %}>10 Closest</option>
+          <option value="50"{% if default_radius == 50 %} selected{% endif %}>50 miles</option>
+          <option value="100"{% if default_radius == 100 %} selected{% endif %}>100 miles</option>
+          <option value="250"{% if default_radius == 250 %} selected{% endif %}>250 miles</option>
+          <option value="500"{% if default_radius == 500 %} selected{% endif %}>500 miles</option>
+        </select>
+      </div>
+
+      <button
+        type="button"
+        class="button button--primary"
+        is="hover-button"
+        data-dealer-search-button
+      >
+        <span class="btn-fill" data-fill></span>
+        <span class="btn-text inline-flex items-center gap-2">
+          {%- render 'icon', icon: 'search', size: 'sm' -%}
+          <span data-search-text>{{ 'sections.dealer_locator.search_button' | t }}</span>
+        </span>
+      </button>
+    </div>
+
+    {%- comment -%} Results Info {%- endcomment -%}
+    <div
+      class="dealer-locator__results-info text-sm text-opacity mb-4"
+      data-dealer-results-info
+    >
+      <!-- Updated by JavaScript -->
+    </div>
+
+    {%- comment -%} Error/No Results Message {%- endcomment -%}
+    <div
+      class="dealer-locator__message alert alert--warning mb-4"
+      data-dealer-message
+      hidden
+    >
+      <!-- Updated by JavaScript -->
+    </div>
+
+    {%- comment -%} Two Column Layout: List (1/3) + Map (2/3) {%- endcomment -%}
+    <div class="dealer-locator__content grid lg:grid-cols-3 gap-8">
+      {%- comment -%} Dealer List {%- endcomment -%}
+      <div class="dealer-locator__list-wrapper order-2 lg:order-1 lg:col-span-1">
+        <ul
+          class="dealer-locator__list grid gap-4"
+          data-dealer-list
+          role="list"
+        >
+          {%- comment -%} Dealer items populated by JavaScript {%- endcomment -%}
+        </ul>
+      </div>
+
+      {%- comment -%} Map {%- endcomment -%}
+      <div class="dealer-locator__map-wrapper order-1 lg:order-2 lg:col-span-2 lg:sticky lg:top-4 lg:self-start">
+        <div
+          class="dealer-locator__map rounded overflow-hidden"
+          data-dealer-map
+          data-api-key="{{ map_api_key }}"
+          data-default-lat="{{ section.settings.default_lat | default: '46.0' }}"
+          data-default-lng="{{ section.settings.default_lng | default: '-94.0' }}"
+          data-default-zoom="{{ section.settings.default_zoom | default: 5 }}"
+          data-marker-color="{{ section.settings.marker_color | default: '#D32F2F' }}"
+          data-map-style="{{ section.settings.map_style | default: 'dark' }}"
+        >
+          <div class="dealer-locator__map-loading flex items-center justify-center h-full bg-current/5">
+            <span class="text-opacity">{{ 'sections.dealer_locator.loading_map' | t | default: 'Loading map...' }}</span>
+          </div>
+        </div>
+
+        {%- comment -%} Map Styles JSON {%- endcomment -%}
+        <script type="application/json" data-map-styles>
+          {
+            "standard": [],
+            "silver": [
+              { "elementType": "geometry", "stylers": [{"color": "#f5f5f5"}] },
+              { "elementType": "labels.icon", "stylers": [{"visibility": "off"}] },
+              { "elementType": "labels.text.fill", "stylers": [{"color": "#616161"}] },
+              { "elementType": "labels.text.stroke", "stylers": [{"color": "#f5f5f5"}] },
+              { "featureType": "water", "elementType": "geometry", "stylers": [{"color": "#c9c9c9"}] }
+            ],
+            "dark": [
+              { "elementType": "geometry", "stylers": [{"color": "#212121"}] },
+              { "elementType": "labels.text.fill", "stylers": [{"color": "#9a9a9a"}] },
+              { "elementType": "labels.text.stroke", "stylers": [{"color": "#212121"}] },
+              { "featureType": "administrative.locality", "elementType": "labels.text.fill", "stylers": [{"color": "#c0c0c0"}] },
+              { "featureType": "administrative.land_parcel", "stylers": [{"visibility": "off"}] },
+              { "featureType": "administrative", "elementType": "geometry", "stylers": [{"color": "#2a2a2a"}] },
+              { "featureType": "poi", "elementType": "labels", "stylers": [{"visibility": "off"}] },
+              { "featureType": "poi.park", "elementType": "geometry", "stylers": [{"color": "#1a1a1a"}] },
+              { "featureType": "road", "elementType": "geometry.fill", "stylers": [{"color": "#2c2c2c"}] },
+              { "featureType": "road", "elementType": "labels", "stylers": [{"visibility": "off"}] },
+              { "featureType": "road.highway", "elementType": "geometry", "stylers": [{"color": "#3c3c3c"}] },
+              { "featureType": "water", "elementType": "geometry", "stylers": [{"color": "#1a3a4a"}] },
+              { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#6a9ab5"}] }
+            ],
+            "night": [
+              { "elementType": "geometry", "stylers": [{"color": "#242f3e"}] },
+              { "elementType": "labels.text.fill", "stylers": [{"color": "#746855"}] },
+              { "elementType": "labels.text.stroke", "stylers": [{"color": "#242f3e"}] },
+              { "featureType": "road", "elementType": "geometry", "stylers": [{"color": "#38414e"}] },
+              { "featureType": "road.highway", "elementType": "geometry", "stylers": [{"color": "#746855"}] },
+              { "featureType": "water", "elementType": "geometry", "stylers": [{"color": "#17263c"}] }
+            ]
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} Dealer Data JSON - Embedded from CSV export {%- endcomment -%}
+<script type="application/json" data-dealers>
+[
+  {"name":"Blade's Bait and Tackle","address":"8923 Bay Shore Drive","city":"Gladstone","state":"MI","zip":"49837","phone":"906-420-8494","website":"https://www.bladesbait.com","lat":45.8704363,"lng":-87.0142685},
+  {"name":"Reeds - Walker","address":"522 Minnesota Ave W","city":"Walker","state":"MN","zip":"56484","phone":"","website":"https://reedssports.com","lat":47.1022337,"lng":-94.5832932},
+  {"name":"Reeds - Onamia","address":"38556 U.S Hwy 169","city":"Onamia","state":"MN","zip":"56359","phone":"","website":"https://reedssports.com","lat":46.1067695,"lng":-93.6440109},
+  {"name":"Dewey Catchem and How","address":"8654 U.S. 51","city":"Minocqua","state":"WI","zip":"54548","phone":"","website":"https://www.deweycatchemandhow.com","lat":45.8865295,"lng":-89.7036743},
+  {"name":"Timberline Sports","address":"209 Summit Ave W","city":"Blackduck","state":"MN","zip":"56630","phone":"","website":"https://www.timberlinesportsmn.com","lat":47.7292784,"lng":-94.5546367},
+  {"name":"West Wind Resort","address":"54719 Minnesota 72","city":"Waskish","state":"MN","zip":"56685","phone":"","website":"http://www.westwindwaskish.com","lat":48.1585702,"lng":-94.5139291},
+  {"name":"Irlbeck Outdoors","address":"432 Main St W","city":"Milltown","state":"WI","zip":"54858","phone":"","website":"https://www.irlbeckoutdoors.com","lat":45.5270158,"lng":-92.5150194},
+  {"name":"Joe's Sporting Goods","address":"33 East County Rd. B","city":"St Paul","state":"MN","zip":"55117","phone":"651-209-7800","website":"http://www.joessportinggoods.com","lat":45.0074026,"lng":-93.0998159},
+  {"name":"Last Cast Bait & Tackle","address":"202 North Main Street","city":"Starbuck","state":"MN","zip":"56381","phone":"320-239-2239","website":"https://lastcastbaitandtackle.com.au","lat":45.6093423,"lng":-95.531469},
+  {"name":"Marine General","address":"1501 London Road","city":"Duluth","state":"MN","zip":"55712","phone":"218-724-8833","website":"https://www.marinegeneral.com","lat":46.8002894,"lng":-92.077974},
+  {"name":"Lander's Northside Bait","address":"2210 N 12th St","city":"Bismarck","state":"ND","zip":"58501","phone":"701-255-2744","website":"https://www.landersbismarck.com","lat":46.8293135,"lng":-100.7739879},
+  {"name":"Mel's Sport Shop","address":"102 MN Hwy 23 S","city":"Spicer","state":"MN","zip":"56288","phone":"320-796-2000","website":"https://www.melsoutdoors.com","lat":45.2330396,"lng":-94.9397496},
+  {"name":"Outdoors Again","address":"409 Main St W","city":"Baudette","state":"MN","zip":"56623","phone":"218-634-3344","website":"https://www.outdoorsagainlow.com","lat":48.7116834,"lng":-94.6096402},
+  {"name":"The Rooster","address":"1441 W Main St","city":"Rapid City","state":"SD","zip":"57701","phone":"605-342-3867","website":"https://rooster-rapid-city.edan.io","lat":44.0820863,"lng":-103.2432181},
+  {"name":"Lake Region CO-OP","address":"4825 Hwy 55","city":"Maple Lake","state":"MN","zip":"55358","phone":"320-963-6074","website":"https://lakeregioncoop-cenex.com","lat":45.2276826,"lng":-93.9874934},
+  {"name":"Clear Lake Bait & Tackle","address":"524 Hwy 18 E","city":"Clear Lake","state":"IA","zip":"50428","phone":"707-994-4399","website":"https://www.clearlakebaitandtackle.com","lat":43.1436493,"lng":-93.3839884},
+  {"name":"Fish Trap Camping & RV","address":"30894 Fishtrap Lake Drive","city":"Cushing","state":"MN","zip":"56443","phone":"218-575-2603","website":"https://fishtrapfun.com","lat":46.206413,"lng":-94.6063608},
+  {"name":"H & H Sport Shop","address":"605 Hwy 55 E","city":"Maple Lake","state":"MN","zip":"55358","phone":"320-963-6074","website":"https://www.lakeregioncoop-cenex.com","lat":45.2311631,"lng":-94.0157922},
+  {"name":"EJ's Beacon Harbor Resort","address":"57153 Hudec Resort Road NE","city":"Waskish","state":"MN","zip":"56685","phone":"218-647-8291","website":"https://www.beaconharborwaskish.com","lat":48.1966208,"lng":-94.5312913},
+  {"name":"Runnings - Marshall","address":"1101 East Main Marshall","city":"Marshall","state":"MN","zip":"56258","phone":"507-532-2286","website":"https://www.runnings.com/storelocator/store/marshall","lat":44.4368919,"lng":-95.7699709},
+  {"name":"Runnings - Pierre","address":"1600 North Harrison Ave","city":"Pierre","state":"SD","zip":"57501","phone":"605-224-1669","website":"https://www.runnings.com/storelocator/store/pierre","lat":44.3758439,"lng":-100.3187739},
+  {"name":"Prince Bait & Marine","address":"19196 US Highway 169","city":"Milaca","state":"MN","zip":"56353","phone":"320-983-6344","website":"https://princebaitandmarine.com/","lat":45.8254683,"lng":-93.6561371},
+  {"name":"Master Bait & Hook","address":"1067 MN 107","city":"Braham","state":"MN","zip":"55006","phone":"702-720-3474","website":"https://masterbaitandhook.com/","lat":45.741011,"lng":-93.1654055},
+  {"name":"Bear Island Tackle Company","address":"9800 Industrial Drive Unit 7","city":"Horace","state":"ND","zip":"58047","phone":"701-566-9044","website":"https://bearislandtackle.com","lat":46.749446,"lng":-96.895904},
+  {"name":"Kurt's Island Sport Shop","address":"824 Highway 51 North","city":"Minocqua","state":"WI","zip":"54548","phone":"715-356-4797","website":"https://www.kurtsislandsports.com/","lat":45.8738527,"lng":-89.7065464},
+  {"name":"Frankies Live Bait & Marine","address":"10680 South Ave","city":"Chisago City","state":"MN","zip":"55013","phone":"651-257-6334","website":"https://frankiesboats.com/","lat":45.3743287,"lng":-92.8892694},
+  {"name":"Tutt's Bait & Tackle","address":"27358 MN-18","city":"Garrison","state":"MN","zip":"56450","phone":"320-692-4341","website":"https://shoptutts.com/","lat":46.2981438,"lng":-93.8253376},
+  {"name":"Team One Stop Outdoors","address":"5006 MN-84","city":"Longville","state":"MN","zip":"56655","phone":"218-363-2252","website":"https://www.team1stopoutdoors.com/","lat":46.9855862,"lng":-94.210806}
+]
+</script>
+
+<script src="{{ 'dealer-locator.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Dealer locator",
+  "tag": "section",
+  "class": "dealer-locator-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "map_api_key",
+      "label": "Google Maps API key",
+      "info": "Required. Must have Maps JavaScript API and Geocoding API enabled."
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find a Dealer"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "title-sm", "label": "Small" },
+        { "value": "title-md", "label": "Medium" },
+        { "value": "title-lg", "label": "Large" }
+      ],
+      "default": "title-lg"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Enter your ZIP code or city to find authorized FishArmor dealers near you.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Map settings"
+    },
+    {
+      "type": "select",
+      "id": "map_style",
+      "label": "Map style",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "silver", "label": "Silver" },
+        { "value": "dark", "label": "Dark" },
+        { "value": "night", "label": "Night" }
+      ],
+      "default": "dark"
+    },
+    {
+      "type": "text",
+      "id": "default_lat",
+      "label": "Default center latitude",
+      "default": "46.0",
+      "info": "Center of dealer coverage area"
+    },
+    {
+      "type": "text",
+      "id": "default_lng",
+      "label": "Default center longitude",
+      "default": "-94.0"
+    },
+    {
+      "type": "range",
+      "id": "default_zoom",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "label": "Default zoom level",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Marker color",
+      "default": "#D32F2F"
+    },
+    {
+      "type": "header",
+      "content": "Search settings"
+    },
+    {
+      "type": "select",
+      "id": "default_radius",
+      "label": "Default search filter",
+      "options": [
+        { "value": "closest", "label": "10 Closest" },
+        { "value": "50", "label": "50 miles" },
+        { "value": "100", "label": "100 miles" },
+        { "value": "250", "label": "250 miles" }
+      ],
+      "default": "closest"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 72
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Show section divider",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dealer locator",
+      "category": "Store information"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  }
+}
+{% endschema %}

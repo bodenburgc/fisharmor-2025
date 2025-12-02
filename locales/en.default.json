@@ -241,6 +241,25 @@
     },
     "comparison-table": {
       "highlight_differences": "Highlight differences"
+    },
+    "dealer_locator": {
+      "search_placeholder": "Enter ZIP code or city...",
+      "search_button": "Search",
+      "use_location": "Use My Location",
+      "locating": "Locating...",
+      "searching": "Searching...",
+      "loading_map": "Loading map...",
+      "showing_all": "Showing all {{ count }} dealers",
+      "showing_results": "Showing {{ count }} dealers within {{ radius }} miles",
+      "showing_closest": "Showing {{ count }} closest dealers",
+      "no_results": "No dealers found within {{ radius }} miles. Try expanding your search.",
+      "search_error": "Unable to find that location. Try entering a ZIP code.",
+      "location_denied": "Location access denied. Please enter your ZIP code.",
+      "location_unavailable": "Unable to get your location. Please enter your ZIP code.",
+      "get_directions": "Get Directions",
+      "website": "Website",
+      "miles_away": "miles away",
+      "map_error": "Unable to load map. Dealer list shown below."
     }
   },
   "blogs": {

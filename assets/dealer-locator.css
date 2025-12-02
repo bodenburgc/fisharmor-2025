@@ -1,0 +1,364 @@
+/**
+ * Dealer Locator Styles
+ * Uses FishArmor brand system: Gazzetta + Barlow, theme color variables
+ */
+
+/* Fix title wrapper visibility */
+.dealer-locator-section .title-wrapper {
+  position: relative;
+}
+
+/* Layout - List (1/4) + Map (3/4) on desktop */
+@media (min-width: 1024px) {
+  .dealer-locator__content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: var(--sp-8);
+  }
+
+  .dealer-locator__list-wrapper {
+    order: 1;
+  }
+
+  .dealer-locator__map-wrapper {
+    order: 2;
+  }
+}
+
+/* Map Container */
+.dealer-locator__map {
+  height: 400px;
+  background-color: rgb(var(--color-foreground));
+}
+
+@media (min-width: 1024px) {
+  .dealer-locator__map {
+    height: 600px;
+  }
+}
+
+.dealer-locator__map-loading {
+  min-height: 100%;
+  opacity: 0.5;
+}
+
+/* Dealer List */
+.dealer-locator__list {
+  max-height: none;
+}
+
+@media (min-width: 1024px) {
+  .dealer-locator__list {
+    max-height: 600px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-foreground) / 0.3) transparent;
+  }
+
+  .dealer-locator__list::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dealer-locator__list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dealer-locator__list::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-foreground) / 0.3);
+    border-radius: var(--buttons-radius);
+  }
+
+  .dealer-locator__list::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-foreground) / 0.5);
+  }
+}
+
+/* Dealer Item Card */
+.dealer-locator__item {
+  position: relative;
+  padding: var(--sp-5);
+  background-color: rgb(var(--color-foreground) / 0.03);
+  border: 1px solid rgb(var(--color-foreground) / 0.1);
+  border-radius: var(--card-radius);
+  cursor: pointer;
+  transition: all var(--duration-default) ease;
+  overflow: visible;
+}
+
+/* Ensure all dealer item content is visible above any overlays */
+.dealer-locator__item-name,
+.dealer-locator__item-address,
+.dealer-locator__item-meta,
+.dealer-locator__item-phone,
+.dealer-locator__item-website,
+.dealer-locator__item-distance {
+  position: relative;
+  z-index: 10;
+  display: block;
+}
+
+.dealer-locator__item-meta {
+  display: flex;
+}
+
+.dealer-locator__item:hover {
+  background-color: rgb(var(--color-foreground) / 0.05);
+  border-color: rgb(var(--color-foreground) / 0.15);
+}
+
+.dealer-locator__item.is-active {
+  background-color: rgb(var(--color-accent) / 0.05);
+  border-color: rgb(var(--color-accent));
+}
+
+/* Dealer name - Heading font (Gazzetta), uppercase */
+.dealer-locator__item-name {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-size: var(--fluid-lg-to-2xl);
+  letter-spacing: var(--font-heading-letter-spacing);
+  text-transform: uppercase;
+  line-height: var(--font-heading-line-height);
+  margin: 0;
+  color: rgb(var(--color-foreground));
+}
+
+/* Body copy - Barlow */
+.dealer-locator__item-address {
+  font-family: var(--font-body-family);
+  font-style: normal;
+  font-size: var(--fluid-sm-to-base);
+  margin-top: var(--sp-1);
+  margin-bottom: var(--sp-3);
+  line-height: var(--font-body-line-height);
+  opacity: 0.7;
+}
+
+.dealer-locator__item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-3);
+  font-size: var(--fluid-sm-to-base);
+}
+
+.dealer-locator__item-phone,
+.dealer-locator__item-website {
+  color: rgb(var(--color-accent));
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity var(--duration-short) ease;
+}
+
+.dealer-locator__item-phone:hover,
+.dealer-locator__item-website:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.dealer-locator__item-distance {
+  font-size: var(--text-xs);
+  opacity: 0.6;
+  margin-bottom: var(--sp-3);
+  font-weight: 500;
+}
+
+.dealer-locator__item-directions {
+  display: inline-flex;
+  margin-top: var(--sp-2);
+  font-size: var(--text-xs);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+/* Search Form */
+.dealer-locator__search {
+  align-items: stretch;
+}
+
+.dealer-locator__search .field {
+  margin: 0;
+}
+
+.dealer-locator__search .input,
+.dealer-locator__search .select {
+  height: 100%;
+  min-height: 48px; /* Touch target minimum */
+}
+
+/* Results Info - Body font */
+.dealer-locator__results-info {
+  font-family: var(--font-body-family);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+  font-weight: 600;
+  margin-top: var(--sp-6);
+  margin-bottom: var(--sp-4);
+}
+
+@media (min-width: 1024px) {
+  .dealer-locator__results-info {
+    max-width: calc(25% - var(--sp-4));
+  }
+}
+
+/* Message/Alert - Using theme-consistent warning */
+.dealer-locator__message {
+  padding: var(--sp-4);
+  border-radius: var(--inputs-radius);
+  background-color: rgb(255 243 205 / 1);
+  border: var(--inputs-border-width) solid rgb(255 193 7 / 1);
+  color: rgb(133 100 4 / 1);
+  font-size: var(--text-sm);
+}
+
+/* Mobile Layout Adjustments */
+@media (max-width: 1023px) {
+  .dealer-locator__search {
+    flex-direction: column;
+  }
+
+  .dealer-locator__search > * {
+    width: 100%;
+  }
+
+  .dealer-locator__search .field {
+    min-width: 100%;
+  }
+
+  .dealer-locator__map-wrapper {
+    margin-bottom: var(--sp-6);
+  }
+}
+
+/* Empty State */
+.dealer-locator__list:empty::after {
+  content: 'No dealers to display';
+  display: block;
+  padding: var(--sp-8);
+  text-align: center;
+  opacity: 0.6;
+  background-color: rgb(var(--color-foreground) / 0.03);
+  border-radius: var(--inputs-radius);
+  font-size: var(--text-sm);
+}
+
+/* Google Maps Info Window Overrides */
+.gm-style-iw {
+  max-width: 300px !important;
+  padding: 0 !important;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+/* Info Window Content */
+.dealer-info {
+  max-width: 260px;
+  padding: var(--sp-3) var(--sp-6) var(--sp-3) var(--sp-3);
+}
+
+.dealer-info__name {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-size: var(--fluid-lg-to-2xl);
+  text-transform: uppercase;
+  letter-spacing: var(--font-heading-letter-spacing);
+  line-height: var(--font-heading-line-height);
+  margin: 0;
+  color: rgb(var(--color-foreground));
+}
+
+.dealer-info__address {
+  font-family: var(--font-body-family);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  opacity: 0.7;
+  margin: var(--sp-2) 0;
+}
+
+.dealer-info__meta {
+  font-size: var(--text-sm);
+  margin-bottom: var(--sp-3);
+}
+
+.dealer-info__link {
+  color: rgb(var(--color-accent));
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-right: var(--sp-3);
+}
+
+.dealer-info__link:hover {
+  text-decoration: underline;
+}
+
+.dealer-info__distance {
+  font-size: var(--text-xs);
+  opacity: 0.5;
+  margin-bottom: var(--sp-3);
+}
+
+.dealer-info__btn {
+  display: inline-block;
+  background-color: #D32F2F;
+  color: #ffffff !important;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dealer-info__btn:hover {
+  background-color: #b71c1c;
+  color: #ffffff !important;
+}
+
+/* Move close button to top-right corner */
+.gm-style-iw-c {
+  padding: 0 !important;
+}
+
+.gm-style-iw-c button.gm-ui-hover-effect {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  width: 24px !important;
+  height: 24px !important;
+  opacity: 0.4;
+  background: rgb(0 0 0 / 0.05) !important;
+  border-radius: 50% !important;
+}
+
+.gm-style-iw-c button.gm-ui-hover-effect:hover {
+  opacity: 0.8;
+  background: rgb(0 0 0 / 0.1) !important;
+}
+
+.gm-style-iw-c button.gm-ui-hover-effect > span {
+  margin: 6px !important;
+}
+
+/* Hide the default tail/arrow */
+.gm-style-iw-tc {
+  display: none;
+}
+
+/* Section Title */
+.dealer-locator-section .title-wrapper {
+  margin-bottom: var(--sp-8);
+}
+
+.dealer-locator-section .heading {
+  color: rgb(var(--color-foreground));
+}
+
+.dealer-locator-section .description {
+  opacity: 0.7;
+}
