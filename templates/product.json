@@ -31,6 +31,10 @@
             "show_rating": true
           }
         },
+        "judge_me_reviews_preview_badge_y6chxU": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -120,6 +124,7 @@
       "block_order": [
         "vendor",
         "title",
+        "judge_me_reviews_preview_badge_y6chxU",
         "price",
         "description_short_ht66tx",
         "countdown",
@@ -674,6 +679,38 @@
         "rounded": false
       }
     },
+    "1763574105c13058e0": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_BLAmpk": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_BLAmpk"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "featured_collection_yeHgLR": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.name",
@@ -720,6 +757,7 @@
     "faq",
     "product-recommendations",
     "recently-viewed",
+    "1763574105c13058e0",
     "featured_collection_yeHgLR"
   ]
 }

@@ -4664,7 +4664,7 @@ class VideoMedia extends DeferredMedia {
         if (templateElement) {
           templateElement.replaceWith(templateElement.content.firstElementChild.cloneNode(true));
         }
-        const muteVideo = this.hasAttribute('autoplay') || window.matchMedia('screen and (max-width: 1023px)').matches;
+        const muteVideo = this.hasAttribute('autoplay');
         const script = document.createElement('script');
         script.type = 'text/javascript';
         if (this.getAttribute('host') === 'youtube') {
