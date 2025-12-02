@@ -123,6 +123,13 @@
   color: rgb(var(--color-foreground));
 }
 
+/* Larger dealer name on mobile */
+@media (max-width: 1023px) {
+  .dealer-locator__item-name {
+    font-size: 28px;
+  }
+}
+
 /* Body copy - Barlow */
 .dealer-locator__item-address {
   font-family: var(--font-body-family);
@@ -263,12 +270,19 @@
 .dealer-info__name {
   font-family: var(--font-heading-family);
   font-weight: var(--font-heading-weight);
-  font-size: var(--fluid-lg-to-2xl);
+  font-size: var(--fluid-xl-to-3xl);
   text-transform: uppercase;
   letter-spacing: var(--font-heading-letter-spacing);
   line-height: var(--font-heading-line-height);
   margin: 0;
   color: rgb(var(--color-foreground));
+}
+
+/* Larger store name on mobile info windows */
+@media (max-width: 1023px) {
+  .dealer-info__name {
+    font-size: 32px;
+  }
 }
 
 .dealer-info__address {

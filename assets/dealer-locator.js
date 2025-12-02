@@ -164,6 +164,11 @@
 
       // Fit bounds to show all dealers
       this.fitBounds(this.dealers);
+
+      // Auto-locate on mobile
+      if (window.innerWidth < 1024 && navigator.geolocation) {
+        this.useMyLocation();
+      }
     }
 
     addMarkers(dealers) {
