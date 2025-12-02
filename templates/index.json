@@ -539,6 +539,14 @@
             "title": ""
           }
         },
+        "collection_J8LWmm": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-ultra-lite-series",
+            "products": [],
+            "title": ""
+          }
+        },
         "collection_LTPHdf": {
           "type": "collection",
           "settings": {
@@ -567,6 +575,7 @@
       "block_order": [
         "collection_ddC8BC",
         "collection_kgrVrF",
+        "collection_J8LWmm",
         "collection_LTPHdf",
         "collection_FJdaxA",
         "collection_3KPiR7"

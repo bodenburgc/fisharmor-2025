@@ -184,18 +184,21 @@ Note: You'll need to authenticate with `shopify auth login` before running theme
 
 ### Metafield Configuration
 
-The theme uses Shopify metafields extensively. Product metafields are defined in `.shopify/metafields.json`:
+The theme uses Shopify metafields extensively. Defined in `.shopify/metafields.json`:
 
-**Custom Metafields:**
-- `custom.card_description` - Single line text field for product card short descriptions
-- `custom.description_short` - Multi-line text field for condensed product descriptions
+**Product Metafields:**
+- `custom.card_description` - Short description for product cards
+- `custom.description_short` - Condensed multi-line description
+- `shopify.color-pattern` - Color/pattern references
+- `shopify.battery-type`, `shopify.battery-size`, `shopify.battery-technology` - Battery specs
+- `shopify.item-material` - Primary material (aluminum, roto-molded plastic)
+- `shopify.durability-features` - Durability highlights (rustproof, waterproof)
+- `shopify.item-condition` - Condition status
+- `mm-google-shopping.custom_product` - Google Shopping UPI availability flag
 
-**Standard Shopify Metafields:**
-- `shopify.color-pattern` - List of color/pattern references
-- `shopify.battery-type`, `shopify.battery-size`, `shopify.battery-technology` - Battery specifications
-- `shopify.item-material` - Primary material (e.g., aluminum, roto-molded plastic)
-- `shopify.durability-features` - Product durability highlights (e.g., rustproof, waterproof)
-- `shopify.item-condition` - Condition status (new, refurbished, etc.)
+**Variant Metafields (Google Shopping):**
+- `mm-google-shopping.custom_label_0` through `custom_label_4` - Shopping campaign labels
+- `mm-google-shopping.mpn`, `condition`, `gender`, `age_group`, `size_type`, `size_system`
 
 ### Theme Settings
 
@@ -205,24 +208,18 @@ Major configurable areas (via `config/settings_schema.json`):
 - Typography (header/body fonts, sizes, line heights, letter spacing)
 - Layout dimensions (page width, section spacing)
 
-## Shopify API Automation Scripts
+## Shopify Admin API Reference
 
-The repository includes bash scripts for bulk product updates via Shopify Admin API GraphQL. These scripts are in the root directory.
+For bulk product updates, use Shopify Admin API GraphQL.
 
-### Script Patterns
+**Endpoint:** `https://fisharmorusa-com.myshopify.com/admin/api/2024-01/graphql.json`
 
-**Authentication:**
-- Uses Admin API access tokens (stored in scripts, should be rotated regularly)
-- GraphQL endpoint: `https://fisharmorusa-com.myshopify.com/admin/api/2024-01/graphql.json`
-- Headers: `X-Shopify-Access-Token` and `Content-Type: application/json`
+**Common GraphQL Mutations:**
+- `productUpdate` - Update product metadata, tags, descriptions, metafields
+- `productPublish` / `productUnpublish` - Control product visibility and sort order
+- `collectionDelete` - Remove collections
 
-**Common Scripts:**
-- `update_shuttle_order.sh` - Unpublish/republish shuttles to control collection sort order
-- `batch_*.sh` - Bulk update products by category (live imaging, batteries, accessories, etc.)
-- `find_*.sh` - Query scripts to find products by specific criteria
-- `check_published_dates.py` - Python script to verify product publish dates
-
-**Script Structure:**
+**Example curl pattern:**
 ```bash
 TOKEN="shpat_..."
 URL="https://fisharmorusa-com.myshopify.com/admin/api/2024-01/graphql.json"
@@ -234,16 +231,9 @@ curl -s -X POST "$URL" \
     | python3 -m json.tool
 ```
 
-**GraphQL Mutations Used:**
-- `productUpdate` - Update product metadata, tags, descriptions, metafields
-- `productPublish` / `productUnpublish` - Control product visibility and sort order
-- `collectionDelete` - Remove collections
-
-**Important Notes:**
-- Scripts use `sleep` delays to avoid rate limiting
-- JSON responses are formatted with `python3 -m json.tool`
+**Notes:**
+- Use `sleep` delays between requests to avoid rate limiting
 - Product IDs use Shopify's GID format: `gid://shopify/Product/[ID]`
-- Scripts often update both `descriptionHtml` and metafields simultaneously
 
 ## Development Workflow
 
@@ -273,6 +263,5 @@ When making changes:
 - **Mobile-first:** Large touch targets (48x48px), high contrast, fast loading for ice fishing conditions
 
 **Security:**
-- API access tokens are currently stored in bash scripts - these should be rotated regularly
-- Never commit new API tokens to version control
-- Consider using environment variables for sensitive credentials
+- Never commit API tokens to version control
+- Use environment variables for sensitive credentials when creating API scripts
