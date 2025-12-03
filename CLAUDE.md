@@ -43,7 +43,10 @@ Section groups render across all pages. Defined in JSON files:
 - `footer-group.json` - Footer, mobile dock, cookie banner
 - `overlay-group.json` - Cart drawer, search drawer, age verification, newsletter popup
 
-Context variants (`.context.eu.json`, `.context.us.json`, `.context.b2b.json`) override defaults per market.
+Context variants override defaults per market:
+- `.context.us.json` - US market (primary)
+- `.context.eu.json` - EU market (GDPR considerations)
+- `.context.b2b.json` - Wholesale/dealer features
 
 ### Template → Section Flow
 
@@ -76,17 +79,27 @@ Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.
 
 ## Third-Party Integrations
 
-Snippets prefixed with `wcp_*` = Wholesale/Volume Discount app (WCP)
-- `wcp_cart.liquid`, `wcp_discount.liquid`, `wcp_variant.liquid`, etc.
-
-Other integrations visible in code:
-- Judge.me (product reviews)
-- Google Maps (contact/store locator)
-- PhotoSwipe (image galleries)
+| Prefix/Files | Integration |
+|--------------|-------------|
+| `wcp_*` snippets | Wholesale/Volume Discount app (cart, discount, variant) |
+| `wlm-*` snippets | Password Lock / Member Access |
+| `freegifts-*` | Free Gifts program |
+| Judge.me | Product reviews |
+| Google Maps | Dealer locator |
+| PhotoSwipe | Image galleries |
 
 ## Brand Guidelines
 
 **Full documentation:** `/.docs/brand/` (READ THIS for any content/design work)
+
+| File | Contents |
+|------|----------|
+| `VOICE.md` | Personality, tone, messaging hierarchy, vocabulary |
+| `COLORS.md` | OKLCH palette (Safety Red, Steel Ice, Frozen Lake, etc.) |
+| `TYPOGRAPHY.md` | Gazzetta + Barlow fluid type system |
+| `COMPONENTS.md` | Buttons, forms, cards with Tailwind classes |
+| `LAYOUT.md` | 12-column grid, containers, spacing scale |
+| `ASSETS.md` | Logo specs, file naming, badge system |
 
 **Quick Reference:**
 - **Voice:** Confident, rugged, technical. "Protect Your Investment" messaging
@@ -147,10 +160,14 @@ curl -s -X POST "$URL" \
 - `custom.description_short` - Condensed description
 - `shopify.item-material` - Material (aluminum, roto-molded)
 - `shopify.durability-features` - Rustproof, waterproof, etc.
+- `shopify.color-pattern` - Color/pattern reference
+- `shopify.battery-type`, `battery-size`, `battery-technology` - Battery specs
+- `mm-google-shopping.custom_product` - UPI availability flag (boolean)
 
 **Variant (Google Shopping):**
 - `mm-google-shopping.custom_label_0` through `custom_label_4`
-- `mm-google-shopping.mpn`, `condition`
+- `mm-google-shopping.mpn`, `condition`, `gender`, `age_group`
+- `mm-google-shopping.size_type`, `size_system`
 
 ## Important Constraints
 
