@@ -28,7 +28,7 @@
             "title_size": "product-title-lg",
             "title_size_mobile": "product-title-md",
             "show_price": false,
-            "show_rating": true
+            "show_rating": false
           }
         },
         "judge_me_reviews_preview_badge_y6chxU": {
@@ -619,7 +619,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_limit": 10,
+        "product_limit": 12,
         "columns": 5,
         "carousel_on_desktop": true,
         "columns_mobile": "2",

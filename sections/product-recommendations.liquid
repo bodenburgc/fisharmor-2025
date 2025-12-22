@@ -68,6 +68,30 @@
   # Track which product IDs we've already shown to avoid duplicates
   assign shown_ids = ','
   assign has_products = false
+
+  # Check if current product is a shuttle and determine compatibility tag
+  assign is_shuttle = false
+  assign compatibility_tag = ''
+  assign dynamic_heading = section.settings.heading
+
+  for tag in product.tags
+    assign tag_lower = tag | downcase
+    if tag_lower == 'shuttle'
+      assign is_shuttle = true
+    endif
+    if tag_lower == 'pro extreme'
+      assign compatibility_tag = 'Pro Extreme'
+    elsif tag_lower == 'pro lite'
+      assign compatibility_tag = 'Pro Lite'
+    elsif tag_lower == 'pro ultra lite'
+      assign compatibility_tag = 'Pro Ultra Lite'
+    endif
+  endfor
+
+  # Set dynamic heading for shuttles
+  if is_shuttle and compatibility_tag != ''
+    assign dynamic_heading = 'Compatible Accessories'
+  endif
 -%}
 
 <div class="related-products block">
@@ -95,7 +119,7 @@
             </button>
           </div>
         {%- endcapture -%}
-        {%- render 'section-heading', section: section, section_button: indicators -%}
+        {%- render 'section-heading', section: section, section_button: indicators, heading: dynamic_heading -%}
 
         <slider-element id="Slider-{{ section.id }}" class="grid slider{% if section.settings.carousel_on_desktop %} slider--desktop{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}" selector=".card-grid>.card"{% if section.settings.carousel_on_desktop or section.settings.swipe_on_mobile %} tabindex="0"{% endif %}>
           <motion-list class="card-grid card-grid--{{ section.settings.columns }} mobile:card-grid--{{ section.settings.columns_mobile }} grid">
@@ -115,6 +139,23 @@
                   assign id_string = ',' | append: coll_product.id | append: ','
                   if shown_ids contains id_string
                     continue
+                  endif
+
+                  # If viewing a shuttle, filter to compatible products only
+                  if is_shuttle and compatibility_tag != ''
+                    # Check if this product has the compatibility tag (e.g., "Pro Extreme")
+                    assign has_compatibility_tag = false
+                    for coll_product_tag in coll_product.tags
+                      if coll_product_tag == compatibility_tag
+                        assign has_compatibility_tag = true
+                        break
+                      endif
+                    endfor
+
+                    # Skip if product doesn't have the compatibility tag
+                    if has_compatibility_tag == false
+                      continue
+                    endif
                   endif
 
                   # Render the product card

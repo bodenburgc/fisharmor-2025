@@ -6,6 +6,7 @@
   @param {object} section - Section object with settings
   @param {boolean} [section_full_width] - Use page-width container
   @param {string} [section_button] - Additional button HTML to append
+  @param {string} [heading] - Optional heading override (defaults to section.settings.heading)
 
   @example
   {% render 'section-heading',
@@ -14,9 +15,18 @@
   %}
 {%- enddoc -%}
 
-{%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.description != blank or section.settings.button_label != blank -%}
+{%- liquid
+  # Allow heading override, fallback to section setting
+  if heading != blank
+    assign display_heading = heading
+  else
+    assign display_heading = section.settings.heading
+  endif
+-%}
+
+{%- if display_heading != blank or section.settings.subheading != blank or section.settings.description != blank or section.settings.button_label != blank -%}
   <div class="{% if section_full_width %}page-width {% endif %}title-wrapper{% if section.settings.heading_size == 'title-xl' %} title-wrapper-lg{% endif %} leading-none gap-4 lg:gap-8 flex flex-col {{ section.settings.heading_alignment }} md:justify-between relative z-1">
-    {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.description != blank -%}
+    {%- if display_heading != blank or section.settings.subheading != blank or section.settings.description != blank -%}
       <div class="grid gap-4">
         {%- if section.settings.subheading != blank -%}
           {%- liquid
@@ -31,10 +41,10 @@
           </p>
         {%- endif -%}
 
-        {%- if section.settings.heading != blank -%}
+        {%- if display_heading != blank -%}
           <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
             {%- if section.settings.highlighted_text == 'none' -%}
-              <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
+              <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ display_heading }}</split-words>
             {%- else -%}
               {%- liquid
                 assign with_gradient = false
@@ -42,7 +52,7 @@
                   assign with_gradient = true
                 endif
               -%}
-              {%- render 'highlighted-text', content: section.settings.heading, style: section.settings.highlighted_text, scribble: section.settings.highlighted_scribble, gradient: with_gradient -%}
+              {%- render 'highlighted-text', content: display_heading, style: section.settings.highlighted_text, scribble: section.settings.highlighted_scribble, gradient: with_gradient -%}
             {%- endif -%}
           </{{ section.settings.heading_tag }}>
         {%- endif -%}
