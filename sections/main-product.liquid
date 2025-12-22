@@ -34,6 +34,23 @@
   #shopify-section-{{ section.id }} .product__tax {
     display: none;
   }
+
+  /* Notice box styling for text blocks */
+  #shopify-section-{{ section.id }} .product__text--notice {
+    background-color: var(--notice-bg, #fee2e2);
+    color: var(--notice-text, #991b1b);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-block: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .product__text--notice .product__text-inner {
+    justify-content: flex-start;
+  }
+
+  #shopify-section-{{ section.id }} .product__text--notice p {
+    color: inherit;
+  }
 </style>
 
 {%- liquid
@@ -200,7 +217,7 @@
   
                     assign modulo = block_index | modulo: 2
                   -%}
-                  <div class="product__text{% if modulo == 0 %} even{% endif %}{% if prev_block.type != 'text' %} first{% endif %}{% if next_block.type != 'text' %} last{% endif %}" {{ block.shopify_attributes }}>
+                  <div class="product__text{% if modulo == 0 %} even{% endif %}{% if prev_block.type != 'text' %} first{% endif %}{% if next_block.type != 'text' %} last{% endif %}{% if block.settings.color_background != blank %} product__text--notice{% endif %}" {% if block.settings.color_background != blank or block.settings.color_text != blank %}style="{% if block.settings.color_background != blank %}--notice-bg: {{ block.settings.color_background }};{% endif %}{% if block.settings.color_text != blank %}--notice-text: {{ block.settings.color_text }};{% endif %}"{% endif %} {{ block.shopify_attributes }}>
                     <div class="product__text-inner flex items-center gap-2d5">
                       {%- if block.settings.icon_image != blank -%}
                         {%- liquid
@@ -1861,6 +1878,20 @@
           ],
           "default": "text-base",
           "label": "t:sections.global.settings.text_size.label"
+        },
+        {
+          "type": "header",
+          "content": "Notice Box Style"
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text color"
         }
       ]
     },
