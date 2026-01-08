@@ -147,29 +147,84 @@ Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.
 - `_` prefix = internal/helper blocks (`_counter.liquid`, `_accordion-row.liquid`)
 - Regular blocks are user-facing in theme editor
 
-## Multi-Project Usage
+## Multi-Project Architecture
 
-BODE is designed as a GitHub template for multiple Shopify projects.
+BODE is the **master framework** used across multiple Shopify store projects. Each project inherits from BODE and can pull framework updates while maintaining brand-specific customizations.
 
-**For new projects:**
+### Repository Structure
+
+```
+BODE-shopify (this repo)          ← Master framework
+    ↓ template
+├── keybar-2026                   ← KeyBar project
+├── fisharmor                     ← FishArmor project
+├── project-3                     ← Future project
+└── project-4                     ← Future project
+```
+
+### Active Projects Using BODE
+
+| Project | Repo | Store | Status |
+|---------|------|-------|--------|
+| KeyBar | `bodenburgc/keybar-2026` | TBD | In Development |
+| FishArmor | `bodenburgc/FishArmorBackup` | fisharmorusa-com.myshopify.com | Live |
+
+### Creating a New Project
+
 ```bash
-# Create from template
+# 1. Create repo from BODE template
 gh repo create project-name --template bodenburgc/BODE-shopify
 cd project-name
 
-# Add upstream for framework updates
+# 2. Add upstream remote for framework updates
 git remote add upstream https://github.com/bodenburgc/BODE-shopify.git
 
-# Pull framework updates (periodic)
-git fetch upstream
-git merge upstream/main
+# 3. Verify remotes
+git remote -v
+# origin   → your project (push changes here)
+# upstream → BODE framework (pull updates from here)
 ```
 
-**Project-specific files (customize per brand):**
+### Pushing Framework Updates to Projects
+
+When you improve BODE, projects can pull updates:
+
+```bash
+# In project repo (e.g., keybar-2026)
+git fetch upstream
+git merge upstream/main
+# Resolve conflicts in brand-specific files
+git push origin main
+```
+
+### What Lives Where
+
+**BODE (this repo) - Framework code:**
+- Core sections (product, collection, cart, header, footer)
+- Snippets (product-card, css-variables, js-variables)
+- JavaScript architecture (theme.js, vendor.js)
+- CSS system (theme.css, feature CSS)
+- Base settings schema
+
+**Project repos - Brand-specific:**
 - `config/settings_data.json` - Theme settings values
 - `sections/*-group.json` - Header/footer configuration
 - `templates/index.json` - Homepage layout
-- `.docs/brand/` - Brand guidelines
+- `.docs/brand/` - Brand guidelines (colors, voice, typography)
+- Brand logos and assets
+- Store-specific metafields
+
+### Avoiding Merge Conflicts
+
+Add to `.gitattributes` in project repos:
+```
+config/settings_data.json merge=ours
+.shopify/* merge=ours
+templates/index.json merge=ours
+sections/*-group.json merge=ours
+```
+
+This keeps brand-specific files from being overwritten during upstream merges.
 
 ## Third-Party Integrations
 
