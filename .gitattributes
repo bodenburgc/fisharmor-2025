@@ -1,0 +1,8 @@
+# Prevent upstream merges from overwriting brand-specific files
+config/settings_data.json merge=ours
+.shopify/* merge=ours
+templates/index.json merge=ours
+sections/header-group.json merge=ours
+sections/footer-group.json merge=ours
+sections/overlay-group.json merge=ours
+.docs/brand/* merge=ours
