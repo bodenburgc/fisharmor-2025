@@ -1,0 +1,119 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_FHyHfk": {
+          "type": "announcement",
+          "settings": {
+            "icon": "none",
+            "text": "Holiday Shipping Update: We're taking a brief pause to celebrate the holidays with our families. No shipments 12/24–12/26, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "announcement_bmLgpT": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "text": "USA-MADE IN MINNESOTA | Garmin • Humminbird • Lowrance",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "announcement_tVDQbV": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "text": "Protect Your Investment | Premium Roto-Molded Shuttles",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_FHyHfk",
+        "announcement_bmLgpT",
+        "announcement_tVDQbV"
+      ],
+      "settings": {
+        "show_social": false,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "invert_icons_selectors": false,
+        "announcement_position": "start",
+        "announcement_layout": "carousel",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "direction": "left",
+        "speed": 20,
+        "color_text": "#fafafa",
+        "color_background": "#d32f2f",
+        "gradient_background": "",
+        "color_highlight": "#ffddbf",
+        "gradient_highlight": "",
+        "hide_homepage": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_h1": true,
+        "menu": "header",
+        "menu_mobile": "header",
+        "menu_active": "dot",
+        "hover_menu": true,
+        "header_layout": "left-center",
+        "sticky_header_type": "always",
+        "icons_size": "md",
+        "menu_drawer_icon_label": "",
+        "enable_language_selector_desktop": false,
+        "enable_country_selector_desktop": false,
+        "show_country_name_dekstop": false,
+        "show_country_flag_desktop": false,
+        "logo_position_mobile": "center",
+        "accordion_menu_mobile": false,
+        "show_social": true,
+        "enable_language_selector": true,
+        "enable_country_selector": true,
+        "transparent_color_text": "#ffffff",
+        "color_text": "#e4e8ec",
+        "color_background": "#0a1824",
+        "color_localization": "",
+        "padding_top": 0,
+        "padding_bottom": 14,
+        "full_width": false,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

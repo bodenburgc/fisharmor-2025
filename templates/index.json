@@ -1,0 +1,660 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_JhcbtN": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "image_cmcxAM": {
+          "type": "image",
+          "settings": {
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50
+          }
+        }
+      },
+      "block_order": [
+        "image_cmcxAM"
+      ],
+      "name": "t:sections.image-with-text-overlay.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/homepage-hero.jpg",
+        "image_height": "700px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-end",
+        "text_alignment": "right",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#0a1824",
+        "color_background": "#0a1824",
+        "gradient_background": "linear-gradient(180deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "floating_product_collection_xm6JRq": {
+      "type": "floating-product-collection",
+      "blocks": {
+        "heading_FjqTPc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Built By Anglers. Engineered for Real Fishing Conditions.",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "heading_color": "#e4e8ec",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xUiUBa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>150 years of combined on-water experience. American-made. Engineered to survive Minnesota winters, Canadian Shield waters, and everything you throw at it.</p>",
+            "text_font": "body",
+            "text_size": "subtext-xl",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_color": "#b8e600",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FjqTPc",
+        "text_xUiUBa"
+      ],
+      "name": "Floating collection",
+      "settings": {
+        "collection": "frontpage",
+        "products": [],
+        "product_limit": 3,
+        "image_height": "900px",
+        "layout": "image_first",
+        "content_position": "md:items-end",
+        "text_alignment": "left",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center",
+        "text_alignment_mobile": "center",
+        "swipe_on_mobile": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "linear-gradient(136deg, rgba(10, 24, 36, 1) 12%, rgba(110, 131, 148, 1) 82%)",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 40,
+        "padding_top": 68,
+        "padding_bottom": 68,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "video_with_text_zqdcrG": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_fzHxYf": {
+          "type": "heading",
+          "settings": {
+            "heading": "From Ice to Boat in Minutes",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_n3bTj9": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>One system. Two seasons. Zero hassle.</strong></em></p>",
+            "text_font": "subtitle",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "#d32f2f",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_4dNpgb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Watch Brad walk you through our complete boat mounting system—from the Pro Pole Boat Mount Arm and Pro Pole to the docking plates that let you move your shuttle from ice to open water in seconds. No complicated installations, just solid aluminum construction and quick-release systems that actually work when you need them.</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fzHxYf",
+        "text_n3bTj9",
+        "text_4dNpgb"
+      ],
+      "name": "t:sections.video-with-text.name",
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=7YAX_btn57k",
+        "cover_image": "shopify://shop_images/From-Ice-to-Boat-in-Minutes.jpg",
+        "description": "Brad Kolstad demonstrating Fish Armor boat mounting systems including Pro Pole Boat Mount Arm, Pro Pole, and docking plates for converting ice fishing shuttles to open water use",
+        "below_video_image": "patterns/watch-this.png",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "image_height": "adapt",
+        "video_width": "medium",
+        "layout": "video_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "video_url_mobile": "",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "video_with_text_LhMX8h": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_cYheNK": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>One Unit. Ice and Boat. No Compromise.</strong>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xAKhmJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Stop buying separate systems. Start fishing smarter.</strong></em></p>",
+            "text_font": "subtitle",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "#d32f2f",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_JbgUyN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Brad breaks down the complete Fish Armor shuttle lineup—from the fully enclosed Pro Extreme to the streamlined Pro Lite and our cord-through Pro Pole. See how the system protects your $2,000+ sonar investment while moving seamlessly from ice to boat, ATV to gunnel, all season long.</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "text_color": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cYheNK",
+        "text_xAKhmJ",
+        "text_JbgUyN"
+      ],
+      "name": "t:sections.video-with-text.name",
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=dLW1QyAwWSU",
+        "cover_image": "shopify://shop_images/Ice-and-Boat-No-Compromise.jpg",
+        "description": "Brad Kolstad demonstrating Fish Armor shuttle systems including Pro Extreme, Pro Lite, and Pro Pole for transporting Garmin, Humminbird, and Lowrance forward-facing sonar units between ice and open water fishing",
+        "below_video_image": "patterns/watch-this.png",
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "image_height": "adapt",
+        "video_width": "medium",
+        "layout": "text_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "video_url_mobile": "",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "pro_staff_3bn4K7": {
+      "type": "pro-staff",
+      "blocks": {
+        "staff_member_GhB9Mr": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Brian-Brosdahl.jpg",
+            "first_name": "Brian",
+            "last_name": "Brosdahl",
+            "title": "Ice Fishing Legend • Guide • TV Host",
+            "bio": "<p>I use Fish Armor every day in my guide business. The durability and versatility of these systems make them essential equipment for serious ice anglers. Simply solid construction that stands up to the toughest conditions on the ice.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_UCBdAJ": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Brad-Hawthorne.jpg",
+            "first_name": "Brad",
+            "last_name": "Hawthorne",
+            "title": "Mille Lacs Guide • 20+ Years Experience",
+            "bio": "<p>Clients can be tough on stuff, especially when you're fishing Mille Lacs in harsh conditions. Fish Armor is the answer for guides who need equipment that can handle daily professional use. The no-metal design means no corrosion, even with constant exposure to water and ice.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_J6wMU3": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Jeremy-Smith.jpg",
+            "first_name": "Jeremy",
+            "last_name": "Smith",
+            "title": "Lindner Media • Lure Designer",
+            "bio": "<p>One of the best and most versatile shuttle systems available on the market. As someone who designs fishing equipment professionally, I appreciate the engineering and thought that went into these systems. Perfect for both ice fishing and open water applications.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        },
+        "staff_member_Fyhr7f": {
+          "type": "staff_member",
+          "settings": {
+            "photo": "shopify://shop_images/Jeff-Simpson.jpg",
+            "first_name": "Jeff",
+            "last_name": "Simpson",
+            "title": "Lindner Media • In-Fisherman Veteran",
+            "bio": "<p>The versatility is endless with Fish Armor shuttles. I use these systems for hours every single day during the ice fishing season. Whether filming for In-Fisherman or guiding clients, I trust Fish Armor to protect my expensive electronics in the harshest conditions.</p>",
+            "instagram_url": "",
+            "facebook_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "staff_member_GhB9Mr",
+        "staff_member_UCBdAJ",
+        "staff_member_J6wMU3",
+        "staff_member_Fyhr7f"
+      ],
+      "name": "Pro Staff",
+      "settings": {
+        "heading": "TRUSTED BY THE BEST",
+        "heading_size": "title-lg",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center md:items-center",
+        "description": "<p>Our team brings unmatched expertise to every shuttle we build. With 150+ years of combined experience and countless hours on the ice, these guides know what it takes to protect your investment in the harshest conditions.</p>",
+        "columns_desktop": 2,
+        "columns_tablet": 1,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "divider": false,
+        "rounded": false,
+        "show_texture": true,
+        "full_width": false,
+        "heading_color": "oklch(30% .04 230)",
+        "last_name_color": "oklch(68% .27 40)"
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_e3zxpG": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-extreme",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 11
+          }
+        },
+        "collection_Nri4hq": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-lite",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_nmt7MH": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-pole-accessories",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_i98kLj": {
+          "type": "collection",
+          "settings": {
+            "collection": "boat-mounts",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_BnYbyt": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_e3zxpG",
+        "collection_Nri4hq",
+        "collection_nmt7MH",
+        "collection_i98kLj",
+        "collection_BnYbyt"
+      ],
+      "settings": {
+        "card_style": "card",
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h3",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#e4e8ec",
+        "color_background": "#0a1824",
+        "gradient_background": "linear-gradient(136deg, rgba(10, 24, 36, 1) 12%, rgba(110, 131, 148, 1) 82%)",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "product-bundle": {
+      "type": "product-bundle",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 1536px) {.product-bundle-wrapper {padding-inline: calc(var(--grid-gap) * 2); }}",
+        "@media screen and (min-width: 1536px) and (max-width: 1920px) {.product-bundle {flex: 0 0 25%; } .product-bundle__sidebar {width: 100%; }}"
+      ],
+      "settings": {
+        "collection": "pro-extreme",
+        "products": [],
+        "product_limit": 12,
+        "columns": 4,
+        "columns_mobile": "1",
+        "minimum_quantity": 3,
+        "maximum_quantity": 7,
+        "prevent_duplicate_products": true,
+        "allow_quantity_change": true,
+        "quantity_increment": "1",
+        "quantity_minimum": "1",
+        "quantity_maximum": "",
+        "show_variant_labels": true,
+        "picker_type": "button",
+        "enable_color_swatches": true,
+        "color_swatch_type": "color",
+        "heading": "Your bundle",
+        "heading_size": "lg:text-5xl text-2xl",
+        "heading_alignment": "text-left",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Add at least 3 products to proceed and Save 30%</p>",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 92,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_ddC8BC": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-extreme",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_kgrVrF": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-lite",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_J8LWmm": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-ultra-lite-series",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_LTPHdf": {
+          "type": "collection",
+          "settings": {
+            "collection": "pro-pole-accessories",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_FJdaxA": {
+          "type": "collection",
+          "settings": {
+            "collection": "boat-mounts",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_3KPiR7": {
+          "type": "collection",
+          "settings": {
+            "collection": "accessories",
+            "products": [],
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_ddC8BC",
+        "collection_kgrVrF",
+        "collection_J8LWmm",
+        "collection_LTPHdf",
+        "collection_FJdaxA",
+        "collection_3KPiR7"
+      ],
+      "settings": {
+        "product_limit": 12,
+        "columns": 5,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#e4e8ec",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "featured_collection_mUpDUN": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "collection": "batteries",
+        "products": [],
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Batteries",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "rgba(0,0,0,0)",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_JhcbtN",
+    "floating_product_collection_xm6JRq",
+    "video_with_text_zqdcrG",
+    "video_with_text_LhMX8h",
+    "pro_staff_3bn4K7",
+    "collection-list",
+    "product-bundle",
+    "featured-collections",
+    "featured_collection_mUpDUN"
+  ]
+}

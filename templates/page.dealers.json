@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "dealer-locator",
+      "settings": {
+        "map_api_key": "AIzaSyDAwjDKSVEHxGVYdlP3O-BxJR5WgxiRWww",
+        "heading": "Find a Dealer",
+        "heading_size": "title-lg",
+        "heading_tag": "h1",
+        "description": "<p>Enter your ZIP code or city to find authorized FishArmor dealers near you. Our dealers carry the full line of shuttles and accessories to protect your investment.</p>",
+        "map_style": "dark",
+        "default_lat": "46.0",
+        "default_lng": "-94.0",
+        "default_zoom": 5,
+        "marker_color": "#D32F2F",
+        "default_radius": "closest",
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": ["main"]
+}

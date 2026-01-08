@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "multicolumn-with-icons": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "custom_icon": "",
+            "heading": "FishArmor Support",
+            "text": "<p>Have questions or need assistance with your FishArmor shuttle? Call <a href=\"tel:651-321-3776\">651&#8209;321&#8209;3776</a> - our team is here to help you!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "users",
+            "custom_icon": "",
+            "heading": "Become a Dealer",
+            "text": "<p>Partner with us to bring FishArmor protection to your customers. Contact us to learn how you can become a dealer!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "custom_icon": "",
+            "heading": "Fast Shipping",
+            "text": "<p>Your sonar protection delivered fast – ready for the ice in days, not weeks. Built in Minnesota, shipped direct to your door.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_6it3Yt": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "USA-Made Quality",
+            "text": "<p>Engineered and manufactured in Minnesota. Every shuttle built to survive extreme conditions and protect thousands in electronics.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-3",
+        "column-2",
+        "column_6it3Yt"
+      ],
+      "settings": {
+        "style": "with-border",
+        "columns": 3,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": true,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "logo_social": {
+          "type": "logo_social",
+          "settings": {
+            "logo": "shopify://shop_images/Fish-Amor-Horizontal.png",
+            "logo_height": 95,
+            "show_social": false,
+            "enable_follow_on_shop": false
+          }
+        },
+        "brand_text": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<p>Designed for Minnesota winters where ice fishing isn't a hobby—it's a lifestyle. Our portable, battle-tested equipment moves with you from frozen lakes to boat decks to dock fishing, performing everywhere you fish and delivering reliability when conditions demand it most.</p>",
+            "container_width": 95,
+            "opened": false
+          }
+        },
+        "link_list_shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SHOP",
+            "menu": "footer-categories",
+            "container_width": 33,
+            "opened": false
+          }
+        },
+        "link_list_support": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SUPPORT",
+            "menu": "footer-company",
+            "container_width": 33,
+            "opened": false
+          }
+        },
+        "link_list_company": {
+          "type": "link_list",
+          "settings": {
+            "heading": "COMPANY",
+            "menu": "footer-company-1",
+            "container_width": 33,
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "logo_social",
+        "brand_text",
+        "link_list_shop",
+        "link_list_support",
+        "link_list_company"
+      ],
+      "settings": {
+        "invert_newsletter_others": false,
+        "enable_newsletter": false,
+        "newsletter_heading": "",
+        "newsletter_heading_size": "md:title-lg",
+        "newsletter_text": "",
+        "newsletter_logo_height": 50,
+        "show_social": true,
+        "enable_follow_on_shop": false,
+        "color_text": "#e4e8ec",
+        "color_background": "#2c4554",
+        "gradient_background": "",
+        "color_button_text": "#000000",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    },
+    "footer-copyright": {
+      "type": "footer-copyright",
+      "settings": {
+        "enable_language_selector": true,
+        "enable_country_selector": false,
+        "show_policy": true,
+        "show_payment_icons": false,
+        "monochrome_payment_icons": false,
+        "show_copyright": true,
+        "copyright_text": "",
+        "color_text": "#e4e8ec",
+        "color_background": "#0a1824",
+        "gradient_background": "",
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    }
+  },
+  "order": [
+    "multicolumn-with-icons",
+    "footer",
+    "footer-copyright"
+  ]
+}
