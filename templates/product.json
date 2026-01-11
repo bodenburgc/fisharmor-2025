@@ -19,7 +19,9 @@
             "iwidth": "custom",
             "icon_width": 24,
             "text": "{{ product.vendor }}",
-            "text_size": "text-base"
+            "text_size": "text-base",
+            "color_background": "",
+            "color_text": ""
           }
         },
         "title": {
@@ -86,8 +88,8 @@
             "icon": "alert",
             "iwidth": "custom",
             "icon_width": 20,
-            "text": "<strong>Holiday Shipping Update:</strong> We're taking a brief pause to celebrate the holidays with our families. No shipments on 12/24, 12/25, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
-            "text_size": "text-sm",
+            "text": "<strong>Holiday Shipping Update:</strong> We're taking a brief pause to celebrate the holidays with our families. No shipments 12/24–12/26, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
+            "text_size": "text-base lg:text-xl",
             "color_background": "#fee2e2",
             "color_text": "#991b1b"
           }

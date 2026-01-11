@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "icon": "none",
-            "text": "Holiday Shipping Update: We're taking a brief pause to celebrate the holidays with our families. No shipments on 12/24, 12/25, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
+            "text": "Holiday Shipping Update: We're taking a brief pause to celebrate the holidays with our families. No shipments 12/24–12/26, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
@@ -63,7 +63,7 @@
         "enable_language_selector": true,
         "enable_country_selector": true,
         "invert_icons_selectors": false,
-        "announcement_position": "center",
+        "announcement_position": "start",
         "announcement_layout": "carousel",
         "autoplay": true,
         "autoplay_speed": 5,
