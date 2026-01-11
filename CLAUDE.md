@@ -16,13 +16,54 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Shopify CLI Commands
 
 ```bash
-shopify theme dev          # Local development server
+shopify theme dev          # Local development with hot reload
 shopify theme push         # Deploy to store
 shopify theme pull         # Pull live theme changes
-shopify theme check        # Lint/validate theme
+shopify theme check        # Lint/validate theme (only validation available)
 shopify theme share        # Generate preview link
 shopify auth login         # Authenticate (required first)
 ```
+
+**No build step required** - No npm, webpack, or compilation. CSS/JS are served as-is from `/assets/`.
+
+## Framework Relationship (BODE Upstream)
+
+```
+/Users/cbodenburg/Sites/BODE-shopify/    ← Master framework (upstream)
+    ↓
+/Users/cbodenburg/Sites/fisharmor-2025/  ← FishArmor-specific customizations (this repo)
+```
+
+**BODE is a separate local project.** Framework changes (sections, snippets, core JS/CSS) should be made in BODE-shopify first, then pulled here.
+
+### Git Remotes
+
+```
+origin   → https://github.com/bodenburgc/fisharmor-2025.git   (FishArmor changes)
+upstream → https://github.com/bodenburgc/BODE-shopify.git     (Framework updates)
+```
+
+### Development Workflow
+
+| Change Type | Where to Make Change |
+|-------------|---------------------|
+| Bug fix in section/snippet | BODE-shopify → push → pull upstream here |
+| New reusable section | BODE-shopify → push → pull upstream here |
+| Improve JS/CSS framework | BODE-shopify → push → pull upstream here |
+| FishArmor colors/fonts/logos | HERE (fisharmor-2025) |
+| FishArmor homepage layout | HERE (fisharmor-2025) |
+| Brand guidelines | HERE (`.docs/brand/`) |
+
+### Pulling Framework Updates
+
+```bash
+git fetch upstream
+git merge upstream/main
+# Resolve any conflicts in brand-specific files (.gitattributes protects key files)
+git push origin main
+```
+
+**Protected files (merge=ours via .gitattributes):** `config/settings_data.json`, `templates/index.json`, `sections/*-group.json`, `.docs/brand/*`
 
 ## Theme Architecture
 
@@ -34,6 +75,20 @@ layout/theme.liquid
 ├── sections 'overlay-group'    → sections/overlay-group.json (cart-drawer, search, popups)
 ├── content_for_layout          → templates/*.json → sections/*.liquid
 └── sections 'footer-group'     → sections/footer-group.json
+```
+
+### Settings → CSS → Components Flow
+
+```
+config/settings_schema.json (definitions)
+        ↓
+config/settings_data.json (current values, auto-generated)
+        ↓
+snippets/css-variables.liquid ({{ settings.* }} → :root CSS variables)
+        ↓
+snippets/js-variables.liquid ({{ settings.* }} → window.theme object)
+        ↓
+theme.css + theme.js (consume variables)
 ```
 
 ### Section Groups (Global Components)
@@ -48,34 +103,23 @@ Context variants override defaults per market:
 - `.context.eu.json` - EU market (GDPR considerations)
 - `.context.b2b.json` - Wholesale/dealer features
 
-### Template → Section Flow
-
-Templates are JSON files referencing sections:
-```
-templates/product.json → sections/main-product.liquid
-                       → sections/product-recommendations.liquid
-                       → sections/recently-viewed.liquid
-```
-
 ### Key Files
 
 | File | Purpose |
 |------|---------|
-| `snippets/css-variables.liquid` | Global CSS custom properties from theme settings |
-| `snippets/js-variables.liquid` | JavaScript config (routes, feature flags) |
-| `config/settings_schema.json` | Theme settings definitions |
-| `config/settings_data.json` | Current setting values (auto-generated, DO NOT edit) |
+| `snippets/css-variables.liquid` | Theme settings → CSS custom properties (`:root`) |
+| `snippets/js-variables.liquid` | Routes, feature flags → `window.theme` object |
+| `config/settings_schema.json` | Theme settings definitions (from BODE) |
+| `config/settings_data.json` | Current values (DO NOT edit manually) |
 | `.shopify/metafields.json` | Metafield definitions |
+| `locales/en.default.json` | Translation strings (English only) |
 
 ### Asset Loading
 
-CSS loads in `<head>` (blocking), JS loads with `defer`:
-```liquid
-{{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
-<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-```
+**Always loaded:** `fonts.css` → `css-variables` → `theme.css` → `vendor.js` → `theme.js`
 
-Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.js`).
+**Template-specific assets** (loaded in individual sections):
+- `cart.js/css`, `collection.js/css`, `dealer-locator.js/css`, etc.
 
 ## Third-Party Integrations
 
@@ -84,9 +128,17 @@ Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.
 | `wcp_*` snippets | Wholesale/Volume Discount app (cart, discount, variant) |
 | `wlm-*` snippets | Password Lock / Member Access |
 | `freegifts-*` | Free Gifts program |
-| Judge.me | Product reviews |
-| Google Maps | Dealer locator |
+| Judge.me | Product reviews (stored in `reviews.*` metafields) |
+| Google Maps | Dealer locator (`sections/dealer-locator.liquid`, `assets/dealer-locator.js`) |
 | PhotoSwipe | Image galleries |
+
+## Custom FishArmor Sections
+
+Notable custom sections beyond the standard BODE theme:
+- `dealer-locator.liquid` - Google Maps-based store finder with dealer list
+- `pro-staff.liquid` - Pro staff/ambassador showcase
+- `product-comparison.liquid` / `comparison-table.liquid` - Product feature comparison
+- `floating-product-collection.liquid` - Floating product display for collections
 
 ## Brand Guidelines
 
@@ -100,6 +152,8 @@ Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.
 | `COMPONENTS.md` | Buttons, forms, cards with Tailwind classes |
 | `LAYOUT.md` | 12-column grid, containers, spacing scale |
 | `ASSETS.md` | Logo specs, file naming, badge system |
+| `ICONS.md` | Icon system with mobile-friendly touch targets |
+| `PHOTOGRAPHY.md` | Ice fishing imagery, Minnesota winters, real anglers |
 
 **Quick Reference:**
 - **Voice:** Confident, rugged, technical. "Protect Your Investment" messaging
@@ -162,7 +216,16 @@ curl -s -X POST "$URL" \
 - `shopify.durability-features` - Rustproof, waterproof, etc.
 - `shopify.color-pattern` - Color/pattern reference
 - `shopify.battery-type`, `battery-size`, `battery-technology` - Battery specs
+- `reviews.rating`, `reviews.rating_count` - Judge.me review data
+- `shopify--discovery--product_recommendation.related_products` - Manual related products
+- `shopify--discovery--product_recommendation.complementary_products` - Accessories/add-ons
 - `mm-google-shopping.custom_product` - UPI availability flag (boolean)
+
+**Page:**
+- `custom.header_image` - Banner image for page headers
+
+**Collection:**
+- `ecomposer.collections` - Sub-collection definitions
 
 **Variant (Google Shopping):**
 - `mm-google-shopping.custom_label_0` through `custom_label_4`
