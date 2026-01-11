@@ -16,13 +16,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Shopify CLI Commands
 
 ```bash
-shopify theme dev          # Local development server
+shopify theme dev          # Local development with hot reload
 shopify theme push         # Deploy to store
 shopify theme pull         # Pull live theme changes
-shopify theme check        # Lint/validate theme
+shopify theme check        # Lint/validate theme (only validation available)
 shopify theme share        # Generate preview link
 shopify auth login         # Authenticate (required first)
 ```
+
+**No build step required** - No npm, webpack, or compilation. CSS/JS are served as-is from `/assets/`.
 
 ## Theme Architecture
 
@@ -151,23 +153,22 @@ Feature-specific assets load conditionally in sections (e.g., `cart.css`, `cart.
 
 BODE is the **master framework** used across multiple Shopify store projects. Each project inherits from BODE and can pull framework updates while maintaining brand-specific customizations.
 
-### Repository Structure
+### Local Project Structure
 
 ```
-BODE-shopify (this repo)          ← Master framework
-    ↓ template
-├── keybar-2026                   ← KeyBar project
-├── fisharmor-2025                ← FishArmor project
-├── project-3                     ← Future project
-└── project-4                     ← Future project
+/Users/cbodenburg/Sites/
+├── BODE-shopify/                 ← Master framework (this repo)
+├── keybar-2026/                  ← KeyBar project
+├── fisharmor-2025/               ← FishArmor project
+└── future-project/               ← Future projects
 ```
 
 ### Active Projects Using BODE
 
-| Project | Repo | Store | Status |
-|---------|------|-------|--------|
-| KeyBar | `bodenburgc/keybar-2026` | TBD | In Development |
-| FishArmor | `bodenburgc/fisharmor-2025` | fisharmorusa-com.myshopify.com | Configured |
+| Project | Local Path | Store | Status |
+|---------|------------|-------|--------|
+| KeyBar | `/Users/cbodenburg/Sites/keybar-2026/` | TBD | In Development |
+| FishArmor | `/Users/cbodenburg/Sites/fisharmor-2025/` | fisharmorusa-com.myshopify.com | Configured |
 
 ### Creating a New Project
 
@@ -199,15 +200,16 @@ git push origin main
 
 ### Development Workflow
 
-**ALWAYS make framework improvements in BODE first**, then pull into projects.
+**ALWAYS make framework improvements in BODE first**, then push and pull into projects.
 
 ```
-BODE-shopify                        Project (e.g., KeyBar)
-────────────                        ──────────────────────
+BODE-shopify (this folder)          Project folder (e.g., keybar-2026/)
+──────────────────────────          ─────────────────────────────────
 1. Fix bug in product-card    →
-2. Remove duplicate sections  →     git fetch upstream
-3. Add new feature            →     git merge upstream/main
-4. Improve CSS system         →     (inherits improvements)
+2. Remove duplicate sections  →     cd ../keybar-2026
+3. Add new feature            →     git fetch upstream
+4. git push origin main       →     git merge upstream/main
+                                    (inherits improvements)
 
                                     5. Customize brand colors
                                     6. Build homepage layout
@@ -216,14 +218,14 @@ BODE-shopify                        Project (e.g., KeyBar)
 
 | Change Type | Where to Make It |
 |-------------|------------------|
-| Bug fix in section/snippet | BODE |
-| New reusable section | BODE |
-| Remove cruft/duplicates | BODE |
-| Improve JS/CSS architecture | BODE |
-| Brand colors/fonts | Project |
-| Homepage layout | Project |
-| Brand logos/assets | Project |
-| Store-specific content | Project |
+| Bug fix in section/snippet | BODE (here) → push → pull in project |
+| New reusable section | BODE (here) → push → pull in project |
+| Remove cruft/duplicates | BODE (here) → push → pull in project |
+| Improve JS/CSS architecture | BODE (here) → push → pull in project |
+| Brand colors/fonts | Project repo only |
+| Homepage layout | Project repo only |
+| Brand logos/assets | Project repo only |
+| Store-specific content | Project repo only |
 
 ### What Lives Where
 
