@@ -16,6 +16,7 @@
       "blocks": {
         "announcement_FHyHfk": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "text": "Holiday Shipping Update: We're taking a brief pause to celebrate the holidays with our families. No shipments 12/24–12/26, 12/31 & 1/1. Orders will resume shipping the following business day. Happy Holidays from the Fish Armor team!",
@@ -28,7 +29,6 @@
         },
         "announcement_bmLgpT": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "text": "USA-MADE IN MINNESOTA | Garmin • Humminbird • Lowrance",
@@ -41,7 +41,6 @@
         },
         "announcement_tVDQbV": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "icon": "none",
             "text": "Protect Your Investment | Premium Roto-Molded Shuttles",
@@ -63,7 +62,7 @@
         "enable_language_selector": true,
         "enable_country_selector": true,
         "invert_icons_selectors": false,
-        "announcement_position": "start",
+        "announcement_position": "center",
         "announcement_layout": "carousel",
         "autoplay": true,
         "autoplay_speed": 5,

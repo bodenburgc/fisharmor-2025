@@ -84,6 +84,7 @@
         },
         "text_TM4nxD": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "icon": "alert",
             "iwidth": "custom",
