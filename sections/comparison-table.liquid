@@ -117,7 +117,7 @@
                     <div class="flex flex-col gap-1">
                       {%- liquid
                         if section.settings.show_price
-                          render 'product-price', product: blank, class: 'flex flex-wrap items-end gap-2 text-sm'
+                          render 'product-price', placeholder: true, class: 'flex flex-wrap items-end gap-2 text-sm'
                         endif
                       -%}
                     </div>
