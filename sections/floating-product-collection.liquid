@@ -92,7 +92,7 @@
       {%- endif -%}
       <div class="{% if section.settings.image != blank %}banner__content overflow-hidden absolute z-1 top-0 left-0 w-full h-full{% else %}w-full{% endif %}">
       <div class="{% if section.settings.image != blank %}page-width w-full h-full lg:flex lg:items-center{% else %}w-full{% endif %}">
-        <div class="compact-product-bundle-wrapper flex flex-col gap-6 lg:grid lg:gap-10{% unless section.settings.layout == 'image_first' %} lg:grid-row-reverse{% endunless %}">
+        <div class="compact-product-bundle-wrapper flex flex-col gap-6{% unless section.settings.layout == 'stacked' %} lg:grid{% endunless %} lg:gap-10{% if section.settings.layout == 'text_first' %} lg:grid-row-reverse{% endif %}{% if section.settings.layout == 'stacked' %} stacked-layout{% endif %}">
           <div class="{% if section.settings.image != blank %}card product-card product-card--promo block leading-none relative overflow-hidden{% else %}content-area{% endif %}">
             {%- if section.settings.image != blank -%}
               <div class="product-card__media{% if section.blocks.size == 0 %} without-content{% endif %} mobile:media--{{ section.settings.image_height_mobile }} lg:hidden relative top-0 left-0 w-full h-full">
@@ -113,8 +113,8 @@
                 </div>
               {%- endif -%}
               {%- if section.blocks.size > 0 -%}
-                <div class="{% if section.settings.image != blank %}product-card__content z-1 absolute top-0 left-0 w-full h-full flex justify-center {{ section.settings.content_position_mobile }} {{ section.settings.content_position }}{% else %}w-full flex flex-col gap-4{% endif %}">
-                  <div class="{% if section.settings.image != blank %}md:text-{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment_mobile }}{% endif %} w-full">
+                <div class="{% if section.settings.image != blank %}product-card__content z-1 absolute top-0 left-0 w-full h-full flex justify-center {{ section.settings.content_position_mobile }} {{ section.settings.content_position }}{% else %}w-full flex flex-col gap-4{% if section.settings.layout == 'stacked' %} items-center{% endif %}{% endif %}">
+                  <div class="{% if section.settings.image != blank %}md:text-{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment_mobile }}{% elsif section.settings.layout == 'stacked' %}text-{{ section.settings.text_alignment_mobile }} md:text-{{ section.settings.text_alignment }}{% endif %} w-full">
                     <div class="promo-box inline-block">
                     {%- liquid
                       assign with_gradient = false
@@ -395,6 +395,10 @@
         {
           "value": "text_first",
           "label": "Products first (left), content second (right)"
+        },
+        {
+          "value": "stacked",
+          "label": "Content above, products below (full width)"
         }
       ],
       "default": "image_first",

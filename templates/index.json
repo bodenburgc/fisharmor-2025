@@ -91,12 +91,18 @@
       "name": "Floating collection",
       "settings": {
         "collection": "frontpage",
-        "products": [],
-        "product_limit": 3,
+        "products": [
+          "fish-armor-pro-extreme",
+          "fish-armor-pro-lite",
+          "pro-ultra-lite-shuttle",
+          "fisharmor-pro-pole",
+          "pro-pole-boat-mount-arm-by-traxtech"
+        ],
+        "product_limit": 5,
         "image_height": "900px",
-        "layout": "image_first",
+        "layout": "stacked",
         "content_position": "md:items-end",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "image_height_mobile": "adapt",
         "content_position_mobile": "items-center",
         "text_alignment_mobile": "center",
