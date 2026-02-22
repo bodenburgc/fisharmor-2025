@@ -43,6 +43,11 @@ origin   → https://github.com/bodenburgc/fisharmor-2025.git   (FishArmor chang
 upstream → https://github.com/bodenburgc/BODE-shopify.git     (Framework updates)
 ```
 
+**Note:** The `upstream` remote may not be configured. Verify with `git remote -v` and add if missing:
+```bash
+git remote add upstream https://github.com/bodenburgc/BODE-shopify.git
+```
+
 ### Development Workflow
 
 | Change Type | Where to Make Change |
@@ -64,6 +69,13 @@ git push origin main
 ```
 
 **Protected files (merge=ours via .gitattributes):** `config/settings_data.json`, `.shopify/*`, `templates/index.json`, `sections/*-group.json`, `.docs/brand/*`
+
+## Claude Slash Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/bode-audit` | Pre-build architecture audit... expert panel stress-tests a BODE v2 plan before implementation |
+| `/bode-verify` | Post-build verification audit... expert panel verifies execution against the plan after implementation |
 
 ## Theme Architecture
 
@@ -113,6 +125,8 @@ Context variants override defaults per market:
 | `config/settings_data.json` | Current values (DO NOT edit manually) |
 | `.shopify/metafields.json` | Metafield definitions |
 | `locales/en.default.json` | Translation strings (English only) |
+| `shopify.app.toml` | BODE Connect app config (OAuth client_id, webhook API version) |
+| `.docs/COMPONENT-AUDIT.md` | Section/snippet usage audit (~35 of 98 sections actually used) |
 
 ### Asset Loading
 
@@ -136,11 +150,11 @@ Context variants override defaults per market:
 
 ## Custom FishArmor Sections
 
-Notable custom sections beyond the standard BODE theme:
-- `dealer-locator.liquid` - Google Maps-based store finder with dealer list
-- `pro-staff.liquid` - Pro staff/ambassador showcase
-- `product-comparison.liquid` / `comparison-table.liquid` - Product feature comparison
-- `floating-product-collection.liquid` - Floating product display for collections
+Most sections (~63 of 98) are inherited from the BODE framework and unused on FishArmor. Notable custom sections unique to this store:
+- `dealer-locator.liquid` - Google Maps-based store finder with geolocation and radius search
+- `pro-staff.liquid` - Pro staff/ambassador showcase with diagonal-line texture
+- `product-comparison.liquid` / `comparison-table.liquid` - Product feature comparison with `<comparison-table>` web component
+- `floating-product-collection.liquid` - Floating product display for collections (1,500+ lines, most complex custom section)
 
 ## Brand Guidelines
 
@@ -156,6 +170,7 @@ Notable custom sections beyond the standard BODE theme:
 | `ASSETS.md` | Logo specs, file naming, badge system |
 | `ICONS.md` | Icon system with mobile-friendly touch targets |
 | `PHOTOGRAPHY.md` | Ice fishing imagery, Minnesota winters, real anglers |
+| `COLOR-MAPPING-RETAY-TO-FISHARMOR.md` | Maps Retay USA (sister brand) color system to FishArmor equivalents |
 
 **Quick Reference:**
 - **Voice:** Confident, rugged, technical. "Protect Your Investment" messaging
