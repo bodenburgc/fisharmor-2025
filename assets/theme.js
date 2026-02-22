@@ -4688,7 +4688,11 @@ class VideoMedia extends DeferredMedia {
                 if (event.data === YT.PlayerState.PLAYING) {
                   this.setAttribute('playing', '');
                 }
-                else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED) {
+                else if (event.data === YT.PlayerState.ENDED) {
+                  player.stopVideo();
+                  this.removeAttribute('playing');
+                }
+                else if (event.data === YT.PlayerState.PAUSED) {
                   this.removeAttribute('playing');
                 }
               }

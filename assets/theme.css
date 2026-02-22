@@ -13760,9 +13760,12 @@ button:is([is=media-lightbox-button], [is=media-hover-button]):focus-visible {
   }
 }
 
+video-media[playing] .deferred-poster {
+  pointer-events: none;
+}
+
 video-media[playing] .deferred-poster .play-button {
-  background-color: rgb(var(--color-base-background)/ 0.7);
-  backdrop-filter: blur(12px);
+  display: none;
 }
 
 video-media .deferred-poster .play-button {
